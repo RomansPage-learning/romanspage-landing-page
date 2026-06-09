@@ -24,7 +24,7 @@ export default function HrPoliciesPage() {
           title="Spend less time administering payroll"
           description="We help employers design payroll structures, process remittances, and maintain compliance with statutory obligations and labour standards."
           variant="policies"
-          imageSrc="/brand/banners/banner-1.jpg"
+          imageSrc="/brand/banners/banner-1.png"
           highlights={[
             "Payroll setup",
             "Statutory remittance",

@@ -24,7 +24,7 @@ export default function HrConsultingPage() {
           title="End-to-end HR consulting for growing organizations"
           description="Whether you employ a few people or several hundred, we help reduce time spent on payroll administration and ensure compliance with labour laws."
           variant="consulting"
-          imageSrc="/brand/banners/banner-1.jpg"
+          imageSrc="/brand/banners/banner-1.png"
           highlights={[
             "Payroll governance",
             "Staff outsourcing",

@@ -924,7 +924,7 @@ p {
 .page-hero-consulting::before {
   background:
     linear-gradient(90deg, rgb(27 22 113 / 82%) 0%, rgb(18 40 120 / 74%) 45%, rgb(133 14 40 / 58%) 100%),
-    url("/brand/banners/banner-1.jpg") center / cover no-repeat;
+    url("/brand/banners/banner-1.png") center / cover no-repeat;
 }
 
 .page-hero-recruitment::before {
@@ -942,13 +942,13 @@ p {
 .page-hero-training::before {
   background:
     linear-gradient(90deg, rgb(31 19 125 / 82%) 0%, rgb(24 46 129 / 74%) 45%, rgb(124 18 44 / 58%) 100%),
-    url("/brand/banners/banner-1.jpg") center / cover no-repeat;
+    url("/brand/banners/banner-1.png") center / cover no-repeat;
 }
 
 .page-hero-policies::before {
   background:
     linear-gradient(90deg, rgb(28 17 100 / 82%) 0%, rgb(20 36 103 / 74%) 45%, rgb(146 16 16 / 58%) 100%),
-    url("/brand/banners/banner-1.jpg") center / cover no-repeat;
+    url("/brand/banners/banner-1.png") center / cover no-repeat;
 }
 
 .page-hero-contact::before {
@@ -963,7 +963,7 @@ p {
   inset: 0;
   background:
     linear-gradient(90deg, rgb(49 0 226 / 84%) 0%, rgb(19 25 67 / 77%) 45%, rgb(173 2 2 / 61%) 100%),
-    url("/brand/banners/banner-1.jpg") center / cover no-repeat;
+    url("/brand/banners/banner-1.png") center / cover no-repeat;
   z-index: -1;
 }
 

@@ -52,7 +52,7 @@ export function HeroSection({ content }: HeroSectionProps) {
         { value: "Compliance-First", label: "Execution Model" },
         { value: "Actionable", label: "Implementation Guidance" },
       ],
-      mediaImage: "/brand/banners/banner-1.jpg",
+      mediaImage: "/brand/banners/banner-1.png",
       mediaStat: "Execution-Ready Advisory",
       mediaNote: "Practical HR solutions tailored to your growth stage",
     },

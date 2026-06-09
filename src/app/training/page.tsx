@@ -24,7 +24,7 @@ export default function TrainingPage() {
           title="Practical learning programs for modern teams"
           description="We offer a wide range of training services to help individuals and teams build the skills needed to succeed in today&apos;s workplace."
           variant="training"
-          imageSrc="/brand/banners/banner-1.jpg"
+          imageSrc="/brand/banners/banner-1.png"
           highlights={[
             "Digital skills training",
             "Coursademia e-learning",
