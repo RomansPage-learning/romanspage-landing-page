@@ -11,7 +11,7 @@ import { contactDetails, footerLinks, primaryNavigation, siteName } from "@/cont
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Romanspage Global, our story, values, and practical approach to executive HR consultancy and workforce solutions.",
+    "Learn about Romanspage Global, our BDSP technology services, Agri-SME support model, and practical approach to workforce and business growth.",
 };
 
 export default function AboutPage() {
@@ -22,14 +22,14 @@ export default function AboutPage() {
         <PageHero
           eyebrow="About Romanspage Global"
           title="Learn About Us"
-          description="Founded in 2014, Romanspage Global is an executive HR consultancy firm committed to quality, top-tier service delivery and practical client outcomes."
+          description="Founded in 2014, Romanspage Global is a Business Development Service Provider delivering technology solutions, platform development, and workforce support for businesses and Agri-SMEs."
           variant="about"
           imageSrc="/brand/images/about-1.jpg"
           highlights={[
             "Founded in 2014",
-            "Executive HR consultancy",
+            "BDSP technology provider",
             "Technology-enabled service delivery",
-            "Client outcome-focused execution",
+            "Agri-SME outcome-focused execution",
           ]}
         />
         <section className="section">
@@ -38,15 +38,15 @@ export default function AboutPage() {
               <p className="eyebrow">Who We Are</p>
               <h2>Executive HR consultancy with practical growth focus</h2>
               <p>
-                Our goal is to provide creative solutions to job creation challenges,
-                training needs, and employer-candidate matching so organizations can
-                achieve strategic goals with confidence.
+                Our goal is to provide practical business solutions through technology,
+                people systems, and execution support, helping organizations and
+                Agri-SMEs improve productivity, market readiness, and sustainable growth.
               </p>
             </div>
             <ul className="feature-list">
               <li>Focused on quality and top-tier partner service delivery</li>
-              <li>Over 7 years of HR solutions and implementation track record</li>
-              <li>Market-oriented practices backed by measurable outcomes</li>
+              <li>Over 7 years of implementation and advisory track record</li>
+              <li>Platform and workflow design backed by measurable outcomes</li>
               <li>Built to support both immediate and long-term workforce goals</li>
             </ul>
           </div>
@@ -56,9 +56,10 @@ export default function AboutPage() {
           intro="We use a proven methodology to deliver workflow-driven HR strategies that help organizations achieve measurable objectives."
           items={[
             "Outsourcing, staff management, and payroll administration",
+            "BDSP technology advisory and digital platform development",
             "Talent sourcing, executive search, internship placement, and recruitment support",
             "HR policy drafting, implementation tracking, and job evaluation",
-            "Training, development, employment fairs, and employer engagement sessions",
+            "Agri-SME digital skills training and implementation coaching",
             "Monitoring and evaluation for process and service improvement",
             "Employee satisfaction programs and managed healthcare support",
           ]}
@@ -74,7 +75,7 @@ export default function AboutPage() {
             </div>
             <ul className="feature-list">
               <li>Customized and thoughtful solutions tailored to client expectations</li>
-              <li>Strong technology orientation with practical implementation depth</li>
+              <li>Strong BDSP technology orientation with practical implementation depth</li>
               <li>Highly motivated, result-oriented team execution</li>
               <li>Consistent delivery standards with measurable impact focus</li>
             </ul>

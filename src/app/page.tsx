@@ -21,16 +21,16 @@ export default function Home() {
         <section className="section section-quote" aria-label="Brand statement">
           <div className="container">
             <blockquote>
-              We are big enough to attend to your HR needs and small enough to care about your business.
+              We combine BDSP insight, technology execution, and HR expertise to help businesses and Agri-SMEs scale with confidence.
             </blockquote>
           </div>
         </section>
         <OutcomeMetrics
-          title="Why employers choose Romanspage"
+          title="Why organizations choose Romanspage"
           metrics={[
-            { label: "Recruitment Delivery", value: "100%", detail: "Structured hiring workflows from brief to onboarding." },
-            { label: "Payroll Reliability", value: "99.9%", detail: "Compliance-first payroll processes and statutory routines." },
-            { label: "SME Support Coverage", value: "End-to-End", detail: "Templates, policies, and advisory scaled to team size." },
+            { label: "Platform Delivery", value: "Build-Ready", detail: "Practical digital platforms aligned to business process outcomes." },
+            { label: "Agri-SME Enablement", value: "Hands-On", detail: "Technology training and implementation support for agribusiness growth." },
+            { label: "People + Process", value: "Integrated", detail: "Recruitment, HR systems, and compliance aligned to execution." },
           ]}
         />
         <ValueGrid

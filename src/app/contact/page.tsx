@@ -10,7 +10,7 @@ import { contactDetails, footerLinks, primaryNavigation, siteName } from "@/cont
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Romanspage Global for HR consulting, recruitment, SME HR support, and training services.",
+    "Contact Romanspage Global for BDSP technology services, platform development, Agri-SME tech training, and HR support.",
 };
 
 export default function ContactPage() {
@@ -21,7 +21,7 @@ export default function ContactPage() {
         <PageHero
           eyebrow="Contact Us"
           title="Call now or write a message"
-          description="Reach out for staffing, HR outsourcing, payroll support, and workforce development. We respond with practical next steps for your business."
+          description="Reach out for BDSP technology support, platform development, Agri-SME training, staffing, and workforce development. We respond with practical next steps for your business."
           variant="contact"
           imageSrc="/brand/banners/banner-2.jpg"
           highlights={[

@@ -1822,6 +1822,10 @@ textarea:focus-visible {
 }
 
 @media (max-width: 980px) {
+  .section {
+    padding: 2.4rem 0;
+  }
+
   .hero-layout {
     grid-template-columns: 1fr;
   }
@@ -1854,8 +1858,26 @@ textarea:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .cta-band {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
+
+  .cta-band .btn {
+    width: 100%;
+  }
+
   .page-hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-hero {
+    padding: 3.4rem 0 1.6rem;
+  }
+
+  .page-hero-media {
+    min-height: 240px;
   }
 
   .split-panel {
@@ -1872,12 +1894,17 @@ textarea:focus-visible {
     display: none;
   }
 
+  .nav-cta {
+    display: none;
+  }
+
   .mobile-nav {
     display: block;
   }
 
   .top-nav {
     justify-content: space-between;
+    gap: 0.7rem;
   }
 
   .top-nav::after {
@@ -1886,6 +1913,19 @@ textarea:focus-visible {
 
   .header-meta {
     display: none;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 0.5rem;
+  }
+
+  .brand span {
+    font-size: 0.96rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 175px;
   }
 
   .contact-form {
@@ -1898,16 +1938,104 @@ textarea:focus-visible {
 }
 
 @media (max-width: 560px) {
-  .nav-cta {
-    display: none;
+  .container {
+    width: min(var(--container), calc(100% - 1.2rem));
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  .section-quote {
+    padding-top: 1.25rem;
+  }
+
+  .top-nav {
+    padding-block: 0.62rem;
+  }
+
+  .brand img {
+    width: 50px;
+    height: auto;
+  }
+
+  .brand span {
+    max-width: 140px;
+    font-size: 0.9rem;
   }
 
   .hero-stage {
     min-height: auto;
   }
 
+  .hero {
+    padding: 2.5rem 0 1.7rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 9vw, 2.2rem);
+  }
+
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-media {
+    min-height: 280px;
+  }
+
+  .hero-media-card {
+    left: 0.7rem;
+    right: 0.7rem;
+    bottom: 0.7rem;
+  }
+
   .page-hero-highlights {
     grid-template-columns: 1fr;
+  }
+
+  .page-hero-content {
+    padding: 0.9rem;
+  }
+
+  .page-hero-media {
+    min-height: 210px;
+  }
+
+  .card,
+  .service-item-card,
+  .program-card,
+  .pillar-card,
+  .outcome-card {
+    padding: 0.85rem;
+    border-radius: 0.85rem;
+  }
+
+  .badge-matrix span {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-shell {
+    padding: 1rem;
+  }
+
+  .footer-connect {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-connect a {
+    width: 100%;
+  }
+
+  .footer-legal .row {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hero-media-stat {

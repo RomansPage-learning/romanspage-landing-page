@@ -34,27 +34,27 @@ export function HeroSection({ content }: HeroSectionProps) {
       kpis: [
         { value: "10+ Years", label: "HR Delivery Experience" },
         { value: "24-48h", label: "Initial Response Window" },
-        { value: "End-to-End", label: "Recruitment and HR Support" },
+        { value: "End-to-End", label: "BDSP, Platform, and HR Support" },
       ],
       mediaImage: "/brand/banners/banner-2.jpg",
       mediaStat: "Trusted HR Partner",
       mediaNote: "The right candidate for you through Romanspage",
     },
     {
-      eyebrow: "Workforce Transformation",
-      title: "From hiring pressure to people performance",
+      eyebrow: "BDSP Technology Enablement",
+      title: "From operational pressure to technology-enabled growth",
       subtitle:
-        "Romanspage helps employers stabilize payroll, improve team capability, and build reliable HR systems for long-term growth.",
+        "Romanspage helps organizations and Agri-SMEs build practical platforms, strengthen team capability, and operationalize systems for sustainable growth.",
       primaryCta: { label: "Plan Your HR Roadmap", href: "/contact" },
-      secondaryCta: { label: "Explore HR Consulting", href: "/hr-consulting" },
+      secondaryCta: { label: "Explore BDSP Services", href: "/hr-consulting" },
       kpis: [
-        { value: "SME to Enterprise", label: "Support Coverage" },
-        { value: "Compliance-First", label: "Execution Model" },
+        { value: "Agri-SME Ready", label: "Sector Support" },
+        { value: "Platform-Driven", label: "Delivery Model" },
         { value: "Actionable", label: "Implementation Guidance" },
       ],
       mediaImage: "/brand/banners/banner-1.png",
-      mediaStat: "Execution-Ready Advisory",
-      mediaNote: "Practical HR solutions tailored to your growth stage",
+      mediaStat: "Execution-Ready BDSP",
+      mediaNote: "Practical platform and training solutions tailored to your growth stage",
     },
   ];
 

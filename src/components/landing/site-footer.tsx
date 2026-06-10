@@ -20,8 +20,8 @@ export function SiteFooter({ owner, links }: SiteFooterProps) {
             <span>{owner}</span>
           </div>
           <p className="footer-description">
-            We are here to solve your HR challenges leveraging technology,
-            practical expertise, and measurable service delivery.
+            We are here to solve business and HR challenges through BDSP support,
+            platform development, and practical Agri-SME technology enablement.
           </p>
           <ul className="plain-list row gap-md footer-connect">
             <li>

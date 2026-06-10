@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.siteTitle}`,
   },
   description:
-    `${siteConfig.siteTitle} helps businesses solve HR challenges through consulting, recruitment, policy support, and workforce training with measurable outcomes.`,
+    `${siteConfig.siteTitle} is a BDSP and HR partner delivering technology consulting, platform development, and Agri-SME capacity building through practical training and measurable outcomes.`,
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png" },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.siteTitle,
     description:
-      `${siteConfig.siteTitle} provides practical, technology-enabled HR solutions including recruitment, HR consulting, payroll and policy support, and training services.`,
+      `${siteConfig.siteTitle} provides BDSP technology services, digital platform development, and Agri-SME training alongside recruitment, HR consulting, and policy support.`,
     url: siteConfig.siteUrl,
     siteName: siteConfig.siteTitle,
     type: "website",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.siteTitle,
     description:
-      `${siteConfig.siteTitle} provides practical, technology-enabled HR solutions including recruitment, HR consulting, payroll and policy support, and training services.`,
+      `${siteConfig.siteTitle} provides BDSP technology services, digital platform development, and Agri-SME training alongside recruitment, HR consulting, and policy support.`,
   },
 };
 

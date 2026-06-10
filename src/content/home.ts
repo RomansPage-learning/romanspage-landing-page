@@ -10,12 +10,12 @@ export const homePageContent: HomePageContent = {
     { label: "Contact", href: "/contact" },
   ],
   hero: {
-    eyebrow: "Executive HR Consultancy",
-    title: "The right HR solutions for your business growth.",
+    eyebrow: "BDSP + HR Technology Partner",
+    title: "Build better businesses with practical people and technology systems.",
     subtitle:
-      "Founded in 2014, Romanspage Global helps employers hire top talent, streamline HR operations, and improve workforce performance through practical and cost-efficient support.",
+      "Founded in 2014, Romanspage Global supports organizations as a Business Development Service Provider, building digital platforms, strengthening HR operations, and enabling Agri-SMEs with practical technology training.",
     primaryCta: { label: "Book Appointment", href: "/contact" },
-    secondaryCta: { label: "Discover Recruitment", href: "/recruitment" },
+    secondaryCta: { label: "Explore Technology Services", href: "/hr-consulting" },
   },
   valuePoints: [
     {
@@ -24,20 +24,20 @@ export const homePageContent: HomePageContent = {
         "From interns to C-suite leaders, we identify and attract qualified candidates with the right skills and attitude.",
     },
     {
-      title: "Payroll Management",
+      title: "BDSP Technology Enablement",
       description:
-        "Reduce administrative load and ensure tax and statutory remittance in line with local labour requirements.",
+        "Design and build practical business platforms, digital workflows, and operating systems that improve execution and visibility.",
     },
     {
-      title: "SME HR Support",
+      title: "Agri-SME Tech Training",
       description:
-        "Get tailored templates, policy support, employee documentation, and ongoing advisory for small and growing teams.",
+        "Support Agri-SMEs with hands-on digital skills training, implementation coaching, and tools that strengthen market readiness and growth.",
     },
   ],
   ctaBand: {
-    title: "Get a practical HR plan in one consultation",
+    title: "Get a practical BDSP and HR growth plan in one consultation",
     description:
-      "Speak with Romanspage to map your immediate priorities across recruitment, payroll, consulting, and workforce support.",
+      "Speak with Romanspage to map priorities across platform development, Agri-SME tech training, recruitment, and workforce support.",
     action: { label: "Book a Consultation", href: "/contact" },
   },
   footer: {
