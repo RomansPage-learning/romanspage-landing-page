@@ -32,9 +32,9 @@ export function HeroSection({ content }: HeroSectionProps) {
       primaryCta: content.primaryCta,
       secondaryCta: content.secondaryCta,
       kpis: [
-        { value: "10+ Years", label: "HR Delivery Experience" },
-        { value: "24-48h", label: "Initial Response Window" },
-        { value: "End-to-End", label: "BDSP, Platform, and HR Support" },
+        { value: "10+ Years", label: "HR Experience" },
+        { value: "24-48h", label: "Response Time" },
+        { value: "End-to-End", label: "BDSP + HR Support" },
       ],
       mediaImage: "/brand/banners/banner-2.jpg",
       mediaStat: "Trusted HR Partner",

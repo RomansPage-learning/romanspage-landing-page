@@ -11,9 +11,9 @@ export const homePageContent: HomePageContent = {
   ],
   hero: {
     eyebrow: "BDSP + HR Technology Partner",
-    title: "Build better businesses with practical people and technology systems.",
+    title: "Build better businesses with practical people and technology.",
     subtitle:
-      "Founded in 2014, Romanspage Global supports organizations as a Business Development Service Provider, building digital platforms, strengthening HR operations, and enabling Agri-SMEs with practical technology training.",
+      "Since 2014, Romanspage Global has helped organizations build digital platforms, strengthen HR operations, and equip Agri-SMEs with practical technology training.",
     primaryCta: { label: "Book Appointment", href: "/contact" },
     secondaryCta: { label: "Explore Technology Services", href: "/hr-consulting" },
   },
