@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Sora } from "next/font/google";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
+import { headers } from 'next/headers';
 
 const manrope = Manrope({
   variable: "--font-body",
@@ -46,14 +47,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const nonce = (await headers()).get('x-nonce') ?? '';
   return (
     <html lang="en" className={`${manrope.variable} ${sora.variable}`}>
-      <body>{children}</body>
+      <body nonce={nonce}>{children}</body>
     </html>
   );
 }

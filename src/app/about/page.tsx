@@ -45,7 +45,7 @@ export default function AboutPage() {
             </div>
             <ul className="feature-list">
               <li>Focused on quality and top-tier partner service delivery</li>
-              <li>Over 7 years of implementation and advisory track record</li>
+              <li>Over 12 years of implementation and advisory track record</li>
               <li>Platform and workflow design backed by measurable outcomes</li>
               <li>Built to support both immediate and long-term workforce goals</li>
             </ul>
@@ -84,7 +84,7 @@ export default function AboutPage() {
         <OutcomeMetrics
           title="Institutional strengths"
           metrics={[
-            { label: "Years of Expertise", value: "7+", detail: "Sustained HR advisory and implementation track record." },
+            { label: "Years of Expertise", value: "12+", detail: "Sustained HR advisory and implementation track record." },
             { label: "Service Breadth", value: "Diversified", detail: "Consulting, recruitment, outsourcing, payroll, and workforce development." },
             { label: "Delivery Model", value: "Business Extension", detail: "We align closely with client objectives and day-to-day operations." },
           ]}
