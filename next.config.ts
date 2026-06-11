@@ -1,5 +1,18 @@
 import type { NextConfig } from "next";
 
+const getApiHostname = () => {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  if (!apiUrl) return '';
+
+  try {
+    return new URL(apiUrl).hostname;
+  } catch {
+    return '';
+  }
+};
+
+const apiHostname = getApiHostname();
+
 const securityHeaders = [
   {
     key: "X-Frame-Options",
@@ -38,6 +51,16 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      ...(apiHostname
+        ? [
+            {
+              protocol: 'https' as const,
+              hostname: apiHostname,
+              port: '',
+              pathname: '/**',
+            },
+          ]
+        : []),
     ],
     formats: ["image/avif", "image/webp"],
   },
