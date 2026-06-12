@@ -17,8 +17,10 @@ export function ServiceList({ title, intro, items }: ServiceListProps) {
           {items.map((item, index) => (
             <Reveal key={item} delayMs={Math.min(index * 80, 360)}>
               <article className="service-item-card">
-                <span className="service-item-index">{String(index + 1).padStart(2, "0")}</span>
-                <p>{item}</p>
+                <div className="service-item-head">
+                  <span className="service-item-index">{String(index + 1).padStart(2, "0")}</span>
+                  <p className="service-item-copy">{item}</p>
+                </div>
               </article>
             </Reveal>
           ))}
