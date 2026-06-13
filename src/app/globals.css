@@ -1665,7 +1665,7 @@ p {
 .service-item-head {
   display: grid;
   grid-template-columns: 2rem minmax(0, 1fr);
-  align-items: start;
+  align-items: center;
   gap: 0.75rem;
 }
 
@@ -1712,9 +1712,8 @@ p {
 }
 
 .service-item-index {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-grid;
+  place-items: center;
   width: 2rem;
   height: 2rem;
   border-radius: 0.6rem;
@@ -1723,15 +1722,20 @@ p {
   color: rgb(var(--service-accent-rgb) / 92%);
   font-size: 0.78rem;
   font-weight: 800;
-  font-variant-numeric: tabular-nums;
+  font-family: var(--font-body), sans-serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  letter-spacing: 0;
+  text-align: center;
   line-height: 1;
+  padding-inline-start: 0.04em;
   flex-shrink: 0;
   transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
 }
 
 .service-item-copy {
   margin: 0;
-  padding-top: 0.15rem;
+  padding-top: 0;
   color: rgb(22 25 48 / 86%);
   font-size: 0.95rem;
   line-height: 1.42;
