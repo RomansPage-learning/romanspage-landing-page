@@ -2,6 +2,8 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const hstsValue = 'max-age=31536000; includeSubDomains';
+const isMaintenanceMode = process.env.MAINTENANCE_MODE === 'true';
+const MAINTENANCE_PATH = '/under-construction';
 
 const getApiHostname = () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -56,12 +58,25 @@ function buildCsp(nonce: string): string {
   ].join('; ');
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const nonce = generateNonce();
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-nonce', nonce);
 
-  const response = NextResponse.next({ request: { headers: requestHeaders } });
+  const { pathname } = request.nextUrl;
+  const isMaintenancePage = pathname === MAINTENANCE_PATH;
+  const isApiRoute = pathname.startsWith('/api');
+  const isStaticAsset = /\.[a-zA-Z0-9]+$/.test(pathname);
+
+  let response: NextResponse;
+  if (isMaintenanceMode && !isMaintenancePage && !isApiRoute && !isStaticAsset) {
+    const url = request.nextUrl.clone();
+    url.pathname = MAINTENANCE_PATH;
+    response = NextResponse.rewrite(url, { request: { headers: requestHeaders } });
+  } else {
+    response = NextResponse.next({ request: { headers: requestHeaders } });
+  }
+
   response.headers.set('Content-Security-Policy', buildCsp(nonce));
   if (!isDev) {
     response.headers.set('Strict-Transport-Security', hstsValue);

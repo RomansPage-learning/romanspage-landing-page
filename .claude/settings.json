@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"raw logo.png: %{http_code} %{content_type} size=%{size_download}\\\\n\" http://localhost:3921/brand/logo.png)",
+      "Bash(curl -s -o /dev/null -w \"next/image logo-icon.png: %{http_code}\\\\n\" \"http://localhost:3921/_next/image?url=%2Fbrand%2Flogo-icon.png&w=256&q=75\")",
+      "Bash(xxd)",
+      "Bash(taskkill //PID 26228 //F)"
+    ]
+  }
+}
