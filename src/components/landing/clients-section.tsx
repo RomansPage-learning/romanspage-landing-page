@@ -23,10 +23,10 @@ export function ClientsSection() {
     <section className="section clients-section" aria-labelledby="clients-title">
       <div className="container stack-lg">
         <Reveal>
-          <p className="eyebrow">Clients</p>
+          <p className="eyebrow">Our Partners</p>
         </Reveal>
         <Reveal>
-          <h2 id="clients-title">Trusted by organizations across sectors</h2>
+          <h2 id="clients-title">Working alongside leading development, government, and private-sector institutions</h2>
         </Reveal>
         <div className="clients-marquee" aria-label="Client logos">
           <span className="clients-mask clients-mask-left" aria-hidden="true" />

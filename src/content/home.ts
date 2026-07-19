@@ -10,34 +10,39 @@ export const homePageContent: HomePageContent = {
     { label: "Contact", href: "/contact" },
   ],
   hero: {
-    eyebrow: "BDSP + HR Technology Partner",
-    title: "Build better businesses with practical people and technology.",
+    eyebrow: "Consulting · Learning · Enterprise Development",
+    title: "Empowering people, building businesses.",
     subtitle:
-      "Since 2014, Romanspage Global has helped organizations build digital platforms, strengthen HR operations, and equip Agri-SMEs with practical technology training.",
+      "Since 2014, Romanspage Consulting Group has helped SMEs, agri-SMEs, and young people across Nigeria build stronger organisations, better talent, and scalable enterprises through consulting, learning, and enterprise technology.",
     primaryCta: { label: "Book Appointment", href: "/contact" },
-    secondaryCta: { label: "Explore Technology Services", href: "/hr-consulting" },
+    secondaryCta: { label: "Explore Our Services", href: "/hr-consulting" },
   },
   valuePoints: [
     {
-      title: "Recruitment",
+      title: "People, HR & Organisation Advisory",
       description:
-        "From interns to C-suite leaders, we identify and attract qualified candidates with the right skills and attitude.",
+        "Recruitment and talent placement, HR services for SMEs, organisational assessment, and capacity building — a professional advisory practice, not just HR support.",
     },
     {
-      title: "BDSP Technology Enablement",
+      title: "Enterprise & Agri-SME Growth Advisory",
       description:
-        "Design and build practical business platforms, digital workflows, and operating systems that improve execution and visibility.",
+        "Business diagnostics, agri-SME support, business development services, and access-to-finance readiness for agribusinesses and growing enterprises.",
     },
     {
-      title: "Agri-SME Tech Training",
+      title: "Skills, Employability & Entrepreneurship Programmes",
       description:
-        "Support Agri-SMEs with hands-on digital skills training, implementation coaching, and tools that strengthen market readiness and growth.",
+        "Donor- and employer-facing programmes covering employability, entrepreneurship, career development, and job matching for youth and women.",
+    },
+    {
+      title: "Digital Learning & Technology Solutions",
+      description:
+        "Coursademia, our online learning platform, and Bickford Technology Solutions, our IT and AI-skills training arm, scale learning and embed technology and practical AI adoption across industries.",
     },
   ],
   ctaBand: {
-    title: "Get a practical BDSP and HR growth plan in one consultation",
+    title: "Get a practical people, business, and growth plan in one consultation",
     description:
-      "Speak with Romanspage to map priorities across platform development, Agri-SME tech training, recruitment, and workforce support.",
+      "Speak with Romanspage to map priorities across HR advisory, enterprise growth, workforce programmes, and technology enablement.",
     action: { label: "Book a Consultation", href: "/contact" },
   },
   footer: {

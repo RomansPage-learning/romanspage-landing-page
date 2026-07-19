@@ -22,7 +22,7 @@ export default function HrPoliciesPage() {
         <PageHero
           eyebrow="Payroll and HR Policies"
           title="Spend less time administering payroll"
-          description="We help employers design payroll structures, process remittances, and maintain compliance with statutory obligations and labour standards."
+          description="Part of our HR4SMEs package: we help employers design payroll structures, process remittances, and maintain compliance with statutory obligations and labour standards."
           variant="policies"
           imageSrc="/brand/banners/banner-1.png"
           highlights={[

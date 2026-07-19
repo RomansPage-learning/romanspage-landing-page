@@ -10,7 +10,7 @@ import { contactDetails, footerLinks, primaryNavigation, siteName } from "@/cont
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Romanspage Global for BDSP technology services, platform development, Agri-SME tech training, and HR support.",
+    "Contact Romanspage Consulting Group for HR advisory, enterprise and Agri-SME growth support, workforce programmes, and technology enablement.",
 };
 
 export default function ContactPage() {
@@ -21,7 +21,7 @@ export default function ContactPage() {
         <PageHero
           eyebrow="Contact Us"
           title="Call now or write a message"
-          description="Reach out for BDSP technology support, platform development, Agri-SME training, staffing, and workforce development. We respond with practical next steps for your business."
+          description="Reach out for HR advisory, enterprise and Agri-SME growth support, workforce programmes, and technology enablement. We respond with practical next steps for your business."
           variant="contact"
           imageSrc="/brand/banners/banner-2.jpg"
           highlights={[
@@ -43,11 +43,14 @@ export default function ContactPage() {
               <h2>Phone</h2>
               <p>
                 <a href={contactDetails.phoneHref}>{contactDetails.phoneDisplay}</a>
+                {" · "}
+                <a href={contactDetails.phoneSecondaryHref}>{contactDetails.phoneSecondaryDisplay}</a>
               </p>
             </article>
             <article className="card">
-              <h2>Address</h2>
+              <h2>Offices</h2>
               <p>{contactDetails.address}</p>
+              <p>{contactDetails.addressSecondary}</p>
             </article>
           </div>
         </section>

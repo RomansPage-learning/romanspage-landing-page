@@ -36,7 +36,7 @@ export function SiteHeader({ siteName, navigation }: SiteHeaderProps) {
     <header className={`site-header${isScrolled ? " is-scrolled" : ""}`} aria-label="Site header">
       <div className="header-meta">
         <div className="container row space-between align-center wrap gap-md">
-          <p>BDSP, technology, and HR execution support with measurable outcomes.</p>
+          <p>Consulting · Learning · Enterprise Development — empowering people, building businesses since 2014.</p>
           <div className="row gap-md wrap">
             <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
             <a href={contactDetails.phoneHref}>{contactDetails.phoneDisplay}</a>

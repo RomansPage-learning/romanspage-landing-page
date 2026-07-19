@@ -21,21 +21,26 @@ export default function Home() {
         <section className="section section-quote" aria-label="Brand statement">
           <div className="container">
             <blockquote>
-              We combine BDSP insight, technology execution, and HR expertise to help businesses and Agri-SMEs scale with confidence.
+              We help organisations, SMEs and development programmes build capable
+              people, stronger systems, and scalable enterprise outcomes.
             </blockquote>
           </div>
         </section>
         <OutcomeMetrics
-          title="Why organizations choose Romanspage"
+          eyebrow="Impact"
+          title="Impact at a glance"
           metrics={[
-            { label: "Platform Delivery", value: "Build-Ready", detail: "Practical digital platforms aligned to business process outcomes." },
-            { label: "Agri-SME Enablement", value: "Hands-On", detail: "Technology training and implementation support for agribusiness growth." },
-            { label: "People + Process", value: "Integrated", detail: "Recruitment, HR systems, and compliance aligned to execution." },
+            { label: "Track Record", value: "Since 2014", detail: "Over a decade of impact across SMEs, youth, and women in Nigeria." },
+            { label: "SMEs Built via Growth-Hack", value: "2,700+", detail: "Supported through our flagship Growth-Hack Series." },
+            { label: "Young People Trained", value: "5,000+", detail: "Employability, entrepreneurship, and digital skills training." },
+            { label: "SMEs Supported (EdoCARES)", value: "500+", detail: "World Bank and Edo State-funded enterprise strengthening." },
+            { label: "Female Participation", value: "55%+", detail: "Gender-responsive, youth-centred programming aligned to SDG 5 and SDG 8." },
+            { label: "Financing Unlocked", value: "US$5M+", detail: "Grant, loan, and equity linkages facilitated for SMEs and agri-SMEs." },
           ]}
         />
         <ValueGrid
           id="services"
-          title="Core service outcomes for employers"
+          title="Our four integrated practice areas"
           items={homePageContent.valuePoints}
         />
         <ClientsSection />

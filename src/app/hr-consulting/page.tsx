@@ -11,7 +11,7 @@ import { footerLinks, primaryNavigation, siteName } from "@/content/site";
 export const metadata: Metadata = {
   title: "HR Consulting",
   description:
-    "BDSP and HR consulting services including technology advisory, platform implementation, payroll support, and workforce optimization.",
+    "Romanspage Advisory: HR services for SMEs, recruitment and talent placement, organisational assessment, and capacity building — a professional advisory practice.",
 };
 
 export default function HrConsultingPage() {
@@ -20,47 +20,60 @@ export default function HrConsultingPage() {
       <SiteHeader siteName={siteName} navigation={primaryNavigation} />
       <main className="page-shell page-consulting">
         <PageHero
-          eyebrow="BDSP and HR Consulting"
-          title="End-to-end business and people consulting for growing organizations"
-          description="Whether you employ a few people or several hundred, we help you design practical operating systems across technology, payroll, compliance, and workforce execution."
+          eyebrow="Romanspage Advisory"
+          title="A professional HR and organisation advisory practice, not just HR support"
+          description="Whether you employ a few people or several hundred, we help you design practical people systems across recruitment, HR documentation, payroll, compliance, and organisational capacity."
           variant="consulting"
           imageSrc="/brand/banners/banner-1.png"
           highlights={[
-            "Platform strategy",
-            "Payroll governance",
-            "Staff outsourcing",
-            "Operational compliance",
+            "HR4SMEs",
+            "Recruitment & talent placement",
+            "Organisational assessment",
+            "Capacity building & HR outsourcing",
             "Agri-SME enablement support",
           ]}
         />
         <ServiceList
           title="Core consulting services"
-          intro="Integrated BDSP and HR support to improve operational reliability, adoption, and growth outcomes."
+          intro="Our consulting backbone — talent management, recruitment, capacity and governance — delivered as a professional advisory practice."
           items={[
-            "Technology advisory and platform requirement mapping",
-            "Business platform implementation and process digitization",
-            "Payroll management and statutory remittance support",
-            "Staff outsourcing and employee performance support",
-            "Professional development for leadership and technical teams",
-            "Agri-SME capability support and implementation coaching",
+            "HR Services for SMEs (HR4SMEs) — recruitment, onboarding, HR documentation, payroll and statutory compliance",
+            "Performance management, KPIs, employee relations and staff policies",
+            "Recruitment & Talent Placement, with a distinctive specialism in the agriculture value chain",
+            "Organisational Assessment — structure review, capacity assessment, and governance review",
+            "Capacity Building & HR Outsourcing — staff training, leadership development, and SOP development",
+            "Acting as the HR partner for SMEs without an in-house HR department",
           ]}
         />
         <section className="section">
           <div className="container stack-lg">
-            <p className="eyebrow">Consulting Pillars</p>
-            <h2>How we deliver HR transformation</h2>
+            <p className="eyebrow">Productised Packages</p>
+            <h2>Three flagship packages built for this practice area</h2>
             <div className="pillars-grid">
               <article className="pillar-card">
-                <h3>Digital Foundation</h3>
-                <p>Define platform architecture, process flows, and capability requirements from day one.</p>
+                <h3>HR4SMEs</h3>
+                <p>
+                  For small businesses needing HR structure: HR audit, employee
+                  handbook, job descriptions, recruitment support, performance
+                  template, payroll &amp; statutory compliance, and a monthly HR
+                  retainer.
+                </p>
               </article>
               <article className="pillar-card">
-                <h3>People Performance Systems</h3>
-                <p>Align goals, accountability, and talent capability to business and technology outcomes.</p>
+                <h3>Organisation Capacity Assessment</h3>
+                <p>
+                  For NGOs, SMEs, agri-SMEs and programme partners: governance,
+                  HR/staffing, operations and financial/admin reviews, a
+                  capacity-gap report, and an improvement roadmap.
+                </p>
               </article>
               <article className="pillar-card">
-                <h3>Operational Clarity</h3>
-                <p>Introduce simple, scalable operating models that reduce friction and improve adoption.</p>
+                <h3>Recruitment & Talent Placement</h3>
+                <p>
+                  Sourcing, screening and placing talent — with a distinctive
+                  specialism in the agriculture value chain, from agribusiness
+                  specialists to field officers and technical experts.
+                </p>
               </article>
             </div>
           </div>
@@ -68,14 +81,14 @@ export default function HrConsultingPage() {
         <OutcomeMetrics
           title="Consulting outcomes"
           metrics={[
-            { label: "Digital Readiness", value: "Improved", detail: "Platform, process, and people systems aligned to delivery." },
-            { label: "Operational Efficiency", value: "Higher", detail: "Reduced friction in HR and business support operations." },
+            { label: "HR Foundations", value: "Structured", detail: "Documentation, policy systems and onboarding standards in place." },
+            { label: "Operational Efficiency", value: "Higher", detail: "Reduced friction in HR and people-operations delivery." },
             { label: "Adoption Enablement", value: "Practical", detail: "Clear implementation support for teams and Agri-SMEs." },
           ]}
         />
         <CtaBand
-          title="Need BDSP and consulting support now?"
-          description="Book a focused consultation and get a clear action plan for platform development, people systems, and growth execution."
+          title="Need HR and organisation advisory support now?"
+          description="Book a focused consultation and get a clear action plan for HR structure, recruitment, and organisational capacity."
           action={{ label: "Book a Strategy Call", href: "/contact" }}
           theme="consulting"
         />

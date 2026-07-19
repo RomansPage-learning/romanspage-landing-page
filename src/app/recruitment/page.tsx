@@ -11,7 +11,7 @@ import { footerLinks, primaryNavigation, siteName } from "@/content/site";
 export const metadata: Metadata = {
   title: "Recruitment",
   description:
-    "Romanspage recruitment services for contract, full-time, project staffing, and intern placement.",
+    "Romanspage recruitment and talent placement services, with a distinctive specialism in the agriculture value chain — agribusiness specialists, field officers, and technical experts.",
 };
 
 export default function RecruitmentPage() {
@@ -20,26 +20,27 @@ export default function RecruitmentPage() {
       <SiteHeader siteName={siteName} navigation={primaryNavigation} />
       <main className="page-shell page-recruitment">
         <PageHero
-          eyebrow="Recruitment"
-          title="Hire the right candidates with confidence"
-          description="We help organizations identify and attract qualified professionals from internship level to C-suite roles across sectors."
+          eyebrow="Recruitment & Talent Placement"
+          title="Hire the right candidates with confidence — including the agriculture value chain"
+          description="We help organizations identify and attract qualified professionals from internship level to C-suite roles across sectors, with a distinctive specialism in agribusiness recruitment."
           variant="recruitment"
           imageSrc="/brand/banners/banner-2.jpg"
           highlights={[
             "Contract hiring",
             "Full-time placement",
             "Project staffing",
-            "Intern pipeline support",
+            "Agri value chain specialism",
           ]}
         />
         <ServiceList
           title="We support your hiring needs for"
-          intro="Flexible recruitment support based on business stage and role complexity."
+          intro="Flexible recruitment support based on business stage, role complexity, and sector — including a distinctive specialism in agribusiness."
           items={[
             "Contract staff",
             "Full-time engagement",
             "Project staffing",
             "Intern placement",
+            "Agribusiness specialists, field officers, and technical experts",
           ]}
         />
         <section className="section">

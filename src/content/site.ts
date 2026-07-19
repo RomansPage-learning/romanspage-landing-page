@@ -20,7 +20,7 @@ export const footerLinks: NavigationItem[] = [
 
 export const footerServiceLinks: NavigationItem[] = [
   { label: "HR Consulting", href: "/hr-consulting" },
-  { label: "SME HR Support", href: "/sme-hr-support" },
+  { label: "SME & Agri-SME Growth", href: "/sme-hr-support" },
   { label: "Payroll and Policies", href: "/hr-policies" },
   { label: "Recruitment", href: "/recruitment" },
   { label: "Training", href: "/training" },
@@ -29,6 +29,9 @@ export const footerServiceLinks: NavigationItem[] = [
 export const contactDetails = {
   phoneDisplay: siteConfig.contact.phoneDisplay,
   phoneHref: siteConfig.contact.phoneHref,
+  phoneSecondaryDisplay: "+234 912 452 3153",
+  phoneSecondaryHref: "tel:+2349124523153",
   email: siteConfig.contact.email,
   address: siteConfig.contact.address,
+  addressSecondary: "Ibadan, Oyo State",
 };

@@ -20,8 +20,9 @@ export function SiteFooter({ owner, links }: SiteFooterProps) {
             <span>{owner}</span>
           </div>
           <p className="footer-description">
-            We are here to solve business and HR challenges through BDSP support,
-            platform development, and practical Agri-SME technology enablement.
+            Romanspage Consulting Group is an integrated consulting, learning, and
+            enterprise development company empowering SMEs, agri-SMEs, and young
+            people across Nigeria since 2014.
           </p>
           <ul className="plain-list row gap-md footer-connect">
             <li>
@@ -101,11 +102,16 @@ export function SiteFooter({ owner, links }: SiteFooterProps) {
             </li>
             <li>
               <span>Phone</span>
-              <a href={contactDetails.phoneHref}>{contactDetails.phoneDisplay}</a>
+              <p>
+                <a href={contactDetails.phoneHref}>{contactDetails.phoneDisplay}</a>
+                {" · "}
+                <a href={contactDetails.phoneSecondaryHref}>{contactDetails.phoneSecondaryDisplay}</a>
+              </p>
             </li>
             <li>
-              <span>Office</span>
+              <span>Offices</span>
               <p>{contactDetails.address}</p>
+              <p>{contactDetails.addressSecondary}</p>
             </li>
           </ul>
         </div>
