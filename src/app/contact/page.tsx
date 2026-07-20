@@ -1,90 +1,84 @@
 import type { Metadata } from "next";
 
 import { ContactForm } from "@/components/forms/contact-form";
-import { OutcomeMetrics } from "@/components/landing/outcome-metrics";
-import { PageHero } from "@/components/landing/page-hero";
+import { MailIcon, PhoneIcon, PinIcon } from "@/components/landing/icons";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
-import { contactDetails, footerLinks, primaryNavigation, siteName } from "@/content/site";
+import { contactDetails } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Romanspage Consulting Group for HR advisory, enterprise and Agri-SME growth support, workforce programmes, and technology enablement.",
+    "Whether you're an employer or a candidate, we'd love to hear from you. Reach out and we'll respond within one business day.",
 };
 
 export default function ContactPage() {
+  const contactInfo = [
+    {
+      label: "Phone",
+      value: contactDetails.phoneDisplay,
+      href: contactDetails.phoneHref,
+      icon: <PhoneIcon size={20} />,
+    },
+    {
+      label: "Email",
+      value: contactDetails.email,
+      href: `mailto:${contactDetails.email}`,
+      icon: <MailIcon size={20} />,
+    },
+    {
+      label: "Office",
+      value: contactDetails.address,
+      icon: <PinIcon size={20} />,
+    },
+  ];
+
   return (
     <>
-      <SiteHeader siteName={siteName} navigation={primaryNavigation} />
-      <main className="page-shell page-contact">
-        <PageHero
-          eyebrow="Contact Us"
-          title="Call now or write a message"
-          description="Reach out for HR advisory, enterprise and Agri-SME growth support, workforce programmes, and technology enablement. We respond with practical next steps for your business."
-          variant="contact"
-          imageSrc="/brand/banners/banner-2.jpg"
-          highlights={[
-            "Fast response workflow",
-            "Consultative discovery",
-            "Service-fit recommendation",
-            "Implementation roadmap",
-          ]}
-        />
-        <section className="section">
-          <div className="container grid contact-grid">
-            <article className="card">
-              <h2>Email</h2>
-              <p>
-                <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
-              </p>
-            </article>
-            <article className="card">
-              <h2>Phone</h2>
-              <p>
-                <a href={contactDetails.phoneHref}>{contactDetails.phoneDisplay}</a>
-                {" · "}
-                <a href={contactDetails.phoneSecondaryHref}>{contactDetails.phoneSecondaryDisplay}</a>
-              </p>
-            </article>
-            <article className="card">
-              <h2>Offices</h2>
-              <p>{contactDetails.address}</p>
-              <p>{contactDetails.addressSecondary}</p>
-            </article>
-          </div>
-        </section>
-        <ContactForm />
-        <section className="section">
-          <div className="container stack-lg">
-            <p className="eyebrow">Response Charter</p>
-            <h2>What happens after you submit</h2>
-            <div className="pillars-grid">
-              <article className="pillar-card">
-                <h3>Fast Triage</h3>
-                <p>Your request is reviewed quickly and routed to the right service specialist.</p>
-              </article>
-              <article className="pillar-card">
-                <h3>Clarity Call</h3>
-                <p>We confirm context, goals, timeline, and constraints before proposing any engagement.</p>
-              </article>
-              <article className="pillar-card">
-                <h3>Execution Plan</h3>
-                <p>You receive a practical path forward with clear next steps and ownership.</p>
-              </article>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <SiteHeader />
+      <main id="main-content" className="page-shell">
+        <section className="container contact-grid">
+          <div>
+            <div className="kicker" style={{ marginBottom: 16 }}>
+              Contact
+            </div>
+            <h1>Let&rsquo;s talk about your HR.</h1>
+            <p className="contact-lede">
+              Whether you&rsquo;re an employer or a candidate, we&rsquo;d love
+              to hear from you. Reach out and we&rsquo;ll respond within one
+              business day.
+            </p>
+            <div className="contact-items">
+              {contactInfo.map((item) => (
+                <div key={item.label} className="contact-item">
+                  <span className="contact-item-icon">{item.icon}</span>
+                  <div>
+                    <div className="contact-item-label">{item.label}</div>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="contact-item-value"
+                        style={{ color: "inherit" }}
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <div className="contact-item-value">{item.value}</div>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+          <div className="contact-panel">
+            <ContactForm />
+          </div>
         </section>
-        <OutcomeMetrics
-          title="Engagement response standards"
-          metrics={[
-            { label: "Triage Speed", value: "Rapid", detail: "Fast routing of your inquiry to the right specialist." },
-            { label: "Discovery Quality", value: "Structured", detail: "Clear scope and requirements validation before execution." },
-            { label: "Execution Clarity", value: "Actionable", detail: "Practical roadmap with ownership and timelines." },
-          ]}
-        />
       </main>
-      <SiteFooter owner={siteName} links={footerLinks} />
+      <SiteFooter />
     </>
   );
 }

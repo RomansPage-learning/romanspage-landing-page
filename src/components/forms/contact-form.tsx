@@ -1,54 +1,37 @@
 "use client";
 
-import type { FormEvent } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
+import { CheckIcon } from "@/components/landing/icons";
 import { trackEvent } from "@/lib/analytics";
 
-type FormState = {
-  status: "idle" | "submitting" | "success" | "error";
-};
+type Role = "employer" | "candidate";
 
-type ToastState = {
-  visible: boolean;
-  tone: "success" | "error";
-  message: string;
-};
+type Status = "idle" | "submitting" | "success" | "error";
 
-const initialState: FormState = {
-  status: "idle",
-};
-
-const initialToast: ToastState = {
-  visible: false,
-  tone: "success",
-  message: "",
+const roleToService: Record<Role, string> = {
+  employer: "general",
+  candidate: "recruitment",
 };
 
 export function ContactForm() {
-  const [state, setState] = useState<FormState>(initialState);
-  const [toast, setToast] = useState<ToastState>(initialToast);
+  const [role, setRole] = useState<Role>("employer");
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!toast.visible) return;
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
-    const timeout = window.setTimeout(() => {
-      setToast((current) => ({ ...current, visible: false }));
-    }, 4200);
-
-    return () => {
-      window.clearTimeout(timeout);
-    };
-  }, [toast.visible]);
-
-  async function onSubmit(formData: FormData) {
-    setState({ status: "submitting" });
+    setStatus("submitting");
+    setError(null);
 
     const payload = {
       name: String(formData.get("name") || "").trim(),
       email: String(formData.get("email") || "").trim(),
       company: String(formData.get("company") || "").trim(),
-      service: String(formData.get("service") || "").trim(),
+      service: roleToService[role],
       message: String(formData.get("message") || "").trim(),
       website: String(formData.get("website") || "").trim(),
     };
@@ -60,119 +43,136 @@ export function ContactForm() {
         body: JSON.stringify(payload),
       });
 
-      const result = (await response.json()) as { message: string };
+      const body = (await response.json().catch(() => null)) as
+        | { error?: string }
+        | null;
 
       if (!response.ok) {
-        setState({ status: "error" });
-        setToast({
-          visible: true,
-          tone: "error",
-          message: result.message || "Could not send your request. Please try again.",
-        });
-        return false;
+        throw new Error(body?.error || "Something went wrong. Please try again.");
       }
 
-      trackEvent({
-        event: "contact_form_submitted",
-        category: "lead_generation",
-        label: payload.service || "general",
-      });
-
-      setState({ status: "success" });
-      setToast({
-        visible: true,
-        tone: "success",
-        message: result.message || "Thanks. We will reach out shortly.",
-      });
-      return true;
-    } catch {
-      setState({ status: "error" });
-      setToast({
-        visible: true,
-        tone: "error",
-        message: "Network issue while sending your request. Please try again.",
-      });
-      return false;
+      trackEvent({ event: "contact_form_submitted", category: "contact", label: role });
+      form.reset();
+      setStatus("success");
+    } catch (submissionError) {
+      setStatus("error");
+      setError(
+        submissionError instanceof Error
+          ? submissionError.message
+          : "Something went wrong. Please try again.",
+      );
     }
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-
-    const submitted = await onSubmit(formData);
-
-    if (submitted) {
-      form.reset();
-    }
+  if (status === "success") {
+    return (
+      <div className="form-success" role="status">
+        <div className="form-success-icon">
+          <CheckIcon size={30} strokeWidth={2.2} />
+        </div>
+        <h3>Message sent</h3>
+        <p>
+          Thanks for reaching out. A member of our team will be in touch
+          shortly.
+        </p>
+        <button
+          type="button"
+          className="btn btn-outline"
+          style={{ height: 42 }}
+          onClick={() => setStatus("idle")}
+        >
+          Send another
+        </button>
+      </div>
+    );
   }
 
   return (
-    <section className="section" aria-labelledby="contact-form-title">
-      <div className="container stack-lg">
-        <h2 id="contact-form-title">Send a message</h2>
-        <form
-          className="contact-form"
-          onSubmit={handleSubmit}
-        >
-          <label>
-            Name
-            <input name="name" type="text" autoComplete="name" required minLength={2} maxLength={80} />
-          </label>
-          <label>
-            Work email
-            <input name="email" type="email" autoComplete="email" required maxLength={120} />
-          </label>
-          <label>
-            Company
-            <input name="company" type="text" autoComplete="organization" maxLength={120} />
-          </label>
-          <label>
-            Service needed
-            <select name="service" defaultValue="">
-              <option value="" disabled>
-                Select a service
-              </option>
-              <option value="recruitment">Recruitment</option>
-              <option value="hr-consulting">HR Consulting</option>
-              <option value="sme-hr-support">SME HR Support</option>
-              <option value="training">Training</option>
-              <option value="payroll">Payroll and HR Policies</option>
-            </select>
-          </label>
-          <label className="full-width">
-            Message
-            <textarea name="message" required minLength={20} maxLength={2000} rows={6} />
-          </label>
-          <input name="website" type="text" tabIndex={-1} autoComplete="off" className="hp-field" aria-hidden="true" />
-          <button
-            className={`btn btn-primary full-width${state.status === "submitting" ? " btn-loading" : ""}`}
-            type="submit"
-            disabled={state.status === "submitting"}
-          >
-            {state.status === "submitting" ? (
-              <>
-                <span className="btn-loader" aria-hidden="true" />
-                Sending...
-              </>
-            ) : (
-              "Submit"
-            )}
-          </button>
-          {toast.visible ? (
-            <div
-              className={`form-toast ${toast.tone}`}
-              role="status"
-              aria-live="polite"
-              aria-atomic="true"
-            >
-              {toast.message}
-            </div>
-          ) : null}
-        </form>
+    <form className="contact-form" onSubmit={onSubmit}>
+      <div className="field-row">
+        <div className="field">
+          <label htmlFor="contact-name">Full name</label>
+          <input
+            id="contact-name"
+            name="name"
+            className="input"
+            required
+            placeholder="Jane Doe"
+            autoComplete="name"
+          />
+        </div>
+        <div className="field">
+          <label htmlFor="contact-email">Email</label>
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            className="input"
+            required
+            placeholder="jane@company.com"
+            autoComplete="email"
+          />
+        </div>
       </div>
-    </section>
+      <div className="field">
+        <label>I am a…</label>
+        <div className="role-row" role="radiogroup" aria-label="I am a">
+          {(
+            [
+              ["employer", "I’m an employer"],
+              ["candidate", "I’m a candidate"],
+            ] as [Role, string][]
+          ).map(([key, label]) => (
+            <button
+              key={key}
+              type="button"
+              role="radio"
+              aria-checked={role === key}
+              className={`role-btn${role === key ? " active" : ""}`}
+              onClick={() => setRole(key)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="field">
+        <label htmlFor="contact-company">Company / organization</label>
+        <input
+          id="contact-company"
+          name="company"
+          className="input"
+          placeholder="Acme Ltd. (optional)"
+          autoComplete="organization"
+        />
+      </div>
+      <div className="field">
+        <label htmlFor="contact-message">How can we help?</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          className="textarea"
+          required
+          rows={4}
+          placeholder="Tell us a little about what you need…"
+        />
+      </div>
+      <div className="honeypot" aria-hidden="true">
+        <label htmlFor="contact-website">Website</label>
+        <input id="contact-website" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+      {status === "error" && error ? (
+        <p className="form-error" role="alert">
+          {error}
+        </p>
+      ) : null}
+      <button
+        type="submit"
+        className="form-submit"
+        disabled={status === "submitting"}
+      >
+        {status === "submitting" ? "Sending…" : "Send message"}
+      </button>
+    </form>
   );
 }

@@ -69,41 +69,18 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: "/sme-hr-suppport.html",
-        destination: "/sme-hr-support",
-        permanent: true,
-      },
-      {
-        source: "/Training.html",
-        destination: "/training",
-        permanent: true,
-      },
-      {
-        source: "/recruitment.html",
-        destination: "/recruitment",
-        permanent: true,
-      },
-      {
-        source: "/about.html",
-        destination: "/about",
-        permanent: true,
-      },
-      {
-        source: "/contact.html",
-        destination: "/contact",
-        permanent: true,
-      },
-      {
-        source: "/hr-consulting.html",
-        destination: "/hr-consulting",
-        permanent: true,
-      },
-      {
-        source: "/Hr-policies.html",
-        destination: "/hr-policies",
-        permanent: true,
-      },
+      { source: "/hr-consulting", destination: "/services", permanent: true },
+      { source: "/hr-policies", destination: "/services", permanent: true },
+      { source: "/recruitment", destination: "/services", permanent: true },
+      { source: "/sme-hr-support", destination: "/services", permanent: true },
+      { source: "/training", destination: "/services", permanent: true },
+      { source: "/sme-hr-suppport.html", destination: "/services", permanent: true },
+      { source: "/Training.html", destination: "/services", permanent: true },
+      { source: "/recruitment.html", destination: "/services", permanent: true },
+      { source: "/about.html", destination: "/about", permanent: true },
+      { source: "/contact.html", destination: "/contact", permanent: true },
+      { source: "/hr-consulting.html", destination: "/services", permanent: true },
+      { source: "/Hr-policies.html", destination: "/services", permanent: true },
     ];
   },
 };

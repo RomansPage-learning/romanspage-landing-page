@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import { Manrope, Sora } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
-import { headers } from 'next/headers';
-
-const manrope = Manrope({
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-});
-
-const sora = Sora({
-  variable: "--font-display",
-  weight: ["600", "700", "800"],
-  subsets: ["latin"],
-});
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -23,18 +12,16 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.siteTitle}`,
   },
   description:
-    `${siteConfig.siteTitle} is a BDSP and HR partner delivering technology consulting, platform development, and Agri-SME capacity building through practical training and measurable outcomes.`,
+    `${siteConfig.siteName} is an executive HR consultancy helping growing businesses run seamless people operations — from payroll and compliance to recruitment, enterprise development, and digital solutions.`,
   icons: {
-    icon: [
-      { url: "/favicon.png", type: "image/png" },
-    ],
+    icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: [{ url: "/favicon.png" }],
     shortcut: ["/favicon.png"],
   },
   openGraph: {
     title: siteConfig.siteTitle,
     description:
-      `${siteConfig.siteTitle} provides BDSP technology services, digital platform development, and Agri-SME training alongside recruitment, HR consulting, and policy support.`,
+      `${siteConfig.siteName} provides HR advisory, enterprise development and business support, and digital & technology solutions for SMEs and growing teams.`,
     url: siteConfig.siteUrl,
     siteName: siteConfig.siteTitle,
     type: "website",
@@ -43,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.siteTitle,
     description:
-      `${siteConfig.siteTitle} provides BDSP technology services, digital platform development, and Agri-SME training alongside recruitment, HR consulting, and policy support.`,
+      `${siteConfig.siteName} provides HR advisory, enterprise development and business support, and digital & technology solutions for SMEs and growing teams.`,
   },
 };
 
@@ -52,9 +39,9 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const nonce = (await headers()).get('x-nonce') ?? '';
+  const nonce = (await headers()).get("x-nonce") ?? "";
   return (
-    <html lang="en" className={`${manrope.variable} ${sora.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body nonce={nonce}>{children}</body>
     </html>
   );

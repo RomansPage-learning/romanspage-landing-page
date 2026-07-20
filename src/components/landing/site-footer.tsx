@@ -1,126 +1,100 @@
 import Image from "next/image";
+import Link from "next/link";
 
-import { TrackedLink } from "@/components/analytics/tracked-link";
+import { SocialIcon } from "@/components/landing/icons";
 import { contactDetails, footerServiceLinks } from "@/content/site";
-import type { NavigationItem } from "@/types/landing";
 
-type SiteFooterProps = {
-  owner: string;
-  links: NavigationItem[];
-};
+const companyLinks = [
+  { label: "Home", href: "/" },
+  { label: "About us", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
+];
 
-export function SiteFooter({ owner, links }: SiteFooterProps) {
+const socials = [
+  { name: "facebook", href: "#" },
+  { name: "linkedin", href: "#" },
+  { name: "twitter", href: "#" },
+  { name: "instagram", href: "#" },
+] as const;
+
+export function SiteFooter() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer id="contact" className="site-footer" aria-label="Site footer">
-      <div className="container footer-shell">
-        <div className="footer-grid">
-        <div className="stack-lg footer-column footer-column-brand">
-          <div className="brand footer-brand">
-            <Image src="/brand/logo-icon.png" alt="Romanspage logo" width={60} height={45} />
-            <span>{owner}</span>
+    <footer className="site-footer">
+      <div className="container footer-grid">
+        <div>
+          <div className="brand" style={{ marginBottom: 20 }}>
+            <span className="footer-brand-mark">
+              <Image src="/brand/logo-icon.png" alt="" width={68} height={56} />
+            </span>
+            <span className="brand-text">
+              <span className="footer-brand-name">Romanspage</span>
+              <span className="footer-brand-sub">GLOBAL</span>
+            </span>
           </div>
-          <p className="footer-description">
-            Romanspage Consulting Group is an integrated consulting, learning, and
-            enterprise development company empowering SMEs, agri-SMEs, and young
-            people across Nigeria since 2014.
+          <p className="footer-brand-blurb">
+            Executive HR consultancy helping SMEs run seamless people
+            operations since 2014.
           </p>
-          <ul className="plain-list row gap-md footer-connect">
-            <li>
-              <TrackedLink
-                href={`mailto:${contactDetails.email}`}
-                eventName="footer_quick_action"
-                eventCategory="footer"
-                eventLabel="Email"
+          <div className="socials">
+            {socials.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                className="social-btn"
+                aria-label={social.name}
               >
-                Email Us
-              </TrackedLink>
-            </li>
-            <li>
-              <TrackedLink
-                href={contactDetails.phoneHref}
-                eventName="footer_quick_action"
-                eventCategory="footer"
-                eventLabel="Call"
-              >
-                Call Us
-              </TrackedLink>
-            </li>
-            <li>
-              <TrackedLink
-                href="https://coursademia.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                eventName="footer_quick_action"
-                eventCategory="footer"
-                eventLabel="Coursademia"
-              >
-                Coursademia
-              </TrackedLink>
-            </li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Explore</h3>
-          <ul className="plain-list vertical-list footer-links-list">
-            {links.map((link) => (
-              <li key={link.label}>
-                <TrackedLink
-                  href={link.href}
-                  eventName="footer_link_click"
-                  eventCategory="footer"
-                  eventLabel={link.label}
-                >
-                  {link.label}
-                </TrackedLink>
-              </li>
+                <SocialIcon name={social.name} />
+              </a>
             ))}
-          </ul>
+          </div>
         </div>
-        <div className="footer-column">
-          <h3>Services</h3>
-          <ul className="plain-list vertical-list footer-links-list">
+        <div>
+          <div className="footer-heading">Company</div>
+          <div className="footer-links">
+            {companyLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="footer-link">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div className="footer-heading">Services</div>
+          <div className="footer-links">
             {footerServiceLinks.map((link) => (
-              <li key={link.label}>
-                <TrackedLink
-                  href={link.href}
-                  eventName="footer_service_click"
-                  eventCategory="footer"
-                  eventLabel={link.label}
-                >
-                  {link.label}
-                </TrackedLink>
-              </li>
+              <Link
+                key={link.label}
+                href={link.href}
+                className="footer-link"
+              >
+                {link.label}
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
-        <div className="footer-column">
-          <h3>Contact</h3>
-          <ul className="plain-list vertical-list footer-contact-list">
-            <li>
-              <span>Email</span>
-              <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
-            </li>
-            <li>
-              <span>Phone</span>
-              <p>
-                <a href={contactDetails.phoneHref}>{contactDetails.phoneDisplay}</a>
-                {" · "}
-                <a href={contactDetails.phoneSecondaryHref}>{contactDetails.phoneSecondaryDisplay}</a>
-              </p>
-            </li>
-            <li>
-              <span>Offices</span>
-              <p>{contactDetails.address}</p>
-              <p>{contactDetails.addressSecondary}</p>
-            </li>
-          </ul>
-        </div>
+        <div>
+          <div className="footer-heading">Contact</div>
+          <div className="footer-links">
+            <a href={contactDetails.phoneHref} className="footer-link">
+              {contactDetails.phoneDisplay}
+            </a>
+            <a href={`mailto:${contactDetails.email}`} className="footer-link">
+              {contactDetails.email}
+            </a>
+            <span className="footer-note">{contactDetails.address}</span>
+          </div>
         </div>
       </div>
-      <div className="footer-legal">
-        <div className="container row space-between wrap gap-md">
-          <p>© {new Date().getFullYear()} {owner}. All rights reserved.</p>
-          <p>Built for high-performance HR delivery and conversion-focused user journeys.</p>
+      <div className="footer-bottom">
+        <div className="container footer-bottom-inner">
+          <span>© {year} Romanspage Global. All rights reserved.</span>
+          <div className="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
         </div>
       </div>
     </footer>
