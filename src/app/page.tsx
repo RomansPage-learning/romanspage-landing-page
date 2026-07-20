@@ -149,19 +149,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Client logos */}
-        <section className="logo-strip" aria-label="Clients">
-          <div className="container logo-strip-inner">
-            <span className="logo-strip-label">Partnering with teams at</span>
-            <div className="logo-chips">
-              {clientLogos.map((n) => (
-                <div key={n} className="logo-chip">
-                  <Image
-                    src={`/brand/clients/clients-logo-${n}.png`}
-                    alt={`Client logo ${n}`}
-                    width={108}
-                    height={36}
-                  />
+        {/* Partners */}
+        <section className="logo-strip" aria-label="Partners">
+          <span className="logo-strip-label">Partners</span>
+          <div className="logo-marquee">
+            <div className="logo-track">
+              {[0, 1].map((dup) => (
+                <div
+                  key={dup}
+                  className="logo-group"
+                  aria-hidden={dup === 1 || undefined}
+                >
+                  {clientLogos.map((n) => (
+                    <div key={n} className="logo-chip">
+                      <Image
+                        src={`/brand/clients/clients-logo-${n}.png`}
+                        alt={dup === 0 ? `Partner logo ${n}` : ""}
+                        width={108}
+                        height={36}
+                      />
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>

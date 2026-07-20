@@ -171,6 +171,7 @@ export default function ServicesPage() {
               Find the right fit for your team
             </h2>
           </div>
+          <div className="table-scroll">
           <div className="compare-table">
             <div className="compare-row compare-head">
               <div className="compare-head-label">HR service offering</div>
@@ -209,6 +210,7 @@ export default function ServicesPage() {
                 </Link>
               </div>
             </div>
+          </div>
           </div>
         </section>
       </main>
