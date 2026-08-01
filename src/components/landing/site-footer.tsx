@@ -35,8 +35,8 @@ export function SiteFooter() {
             </span>
           </div>
           <p className="footer-brand-blurb">
-            Executive HR consultancy helping SMEs run seamless people
-            operations since 2014.
+            Integrated consulting, learning and enterprise development for
+            SMEs, agri-SMEs and development partners since 2014.
           </p>
           <div className="socials">
             {socials.map((social) => (

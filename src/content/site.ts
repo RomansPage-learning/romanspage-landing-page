@@ -1,12 +1,20 @@
-import type { NavigationItem } from "@/types/landing";
+import type { NavigationDropdownItem, NavigationItem } from "@/types/landing";
 import { siteConfig } from "@/lib/site-config";
+import { practiceAreas } from "@/content/services";
 
 export const siteName = siteConfig.siteName;
 
-export const primaryNavigation: NavigationItem[] = [
+export const primaryNavigation: NavigationDropdownItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
+  {
+    label: "Services",
+    href: "/services",
+    children: practiceAreas.map((area) => ({
+      label: area.navLabel,
+      href: `/services#${area.id}`,
+    })),
+  },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -17,12 +25,10 @@ export const footerLinks: NavigationItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const footerServiceLinks: NavigationItem[] = [
-  { label: "HR Advisory", href: "/services" },
-  { label: "Enterprise Development", href: "/services" },
-  { label: "Digital & Technology", href: "/services" },
-  { label: "Payroll Management", href: "/services" },
-];
+export const footerServiceLinks: NavigationItem[] = practiceAreas.map((area) => ({
+  label: area.navLabel,
+  href: `/services#${area.id}`,
+}));
 
 export const contactDetails = {
   phoneDisplay: siteConfig.contact.phoneDisplay,
@@ -33,3 +39,5 @@ export const contactDetails = {
   address: siteConfig.contact.address,
   addressSecondary: "Ibadan, Oyo State",
 };
+
+export const coursademiaUrl = "https://coursademia.com";

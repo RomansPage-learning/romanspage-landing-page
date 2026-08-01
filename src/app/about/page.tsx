@@ -5,36 +5,30 @@ import Link from "next/link";
 import { BulbIcon, ScaleIcon, StarIcon } from "@/components/landing/icons";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
+import { stats } from "@/content/services";
 
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "Founded in 2014, Romanspage Global is an executive HR consultancy committed to top-tier service and creative solutions to job creation, training, and talent matching.",
+    "Founded in 2014, Romanspage Consulting Group is an integrated consulting, learning and enterprise development company committed to top-tier service across HR advisory, enterprise growth, skills programmes and digital learning.",
 };
 
 const values = [
   {
     title: "Big enough, small enough",
-    body: "The reach to meet real HR needs, the care to treat your business like our own.",
+    body: "The reach to meet real organisational needs, the care to treat your business like our own.",
     icon: <ScaleIcon />,
   },
   {
     title: "Creative solutions",
-    body: "We solve for job creation, training and talent matching with practical, tailored answers.",
+    body: "We solve for job creation, enterprise growth and talent matching with practical, tailored answers.",
     icon: <BulbIcon />,
   },
   {
     title: "Top-tier service",
-    body: "A commitment to quality that has made us a market leader in HR practice.",
+    body: "A commitment to quality that has made us a market leader across our practice areas.",
     icon: <StarIcon />,
   },
-];
-
-const stats = [
-  { value: "2014", label: "Year Romanspage was founded" },
-  { value: "10+", label: "Years of HR expertise" },
-  { value: "4", label: "Core service lines" },
-  { value: "1", label: "Partner for everything HR" },
 ];
 
 export default function AboutPage() {
@@ -47,11 +41,12 @@ export default function AboutPage() {
       <main id="main-content" className="page-shell">
         <section className="container page-hero">
           <div className="kicker">About us</div>
-          <h1>A people-first HR partner, built for growing businesses.</h1>
+          <h1>An integrated partner for people, growth and learning.</h1>
           <p className="page-lede">
-            Founded in 2014, Romanspage Global is an executive HR consultancy
-            committed to top-tier service and creative solutions to job
-            creation, training, and talent matching.
+            Founded in 2014, Romanspage Consulting Group brings together HR
+            &amp; organisation advisory, enterprise &amp; agri-SME growth,
+            skills &amp; employability programmes, and digital learning &amp;
+            technology under one trusted Group.
           </p>
         </section>
 
@@ -75,24 +70,24 @@ export default function AboutPage() {
           <div className="container story-grid">
             <div>
               <div className="kicker">Our story</div>
-              <h2>Over a decade of HR expertise</h2>
+              <h2>Over a decade of impact across four practice areas</h2>
             </div>
             <div className="story-copy">
               <p>
-                We&rsquo;re big enough to attend to your HR needs and small
-                enough to care about your business. That balance has guided
-                Romanspage since day one.
+                We&rsquo;re big enough to meet real organisational and
+                enterprise needs, and small enough to care about your
+                business. That balance has guided Romanspage since day one.
               </p>
               <p>
                 Our goal is to continually provide creative solutions to the
-                issues of job creation, training, and matching top candidates
-                to employers — helping our clients achieve their organizational
-                goals.
+                issues of job creation, enterprise growth, and matching top
+                candidates to employers — helping our clients achieve their
+                organisational goals.
               </p>
               <p>
-                With more than a decade providing HR solutions, we pride
-                ourselves as one of the market leaders in human resources
-                practice across the region.
+                With more than a decade delivering HR, enterprise, skills and
+                digital learning solutions, we pride ourselves as one of the
+                market leaders across our practice areas in the region.
               </p>
             </div>
           </div>

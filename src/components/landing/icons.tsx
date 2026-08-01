@@ -95,6 +95,14 @@ export function StarIcon({ size = 24, strokeWidth = 1.8, className }: IconProps)
   );
 }
 
+export function ChevronIcon({ size = 16, strokeWidth = 2, className }: IconProps) {
+  return (
+    <svg {...base(size, strokeWidth)} className={className}>
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
+
 export function PhoneIcon({ size = 24, strokeWidth = 1.8, className }: IconProps) {
   return (
     <svg {...base(size, strokeWidth)} className={className}>
