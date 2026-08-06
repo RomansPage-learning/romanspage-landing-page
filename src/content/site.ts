@@ -12,9 +12,10 @@ export const primaryNavigation: NavigationDropdownItem[] = [
     href: "/services",
     children: practiceAreas.map((area) => ({
       label: area.navLabel,
-      href: `/services#${area.id}`,
+      href: `/services/${area.id}`,
     })),
   },
+  { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -22,12 +23,13 @@ export const footerLinks: NavigationItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const footerServiceLinks: NavigationItem[] = practiceAreas.map((area) => ({
   label: area.navLabel,
-  href: `/services#${area.id}`,
+  href: `/services/${area.id}`,
 }));
 
 export const contactDetails = {

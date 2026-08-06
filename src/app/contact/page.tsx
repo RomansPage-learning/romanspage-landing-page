@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { ContactForm } from "@/components/forms/contact-form";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/landing/icons";
@@ -72,6 +73,14 @@ export default function ContactPage() {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="contact-accent-image">
+              <Image
+                src="/brand/stock/support-headset.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 1023px) 90vw, 420px"
+              />
             </div>
           </div>
           <div className="contact-panel">

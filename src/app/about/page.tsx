@@ -57,8 +57,8 @@ export default function AboutPage() {
         >
           <div className="media-banner">
             <Image
-              src="/brand/banners/banner-2.jpg"
-              alt="The Romanspage Global team"
+              src="/brand/stock/team-group.jpg"
+              alt=""
               fill
               sizes="(max-width: 1023px) 95vw, 1136px"
               priority
@@ -89,6 +89,125 @@ export default function AboutPage() {
                 digital learning solutions, we pride ourselves as one of the
                 market leaders across our practice areas in the region.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section container" aria-label="Our integrated model">
+          <div className="section-head-center">
+            <div className="kicker">Our integrated model</div>
+            <h2 className="section-title" style={{ fontSize: 34 }}>
+              A connected value chain
+            </h2>
+            <p className="section-lede">
+              We diagnose the problem, design the solution, deliver the
+              training, scale the learning through Coursademia, and deliver
+              technology-based solutions through Bickford — every engagement
+              can move seamlessly from advice to capability to measurable
+              outcome.
+            </p>
+          </div>
+          <div className="table-scroll">
+            <table className="info-table">
+              <thead>
+                <tr>
+                  <th style={{ width: "18%" }}>Stage</th>
+                  <th>What it means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Diagnose</td>
+                  <td>
+                    We assess the organisation, enterprise or programme —
+                    structure, capacity, operations, talent and systems — to
+                    define the real problem.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Design</td>
+                  <td>
+                    We design the right solution: HR systems, growth
+                    strategy, a training curriculum, a programme model or a
+                    technology approach.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Deliver</td>
+                  <td>
+                    We deliver the work — advisory, capacity building,
+                    training and programme implementation — to defined
+                    standards and timelines.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Scale</td>
+                  <td>
+                    Coursademia, our learning platform, scales the learning to
+                    more people, cohorts and locations, with tracking and
+                    certification.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Enable with technology</td>
+                  <td>
+                    Bickford delivers IT training, digital skills and
+                    tech-enabled tools that embed and sustain the change.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="band-soft" aria-label="Brand architecture">
+          <div className="container section">
+            <div className="section-head-center">
+              <div className="kicker">Brand architecture</div>
+              <h2 className="section-title" style={{ fontSize: 34 }}>
+                One trusted Group, four brands
+              </h2>
+              <p className="section-lede">
+                The Group consolidates under one market-facing identity while
+                retaining the equity built in its established names. Each
+                brand sits visibly under — and is endorsed by — Romanspage
+                Consulting Group.
+              </p>
+            </div>
+            <div className="table-scroll">
+              <table className="info-table">
+                <thead>
+                  <tr>
+                    <th style={{ width: "28%" }}>Brand</th>
+                    <th>Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Romanspage Consulting Group</td>
+                    <td>The parent and market-facing identity for the whole business.</td>
+                  </tr>
+                  <tr>
+                    <td>Romanspage Advisory</td>
+                    <td>HR, organisational assessment, and SME / agri-SME consulting.</td>
+                  </tr>
+                  <tr>
+                    <td>Romanspage Programmes</td>
+                    <td>
+                      Employability, entrepreneurship, women and youth
+                      empowerment, and project implementation.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Coursademia by Romanspage</td>
+                    <td>The Group&rsquo;s online learning platform and digital learning unit.</td>
+                  </tr>
+                  <tr>
+                    <td>Bickford Technology Solutions</td>
+                    <td>Technology training, digital skills and tech-enabled tools.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

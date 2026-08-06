@@ -114,6 +114,7 @@ export function HeroSlider({ slides, intervalMs = 6000 }: HeroSliderProps) {
                 sizes="(max-width: 1023px) 90vw, 45vw"
                 priority={i === 0}
                 className={i === index ? "active" : ""}
+                style={{ objectPosition: slide.imagePosition || "center" }}
               />
             ))}
           </div>

@@ -103,6 +103,35 @@ export function ChevronIcon({ size = 16, strokeWidth = 2, className }: IconProps
   );
 }
 
+export function GooglePlayIcon({ size = 18, className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" className={className}>
+      <polygon points="4,3 4,21 12,12" fill="#00D2FF" />
+      <polygon points="4,3 15,7.6 12,12" fill="#00F076" />
+      <polygon points="4,21 15,16.4 12,12" fill="#EF3A56" />
+      <polygon points="15,7.6 20,10.2 20,13.8 15,16.4 12,12" fill="#FFD24D" />
+    </svg>
+  );
+}
+
+export function AppleIcon({ size = 18, className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" className={className}>
+      <defs>
+        <linearGradient id="appstore-grad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#4FC3F7" />
+          <stop offset="100%" stopColor="#1565C0" />
+        </linearGradient>
+      </defs>
+      <rect width="24" height="24" rx="6" fill="url(#appstore-grad)" />
+      <path
+        d="M12 5.2c.32 0 .58.26.58.58v1.4l4.2 7.28a.58.58 0 0 1-.5.87h-2.06l-.9-1.56h-2.64l-.9 1.56H7.72a.58.58 0 0 1-.5-.87l4.2-7.28V5.78c0-.32.26-.58.58-.58Zm-.98 6.4h1.96L12 9.5l-.98 2.1Z"
+        fill="#fff"
+      />
+    </svg>
+  );
+}
+
 export function PhoneIcon({ size = 24, strokeWidth = 1.8, className }: IconProps) {
   return (
     <svg {...base(size, strokeWidth)} className={className}>
@@ -133,8 +162,7 @@ const socialPaths: Record<string, string> = {
   facebook: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
   linkedin:
     "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z",
-  twitter:
-    "M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z",
+  x: "M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93Zm-1.29 19.49h2.04L6.49 3.24H4.3Z",
   instagram:
     "M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm5.5-.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z",
 };

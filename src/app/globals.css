@@ -931,6 +931,12 @@ button {
   gap: 20px;
 }
 
+.cards-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
 .service-card {
   display: block;
   background: #fff;
@@ -1016,6 +1022,31 @@ button {
   object-fit: cover;
 }
 
+.project-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.project-status-ongoing {
+  background: rgba(30, 58, 138, 0.85);
+}
+
+.project-location {
+  font-size: 12px;
+  color: var(--gray-400);
+  margin-top: 8px;
+}
+
 .project-body {
   padding: 26px;
 }
@@ -1088,6 +1119,11 @@ button {
   margin: 0 auto;
 }
 
+.plans-3 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1136px;
+}
+
 .plan-card {
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -1147,6 +1183,18 @@ button {
   color: var(--gray-500);
 }
 
+.plan-price-consult {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.cta-inline-row {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
 .plan-cta {
   width: 100%;
   margin-bottom: 28px;
@@ -1178,91 +1226,6 @@ button {
 
 .feature-row.muted svg {
   color: #c4c4c4;
-}
-
-/* ---------- Accordion ---------- */
-
-.accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.accordion-item {
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: #fff;
-  overflow: hidden;
-}
-
-.accordion-trigger {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font: inherit;
-  text-align: left;
-  color: inherit;
-  padding: 24px;
-}
-
-.accordion-chevron {
-  flex-shrink: 0;
-  margin-left: auto;
-  margin-top: 12px;
-  color: var(--gray-400);
-  transition: transform 0.2s ease;
-}
-
-.accordion-chevron.open {
-  transform: rotate(180deg);
-}
-
-.accordion-panel {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease;
-}
-
-.accordion-panel.open {
-  grid-template-rows: 1fr;
-}
-
-.accordion-panel-inner {
-  overflow: hidden;
-  min-height: 0;
-}
-
-.accordion-panel .accordion-panel-inner > * {
-  padding: 0 24px 24px;
-}
-
-.accordion-cta-row {
-  margin-top: 20px;
-}
-
-.accordion-cta-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--navy);
-}
-
-.accordion-cta-link:hover {
-  color: var(--navy-hover);
-}
-
-.accordion-cta-link svg {
-  transition: transform 0.15s ease;
-}
-
-.accordion-cta-link:hover svg {
-  transform: translateX(3px);
 }
 
 /* ---------- Project card expand ---------- */
@@ -1353,6 +1316,63 @@ button {
   width: auto;
   height: auto;
   display: block;
+}
+
+/* ---------- Store badges ---------- */
+
+.store-badge-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--dark);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 10px 20px 10px 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.store-badge:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.store-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.store-badge span:not(.store-badge-icon) {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.store-badge small {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* ---------- CTA contact row ---------- */
@@ -1465,6 +1485,45 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ---------- Info table (Integrated Model / Brand Architecture) ---------- */
+
+.info-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.info-table th {
+  background: var(--navy);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  padding: 14px 22px;
+}
+
+.info-table td {
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 14px;
+  color: var(--gray-600);
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.info-table tr:last-child td {
+  border-bottom: none;
 }
 
 /* ---------- About ---------- */
@@ -1780,6 +1839,19 @@ button {
   justify-content: center;
   color: var(--navy);
   flex-shrink: 0;
+}
+
+.contact-accent-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-top: 32px;
+}
+
+.contact-accent-image img {
+  object-fit: cover;
 }
 
 .contact-item-label {
@@ -2114,6 +2186,14 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .cards-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plans-3 {
+    grid-template-columns: 1fr;
+  }
+
   .split-card,
   .detail-card,
   .story-grid,
@@ -2227,6 +2307,10 @@ button {
   }
 
   .plans {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-4 {
     grid-template-columns: 1fr;
   }
 

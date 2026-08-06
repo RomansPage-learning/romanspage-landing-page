@@ -3,14 +3,24 @@ export type SubService = {
   desc: string;
 };
 
+export type PricingTier = {
+  name: string;
+  staffRange: string;
+  price: string | null; // null → "Speak to a consultant"
+  features: string[];
+};
+
 export type PracticeArea = {
   id: string;
   navLabel: string;
   title: string;
   teaser: string;
+  intro: string;
   cta: string;
   icon: "people" | "chart" | "bulb" | "chip";
+  bannerImage: string;
   subs: SubService[];
+  pricingTiers?: PricingTier[];
 };
 
 export const practiceAreas: PracticeArea[] = [
@@ -20,24 +30,63 @@ export const practiceAreas: PracticeArea[] = [
     title: "People, HR & Organisation Advisory",
     teaser:
       "Our consulting backbone — talent management, recruitment, capacity and governance — a professional advisory practice, not merely \"HR support.\"",
+    intro:
+      "Our consulting backbone — a professional advisory practice, not merely outsourced HR support. We help SMEs and growing organisations build the talent, structure and governance to scale with confidence, combining hands-on recruitment and payroll delivery with the kind of organisational assessment and capacity-building work that changes how a business actually runs day to day.",
     cta: "Talk to an HR advisor",
     icon: "people",
+    bannerImage: "/brand/stock/professional-portrait-1.jpg",
     subs: [
       {
         name: "HR4SMEs",
-        desc: "Recruitment, onboarding, HR documentation, payroll and statutory compliance, performance management, KPIs, employee relations and staff policies.",
+        desc: "A complete outsourced HR function built for small and growing teams — end-to-end recruitment and onboarding, HR policy and documentation, payroll processing with full statutory compliance (Tax, Pension, NSITF, NHF), performance management and KPI tracking, and day-to-day employee relations. Designed so you never need an in-house HR department to run a professional, compliant workplace.",
       },
       {
         name: "Recruitment & Talent Placement",
-        desc: "Sourcing, screening and placing talent — with a distinctive specialism in the agriculture value chain (agribusiness specialists, field officers, technical experts).",
+        desc: "End-to-end sourcing, screening, interviewing and placement across every function — with a distinctive specialism in the agriculture value chain, including agribusiness specialists, field officers, extension workers and technical experts that generalist recruiters struggle to find. We manage the full hiring cycle, from role scoping and shortlisting to offer negotiation and onboarding support.",
       },
       {
         name: "Organisational Assessment",
-        desc: "Structure review, capacity assessment, operational and staffing gaps, governance review.",
+        desc: "A structured diagnostic of your organisation — reviewing reporting lines, role clarity, staffing gaps, operational bottlenecks and governance practices — to surface exactly where structure, capacity or process is holding performance back. You get a clear, prioritised set of findings and recommendations, not an audit report that sits on a shelf.",
       },
       {
         name: "Capacity Building & HR Outsourcing",
-        desc: "Staff training, leadership development, SOP development, and acting as the HR partner for SMEs without an in-house HR department.",
+        desc: "Hands-on staff training and leadership development, SOP design and documentation, and ongoing HR outsourcing for SMEs that need a dependable people function without the overhead of building one internally. We act as your embedded HR partner — available for policy questions, disciplinary guidance and workforce planning as your team grows.",
+      },
+    ],
+    pricingTiers: [
+      {
+        name: "Startup",
+        staffRange: "1–20 staff",
+        price: "₦79,999/mo",
+        features: [
+          "Payroll & compliance (Tax, Pension, NSITF, NHF)",
+          "Policies & HR documentation",
+          "Employee engagement",
+          "Unlimited HR support",
+        ],
+      },
+      {
+        name: "SME",
+        staffRange: "20–50 staff",
+        price: "₦149,999/mo",
+        features: [
+          "Payroll & compliance (Tax, Pension, NSITF, NHF)",
+          "Policies & HR documentation",
+          "Employee engagement",
+          "Unlimited HR support",
+          "Recruitment & talent placement",
+          "Organisational assessment, outsourcing & training",
+        ],
+      },
+      {
+        name: "Enterprise",
+        staffRange: "50+ staff / large corporation",
+        price: null,
+        features: [
+          "Fully customised HR partnership",
+          "Dedicated account manager",
+          "Everything in Startup & SME",
+        ],
       },
     ],
   },
@@ -47,28 +96,31 @@ export const practiceAreas: PracticeArea[] = [
     title: "Enterprise & Agri-SME Growth Advisory",
     teaser:
       "Business development, access-to-finance and agri-SME growth — the natural home for agribusinesses, mechanisation and solar-irrigation providers, youth-in-agriculture models and enterprise support programmes.",
+    intro:
+      "Business development, access-to-finance and agri-SME growth advisory — the natural home for agribusinesses, mechanisation and solar-irrigation providers, youth-in-agriculture models and enterprise support programmes. We work directly with the operational and financial realities of Nigerian SMEs, and have helped the businesses we support unlock over US$5 million in financing to date.",
     cta: "Explore business support",
     icon: "chart",
+    bannerImage: "/brand/stock/meeting-handshake.jpg",
     subs: [
       {
         name: "SME Business Diagnostics",
-        desc: "Business model review, operations review, staffing, systems and financial readiness.",
+        desc: "A ground-up review of how your business actually runs — business model, operating processes, staffing structure, systems and financial readiness — to pinpoint the specific constraints slowing growth. The output is a practical action plan, prioritised by what will move the business forward fastest, not a generic report.",
       },
       {
         name: "Agri-SME Support",
-        desc: "Support for agribusinesses, processors, mechanisation providers, solar-irrigation service providers and cooperatives.",
+        desc: "Specialist advisory for agribusinesses, processors, mechanisation service providers, solar-irrigation companies and farmer cooperatives — the segment of the economy general business consultants rarely understand well. We work with the real value-chain constraints: seasonality, input financing, off-take arrangements and last-mile distribution.",
       },
       {
         name: "Business Development Services",
-        desc: "Business plans, investment readiness, market access, proposal development and growth strategy.",
+        desc: "Investor-ready business plans, market-access strategy, funding-proposal development and growth planning tailored to where your business actually is today. We've guided businesses through the exact diligence and documentation that funders like AGRA, Mastercard Foundation and development finance institutions expect to see.",
       },
       {
         name: "Access-to-Finance Readiness",
-        desc: "Business case development, investor documentation, financial-model support and facilitation of grant, loan and equity linkages.",
+        desc: "We prepare businesses for the scrutiny that comes with real funding — building the business case, investor documentation and financial models that lenders and investors actually ask for — then facilitate warm introductions to grant, loan and equity partners in our network. This discipline has helped the SMEs we support unlock over US$5 million in financing to date.",
       },
       {
         name: "Operational Improvement",
-        desc: "SOPs, process mapping, reporting systems and field-operations support.",
+        desc: "Standard operating procedures, process mapping, reporting systems and hands-on field-operations support that turn ad-hoc ways of working into something repeatable and scalable. Particularly valuable for agri-SMEs managing dispersed field teams, seasonal labour and multi-site operations.",
       },
     ],
   },
@@ -78,28 +130,31 @@ export const practiceAreas: PracticeArea[] = [
     title: "Skills, Employability & Entrepreneurship Programmes",
     teaser:
       "Our programme-delivery practice for donors, NGOs, government agencies and corporate CSR partners — consolidating training, youth employability, entrepreneurship and job connection.",
+    intro:
+      "Our programme-delivery practice for donors, NGOs, government agencies and corporate CSR partners — consolidating training, youth employability, entrepreneurship and job connection into one accountable delivery partner. We've trained over 50,000 young people to date, with a consistent focus on measurable outcomes — placement, income and enterprise growth — not just attendance.",
     cta: "Discuss a programme",
     icon: "bulb",
+    bannerImage: "/brand/gallery/training-audience-2.jpg",
     subs: [
       {
         name: "Employability Programmes",
-        desc: "Soft skills, workplace readiness, CV writing, interview coaching and job-placement support.",
+        desc: "Structured training in soft skills and workplace readiness — CV writing, interview coaching, workplace etiquette and communication — paired with active job-placement support, not just a certificate at the end. Delivered at scale for donor and government-funded youth programmes, with over 50,000 young people trained to date.",
       },
       {
         name: "Entrepreneurship Programmes",
-        desc: "Business ideation, planning, financial literacy, record keeping, market access and mentorship.",
+        desc: "Practical training in business ideation, planning, financial literacy, record-keeping and market access — backed by ongoing mentorship, not a one-off workshop. Built for first-time entrepreneurs, market women and youth-led micro-businesses who need support that continues after the training ends.",
       },
       {
         name: "Career Development",
-        desc: "Career coaching, talent profiling and internship / apprenticeship linkage.",
+        desc: "One-on-one career coaching and talent profiling to help young people identify realistic, well-matched career paths, paired with direct linkage to internship and apprenticeship opportunities with our employer partners. We track outcomes, not just attendance.",
       },
       {
         name: "Programme Design & Management",
-        desc: "Designing and implementing youth, women, SME and livelihood programmes for funders.",
+        desc: "End-to-end design and implementation of youth, women, SME and livelihood programmes on behalf of donors, government agencies and corporate CSR partners — from programme logic and curriculum design through field delivery, monitoring and reporting. Delivered for funders including SOS Children's Villages, Mastercard Foundation and AGRA.",
       },
       {
         name: "Job Matching & Employer Engagement",
-        desc: "Connecting trained youth to employers, internships, apprenticeships and enterprise opportunities.",
+        desc: "Active employer engagement and job-matching that connects trained youth to real internships, apprenticeships and enterprise opportunities — closing the loop between training and actual employment outcomes. We maintain relationships with employer partners specifically so placement isn't left to chance.",
       },
     ],
   },
@@ -109,20 +164,23 @@ export const practiceAreas: PracticeArea[] = [
     title: "Digital Learning & Technology Solutions",
     teaser:
       "Where Coursademia and Bickford fit. Coursademia is our official learning infrastructure — not a side platform; Bickford is our technology and digital-skills delivery arm — not a separate, competing business.",
+    intro:
+      "Where Coursademia and Bickford fit into the wider Group. Coursademia is our official learning infrastructure — not a side platform — built to scale our programme work to more people, cohorts and locations, with tracking and certification built in. Bickford is our technology and digital-skills delivery arm, helping SMEs take real, practical steps into digital transformation.",
     cta: "Start a digital project",
     icon: "chip",
+    bannerImage: "/brand/gallery/coursademia-training-session.jpg",
     subs: [
       {
         name: "Coursademia",
-        desc: "The Group's online learning platform for soft skills, employability, entrepreneurship, SME training and blended learning.",
+        desc: "The Group's own online learning platform — soft skills, employability, entrepreneurship and SME training delivered through structured, blended learning with tracking and certification built in. It's the infrastructure that lets our programme work scale to more people, cohorts and locations than in-person delivery alone ever could.",
       },
       {
         name: "Bickford International Partners",
-        desc: "Technology training, IT skills, digital tools, LMS support and digital-transformation support for SMEs.",
+        desc: "Our technology and digital-skills delivery arm — IT training, digital-tools adoption, learning-management-system support and hands-on digital-transformation support for SMEs taking their first real steps into technology. Not a separate, competing business — Bickford is how the Group delivers on the technology half of its promise.",
       },
       {
         name: "Romanspage Digital Learning Unit",
-        desc: "Manages course development, learner data, certification, employer linkage and alumni tracking.",
+        desc: "The internal team behind the platform — managing course development, learner data, certification issuance, employer linkage and alumni tracking so that what people learn on Coursademia connects back to real opportunity. This is also where the self-assessment and guided-recommendation experience for the wider Romanspage site will be built.",
       },
     ],
   },
@@ -136,13 +194,10 @@ export type Project = {
   summary: string;
   detail: string;
   image: string;
+  status: "ongoing" | "completed";
+  location: string;
+  featured?: boolean;
 };
-
-export const REUSED_PHOTOS = [
-  "/brand/banners/banner-1.png",
-  "/brand/banners/banner-2.jpg",
-  "/brand/images/about-1.jpg",
-];
 
 export const projects: Project[] = [
   {
@@ -154,6 +209,9 @@ export const projects: Project[] = [
     detail:
       "Tailored business development support to 200 SMEs to unlock over US$5 million in financing (ongoing).",
     image: "/brand/gallery/training-audience-1.jpg",
+    status: "ongoing",
+    location: "Kwara State",
+    featured: true,
   },
   {
     slug: "agra-investment-readiness",
@@ -164,6 +222,9 @@ export const projects: Project[] = [
     detail:
       "Investment readiness, operational restructuring and financial-compliance support to 100 SMEs across Niger, Kaduna and Nasarawa, including rice SMEs (e.g. Sulaitan Ltd, Arzikin Noma Services).",
     image: "/brand/gallery/training-audience-2.jpg",
+    status: "completed",
+    location: "Niger, Kaduna & Nasarawa States",
+    featured: true,
   },
   {
     slug: "edocares-enterprise-strengthening",
@@ -174,6 +235,9 @@ export const projects: Project[] = [
     detail:
       "Trained and supported 500+ SMEs, enabling over 70% to access grant funding (over US$1 million).",
     image: "/brand/gallery/training-audience-3.jpg",
+    status: "completed",
+    location: "Edo State",
+    featured: true,
   },
   {
     slug: "oyo-youth-employability",
@@ -184,6 +248,8 @@ export const projects: Project[] = [
     detail:
       "Trained 400 youths in employability skills and supported job placement, achieving a strong placement rate.",
     image: "/brand/gallery/sos-certificate-group-1.jpg",
+    status: "completed",
+    location: "Oyo State",
   },
   {
     slug: "market-women-financial-literacy",
@@ -194,6 +260,8 @@ export const projects: Project[] = [
     detail:
       "Financial literacy and record-keeping training to improve women's financial capacity and access to finance.",
     image: "/brand/gallery/sos-certificate-portrait.jpg",
+    status: "completed",
+    location: "Multiple states",
   },
   {
     slug: "sme-organisational-capacity-assessments",
@@ -204,6 +272,8 @@ export const projects: Project[] = [
     detail:
       "Capacity assessments strengthening SMEs toward access to finance across the AGRA priority states.",
     image: "/brand/gallery/sos-certificate-group-2.jpg",
+    status: "completed",
+    location: "Niger, Kaduna & Nasarawa States",
   },
 ];
 
@@ -212,7 +282,7 @@ export type Stat = { value: string; label: string };
 export const stats: Stat[] = [
   { value: "2014", label: "Founded — over a decade of impact" },
   { value: "2,700+", label: "SMEs built via Growth-Hack" },
-  { value: "5,000+", label: "Young people trained" },
+  { value: "50,000+", label: "Young people trained" },
   { value: "500+", label: "SMEs supported (EdoCARES)" },
   { value: "55%+", label: "Female participation" },
   { value: "US$5M+", label: "Financing unlocked" },
@@ -224,6 +294,7 @@ export type HeroSlide = {
   title: string;
   body: string;
   image: string;
+  imagePosition?: string;
   ctaHref: string;
   ctaLabel: string;
 };
@@ -234,7 +305,8 @@ export const heroSlides: HeroSlide[] = [
     eyebrow: "Since 2014 · Consulting · Learning · Enterprise Development",
     title: "Empowering people. Building businesses. Enabling inclusive growth.",
     body: "Romanspage Consulting Group is an integrated consulting, learning and enterprise development company helping SMEs, agri-SMEs, development partners and young people build stronger organisations and scalable businesses.",
-    image: REUSED_PHOTOS[0],
+    image: "/brand/stock/team-hallway.jpg",
+    imagePosition: "78% center",
     ctaHref: "/services",
     ctaLabel: "Explore our services",
   },
@@ -243,8 +315,8 @@ export const heroSlides: HeroSlide[] = [
     eyebrow: "People, HR & Organisation Advisory",
     title: "HR and organisation advisory built for growing teams.",
     body: "Recruitment, payroll and compliance, organisational assessment and capacity building — a professional advisory practice, not just outsourced HR.",
-    image: REUSED_PHOTOS[1],
-    ctaHref: "/services#hr",
+    image: "/brand/stock/professional-portrait-1.jpg",
+    ctaHref: "/services/hr",
     ctaLabel: "See HR & organisation advisory",
   },
   {
@@ -252,17 +324,17 @@ export const heroSlides: HeroSlide[] = [
     eyebrow: "Enterprise & Agri-SME Growth Advisory",
     title: "Investment-ready growth for SMEs and agri-SMEs.",
     body: "Business diagnostics, access-to-finance readiness and operational improvement — we've helped unlock over US$5M in financing for the businesses we support.",
-    image: REUSED_PHOTOS[2],
-    ctaHref: "/services#enterprise-agri-sme",
+    image: "/brand/stock/handshake-exterior.jpg",
+    ctaHref: "/services/enterprise-agri-sme",
     ctaLabel: "See enterprise & agri-SME growth",
   },
   {
     id: "skills-employability",
     eyebrow: "Skills, Employability & Entrepreneurship",
-    title: "Training over 5,000 young people into real opportunity.",
+    title: "Training over 50,000 young people into real opportunity.",
     body: "Employability programmes, entrepreneurship training and job matching for donors, NGOs, government agencies and corporate CSR partners.",
-    image: REUSED_PHOTOS[0],
-    ctaHref: "/services#skills-employability",
+    image: "/brand/gallery/training-audience-1.jpg",
+    ctaHref: "/services/skills-employability",
     ctaLabel: "See skills & employability programmes",
   },
 ];

@@ -5,8 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 
+import { TrackedLink } from "@/components/analytics/tracked-link";
 import { ChevronIcon } from "@/components/landing/icons";
-import { primaryNavigation, siteName } from "@/content/site";
+import { coursademiaUrl, primaryNavigation, siteName } from "@/content/site";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -95,9 +96,16 @@ export function SiteHeader() {
           )}
         </nav>
         <div className="header-actions">
-          <Link href="/contact" className="btn btn-dark">
-            Get started
-          </Link>
+          <TrackedLink
+            href={coursademiaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            eventName="coursademia_cta_click"
+            eventCategory="header"
+            className="btn btn-dark"
+          >
+            Coursademia
+          </TrackedLink>
           <button
             type="button"
             className="nav-toggle"

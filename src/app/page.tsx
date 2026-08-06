@@ -2,16 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { TrackedLink } from "@/components/analytics/tracked-link";
-import { PhoneIcon, MailIcon, PinIcon } from "@/components/landing/icons";
+import {
+  AppleIcon,
+  GooglePlayIcon,
+  PhoneIcon,
+  MailIcon,
+  PinIcon,
+} from "@/components/landing/icons";
 import { HeroSlider } from "@/components/landing/hero-slider";
 import { ProjectsSection } from "@/components/landing/projects-section";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 import { WhatWeDo } from "@/components/landing/what-we-do";
 import { contactDetails, coursademiaUrl } from "@/content/site";
-import { heroSlides, stats } from "@/content/services";
+import { heroSlides, projects, stats } from "@/content/services";
 
 const clientLogos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const featuredProjects = projects.filter((project) => project.featured);
 
 export default function Home() {
   return (
@@ -63,11 +70,11 @@ export default function Home() {
                 Projects &amp; impact we&rsquo;re proud of
               </h2>
             </div>
-            <Link href="/contact" className="btn btn-outline">
-              Start your project
+            <Link href="/projects" className="btn btn-outline">
+              View all projects
             </Link>
           </div>
-          <ProjectsSection />
+          <ProjectsSection items={featuredProjects} />
         </section>
 
         {/* Coursademia */}
@@ -84,16 +91,40 @@ export default function Home() {
                 and SME training, with tracking and certification. It&rsquo;s a
                 standalone platform, not a side feature.
               </p>
-              <TrackedLink
-                href={coursademiaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                eventName="coursademia_cta_click"
-                eventCategory="homepage"
-                className="btn btn-primary btn-lg"
-              >
-                Visit Coursademia
-              </TrackedLink>
+              <div className="store-badge-row">
+                <TrackedLink
+                  href={coursademiaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  eventName="coursademia_playstore_click"
+                  eventCategory="homepage"
+                  className="store-badge"
+                >
+                  <span className="store-badge-icon">
+                    <GooglePlayIcon size={26} />
+                  </span>
+                  <span>
+                    <small>GET IT ON</small>
+                    Google Play
+                  </span>
+                </TrackedLink>
+                <TrackedLink
+                  href={coursademiaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  eventName="coursademia_appstore_click"
+                  eventCategory="homepage"
+                  className="store-badge"
+                >
+                  <span className="store-badge-icon">
+                    <AppleIcon size={26} />
+                  </span>
+                  <span>
+                    <small>Download on the</small>
+                    App Store
+                  </span>
+                </TrackedLink>
+              </div>
             </div>
             <div className="coursademia-visual-wrap">
               <div className="coursademia-visual" aria-hidden>
