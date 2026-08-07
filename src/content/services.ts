@@ -221,7 +221,7 @@ export const projects: Project[] = [
     summary: "Investment readiness for 100 SMEs across Niger, Kaduna and Nasarawa.",
     detail:
       "Investment readiness, operational restructuring and financial-compliance support to 100 SMEs across Niger, Kaduna and Nasarawa, including rice SMEs (e.g. Sulaitan Ltd, Arzikin Noma Services).",
-    image: "/brand/gallery/training-audience-2.jpg",
+    image: "/brand/gallery/agra-farmer-training.jpg",
     status: "completed",
     location: "Niger, Kaduna & Nasarawa States",
     featured: true,
