@@ -275,6 +275,42 @@ export const projects: Project[] = [
     status: "completed",
     location: "Niger, Kaduna & Nasarawa States",
   },
+  {
+    slug: "agra-business-angel-investment-session",
+    title: "AGRA Business Angel Investment & Finance Strategy Session",
+    funder: "AGRA · Welcome2Africa International",
+    practiceAreaId: "enterprise-agri-sme",
+    summary: "A strategy session on catalysing agribusiness investment and finance for SMEs.",
+    detail:
+      "Facilitated a strategy session on catalysing agribusiness investment and finance for SMEs through the strengthening of Business Angel investments, bringing together AGRA, Welcome2Africa International and partner stakeholders across the programme's focus states.",
+    image: "/brand/gallery/agra-programme-banner.jpg",
+    status: "completed",
+    location: "Niger, Kaduna & Nasarawa States",
+  },
+  {
+    slug: "kbs-lms-handover",
+    title: "Kaduna Business School — LMS Build & Handover",
+    funder: "Kaduna Business School",
+    practiceAreaId: "digital-learning",
+    summary: "Built and handed over a custom learning management system, then trained staff to run it.",
+    detail:
+      "Designed and built a custom LMS for Kaduna Business School — covering learner, instructor and admin workflows — then led a hands-on technical handover session, walking their team through running and managing the platform.",
+    image: "/brand/gallery/kbs-lms-training.jpg",
+    status: "completed",
+    location: "Kaduna State",
+  },
+  {
+    slug: "noma-services-partner-visit",
+    title: "Partner Visit: Noma Services Consolidated Ltd",
+    funder: "Noma Services Consolidated Ltd (Partner)",
+    practiceAreaId: "enterprise-agri-sme",
+    summary: "A partner visit to Noma Services, an agri-fintech partner aggregating smallholder farmer financing.",
+    detail:
+      "Visited Noma Services Consolidated Ltd — a technology-driven agriculture and rural development partner working to aggregate smallholder farmers, unlock financing and promote financial inclusion — to strengthen our ongoing partnership and explore joint opportunities across our agri-SME work.",
+    image: "/brand/gallery/noma-partner-visit.jpg",
+    status: "completed",
+    location: "Partner office visit",
+  },
 ];
 
 export type Stat = { value: string; label: string };

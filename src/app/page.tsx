@@ -14,7 +14,7 @@ import { ProjectsSection } from "@/components/landing/projects-section";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 import { WhatWeDo } from "@/components/landing/what-we-do";
-import { contactDetails, coursademiaUrl } from "@/content/site";
+import { contactDetails, googlePlayUrl, appStoreUrl } from "@/content/site";
 import { heroSlides, projects, stats } from "@/content/services";
 
 const clientLogos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
@@ -93,7 +93,7 @@ export default function Home() {
               </p>
               <div className="store-badge-row">
                 <TrackedLink
-                  href={coursademiaUrl}
+                  href={googlePlayUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   eventName="coursademia_playstore_click"
@@ -109,7 +109,7 @@ export default function Home() {
                   </span>
                 </TrackedLink>
                 <TrackedLink
-                  href={coursademiaUrl}
+                  href={appStoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   eventName="coursademia_appstore_click"

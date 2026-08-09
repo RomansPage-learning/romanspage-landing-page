@@ -43,3 +43,7 @@ export const contactDetails = {
 };
 
 export const coursademiaUrl = "https://coursademia.com";
+
+export const googlePlayUrl = "https://play.google.com/store/apps/details?id=com.romanspage.mobile";
+
+export const appStoreUrl = "#https://apps.apple.com/us/app/romanspage-global-services/id1602501285";
