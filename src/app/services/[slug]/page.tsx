@@ -50,9 +50,9 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <a href="#main-content" className="skip-link">
+      {/* <a href="#main-content" className="skip-link">
         Skip to main content
-      </a>
+      </a> */}
       <SiteHeader />
       <main id="main-content" className="page-shell">
         <section className="container page-hero" style={{ paddingBottom: 40 }}>

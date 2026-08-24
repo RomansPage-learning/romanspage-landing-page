@@ -34,9 +34,9 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <a href="#main-content" className="skip-link">
+      {/* <a href="#main-content" className="skip-link">
         Skip to main content
-      </a>
+      </a> */}
       <SiteHeader />
       <main id="main-content" className="page-shell">
         <section className="container page-hero">
@@ -57,7 +57,7 @@ export default function AboutPage() {
         >
           <div className="media-banner">
             <Image
-              src="/brand/stock/team-group.jpg"
+              src="/brand/stock/team-collaboration.jpg"
               alt=""
               fill
               sizes="(max-width: 1023px) 95vw, 1136px"

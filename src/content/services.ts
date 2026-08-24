@@ -360,7 +360,7 @@ export const heroSlides: HeroSlide[] = [
     eyebrow: "Enterprise & Agri-SME Growth Advisory",
     title: "Investment-ready growth for SMEs and agri-SMEs.",
     body: "Business diagnostics, access-to-finance readiness and operational improvement — we've helped unlock over US$5M in financing for the businesses we support.",
-    image: "/brand/stock/handshake-exterior.jpg",
+    image: "/brand/stock/business-contract-discussion.jpg",
     ctaHref: "/services/enterprise-agri-sme",
     ctaLabel: "See enterprise & agri-SME growth",
   },

@@ -23,9 +23,9 @@ const featuredProjects = projects.filter((project) => project.featured);
 export default function Home() {
   return (
     <>
-      <a href="#main-content" className="skip-link">
+      {/* <a href="#main-content" className="skip-link">
         Skip to main content
-      </a>
+      </a> */}
       <SiteHeader />
       <main id="main-content" className="page-shell">
         {/* Hero */}

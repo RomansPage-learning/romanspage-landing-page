@@ -17,7 +17,7 @@ export function ProjectsSection({ items = projects }: ProjectsSectionProps) {
   const [openSlug, setOpenSlug] = useState<string | null>(null);
 
   return (
-    <div className="cards-3">
+    <div className="cards-3 projects-grid">
       {items.map((project) => {
         const isOpen = openSlug === project.slug;
         return (
