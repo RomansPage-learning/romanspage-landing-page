@@ -29,9 +29,9 @@ const iconFor = {
 export default function ServicesPage() {
   return (
     <>
-      <a href="#main-content" className="skip-link">
+      {/* <a href="#main-content" className="skip-link">
         Skip to main content
-      </a>
+      </a> */}
       <SiteHeader />
       <main id="main-content" className="page-shell">
         <section className="container page-hero" style={{ paddingBottom: 40 }}>
@@ -48,7 +48,7 @@ export default function ServicesPage() {
         <section className="container" style={{ paddingBottom: 56 }}>
           <div className="media-banner">
             <Image
-              src="/brand/stock/handshake-exterior.jpg"
+              src="/brand/stock/business-contract-discussion.jpg"
               alt=""
               fill
               sizes="(max-width: 1023px) 95vw, 1136px"

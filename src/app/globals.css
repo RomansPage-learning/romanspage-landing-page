@@ -931,6 +931,10 @@ button {
   gap: 20px;
 }
 
+.projects-grid {
+  align-items: start;
+}
+
 .cards-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

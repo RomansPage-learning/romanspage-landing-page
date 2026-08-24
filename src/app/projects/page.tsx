@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <>
-      <a href="#main-content" className="skip-link">
+      {/* <a href="#main-content" className="skip-link">
         Skip to main content
-      </a>
+      </a> */}
       <SiteHeader />
       <main id="main-content" className="page-shell">
         <section className="container page-hero" style={{ paddingBottom: 56 }}>
