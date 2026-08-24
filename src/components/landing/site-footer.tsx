@@ -8,14 +8,15 @@ const companyLinks = [
   { label: "Home", href: "/" },
   { label: "About us", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
 ];
 
 const socials = [
-  { name: "facebook", href: "#" },
-  { name: "linkedin", href: "#" },
-  { name: "twitter", href: "#" },
-  { name: "instagram", href: "#" },
+  { name: "facebook", href: "https://www.facebook.com/romanspageglobal" },
+  { name: "linkedin", href: "https://www.linkedin.com/company/romanspage-global-services" },
+  { name: "x", href: "https://x.com/Romanspage" },
+  { name: "instagram", href: "https://www.instagram.com/romanspage_globall" },
 ] as const;
 
 export function SiteFooter() {
@@ -35,8 +36,8 @@ export function SiteFooter() {
             </span>
           </div>
           <p className="footer-brand-blurb">
-            Executive HR consultancy helping SMEs run seamless people
-            operations since 2014.
+            Integrated consulting, learning and enterprise development for
+            SMEs, agri-SMEs and development partners since 2014.
           </p>
           <div className="socials">
             {socials.map((social) => (

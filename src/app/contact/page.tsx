@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { ContactForm } from "@/components/forms/contact-form";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/landing/icons";
@@ -9,7 +10,7 @@ import { contactDetails } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Whether you're an employer or a candidate, we'd love to hear from you. Reach out and we'll respond within one business day.",
+    "Whether it's HR advisory, enterprise & agri-SME growth, skills & employability programmes, or digital learning & technology, we'd love to hear from you. Reach out and we'll respond within one business day.",
 };
 
 export default function ContactPage() {
@@ -45,11 +46,12 @@ export default function ContactPage() {
             <div className="kicker" style={{ marginBottom: 16 }}>
               Contact
             </div>
-            <h1>Let&rsquo;s talk about your HR.</h1>
+            <h1>Let&rsquo;s talk about your organisation or programme.</h1>
             <p className="contact-lede">
-              Whether you&rsquo;re an employer or a candidate, we&rsquo;d love
-              to hear from you. Reach out and we&rsquo;ll respond within one
-              business day.
+              Whether it&rsquo;s HR advisory, enterprise &amp; agri-SME growth,
+              skills &amp; employability programmes, or digital learning &amp;
+              technology, we&rsquo;d love to hear from you. Reach out and
+              we&rsquo;ll respond within one business day.
             </p>
             <div className="contact-items">
               {contactInfo.map((item) => (
@@ -71,6 +73,14 @@ export default function ContactPage() {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="contact-accent-image">
+              <Image
+                src="/brand/stock/support-headset.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 1023px) 90vw, 420px"
+              />
             </div>
           </div>
           <div className="contact-panel">

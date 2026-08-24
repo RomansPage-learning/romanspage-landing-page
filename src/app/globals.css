@@ -343,6 +343,88 @@ button {
   gap: 10px;
 }
 
+/* ---------- Nav dropdown ---------- */
+
+.nav-item-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-caret {
+  color: var(--gray-400);
+  transition: transform 0.15s ease;
+  cursor: pointer;
+}
+
+.nav-caret.open {
+  transform: rotate(180deg);
+  color: var(--ink);
+}
+
+.nav-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 40;
+}
+
+.nav-dropdown-panel a {
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.nav-dropdown-panel a:hover {
+  background: var(--bg-tint);
+}
+
+.mobile-services-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  color: var(--gray-600);
+}
+
+.mobile-services-toggle.active {
+  color: var(--ink);
+}
+
+.mobile-subnav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.mobile-subnav .nav-link {
+  border-bottom: none !important;
+  padding: 9px 0 !important;
+  font-size: 14px !important;
+  color: var(--gray-500);
+}
+
 .nav-toggle {
   display: none;
   width: 38px;
@@ -488,6 +570,98 @@ button {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.45;
+}
+
+/* ---------- Hero slider ---------- */
+
+.hero-slides {
+  position: relative;
+  min-height: 380px;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.hero-slide.active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.hero-media-frame img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.hero-media-frame img.active {
+  opacity: 1;
+}
+
+.hero-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.hero-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.hero-arrow:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hero-arrow-prev svg {
+  transform: rotate(180deg);
+}
+
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.hero-dot.active {
+  width: 22px;
+  border-radius: 4px;
+  background: var(--hero-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide,
+  .hero-media-frame img {
+    transition: none;
+  }
 }
 
 /* ---------- Client logo strip ---------- */
@@ -757,6 +931,12 @@ button {
   gap: 20px;
 }
 
+.cards-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
 .service-card {
   display: block;
   background: #fff;
@@ -842,6 +1022,31 @@ button {
   object-fit: cover;
 }
 
+.project-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.project-status-ongoing {
+  background: rgba(30, 58, 138, 0.85);
+}
+
+.project-location {
+  font-size: 12px;
+  color: var(--gray-400);
+  margin-top: 8px;
+}
+
 .project-body {
   padding: 26px;
 }
@@ -879,13 +1084,14 @@ button {
 .stats-band {
   background: var(--dark);
   color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .stats-grid {
   padding-top: 72px;
   padding-bottom: 72px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 32px;
 }
 
@@ -911,6 +1117,11 @@ button {
   gap: 24px;
   max-width: 880px;
   margin: 0 auto;
+}
+
+.plans-3 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1136px;
 }
 
 .plan-card {
@@ -972,6 +1183,18 @@ button {
   color: var(--gray-500);
 }
 
+.plan-price-consult {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.cta-inline-row {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
 .plan-cta {
   width: 100%;
   margin-bottom: 28px;
@@ -1003,6 +1226,178 @@ button {
 
 .feature-row.muted svg {
   color: #c4c4c4;
+}
+
+/* ---------- Project card expand ---------- */
+
+.project-view-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  padding: 0;
+  margin-top: 4px;
+}
+
+.project-view-more svg {
+  transition: transform 0.2s ease;
+}
+
+.project-view-more.open svg {
+  transform: rotate(180deg);
+}
+
+.project-detail {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.6;
+  padding-top: 12px;
+  margin-top: 12px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* ---------- Coursademia band ---------- */
+
+.coursademia-band {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.coursademia-visual-wrap {
+  position: relative;
+}
+
+.coursademia-visual {
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.coursademia-visual-photo {
+  object-fit: cover;
+}
+
+.coursademia-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.82) 0%, rgba(51, 82, 158, 0.72) 100%),
+    radial-gradient(rgba(255, 255, 255, 0.18) 1.5px, transparent 1.5px);
+  background-size:
+    100% 100%,
+    22px 22px;
+}
+
+.coursademia-logo-card {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  z-index: 2;
+  background: #fff;
+  padding: 9px 12px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coursademia-logo-card img {
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Store badges ---------- */
+
+.store-badge-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--dark);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 10px 20px 10px 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.store-badge:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.store-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.store-badge span:not(.store-badge-icon) {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.store-badge small {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- CTA contact row ---------- */
+
+.cta-contact-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.cta-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.cta-contact-item svg {
+  flex-shrink: 0;
+  opacity: 0.85;
 }
 
 /* ---------- CTA band ---------- */
@@ -1090,6 +1485,45 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ---------- Info table (Integrated Model / Brand Architecture) ---------- */
+
+.info-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.info-table th {
+  background: var(--navy);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  padding: 14px 22px;
+}
+
+.info-table td {
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 14px;
+  color: var(--gray-600);
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.info-table tr:last-child td {
+  border-bottom: none;
 }
 
 /* ---------- About ---------- */
@@ -1186,6 +1620,35 @@ button {
   color: var(--gray-500);
   line-height: 1.65;
   margin-bottom: 26px;
+}
+
+.detail-card-head {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
+}
+
+.detail-card-head .icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+  margin-bottom: 0;
+}
+
+.detail-card-head h2,
+.detail-card-head h3 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.detail-card-head p {
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.6;
 }
 
 .subs-grid {
@@ -1378,6 +1841,19 @@ button {
   flex-shrink: 0;
 }
 
+.contact-accent-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-top: 32px;
+}
+
+.contact-accent-image img {
+  object-fit: cover;
+}
+
 .contact-item-label {
   font-family: var(--font-geist-mono), monospace;
   font-size: 11px;
@@ -1452,21 +1928,27 @@ button {
 }
 
 .role-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
 .role-btn {
-  flex: 1;
   height: 44px;
+  padding: 0 16px;
   border: 1px solid var(--border);
   border-radius: 9px;
   background: #fff;
   color: var(--gray-600);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.15s ease;
+  text-align: center;
+}
+
+.role-btn-wide {
+  grid-column: 1 / -1;
 }
 
 .role-btn.active {
@@ -1704,10 +2186,19 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .cards-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plans-3 {
+    grid-template-columns: 1fr;
+  }
+
   .split-card,
   .detail-card,
   .story-grid,
-  .contact-grid {
+  .contact-grid,
+  .coursademia-band {
     grid-template-columns: 1fr;
   }
 
@@ -1720,7 +2211,7 @@ button {
   }
 
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .footer-grid {
@@ -1775,6 +2266,11 @@ button {
     max-width: none;
   }
 
+  .coursademia-logo-card {
+    right: 10px;
+    top: -10px;
+  }
+
   .hero-grid {
     gap: 40px;
   }
@@ -1814,8 +2310,13 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .cards-4 {
+    grid-template-columns: 1fr;
+  }
+
   .subs-grid,
-  .field-row {
+  .field-row,
+  .role-row {
     grid-template-columns: 1fr;
   }
 

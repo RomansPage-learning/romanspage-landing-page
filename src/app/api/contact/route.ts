@@ -13,11 +13,10 @@ type ContactRequest = {
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const allowedServices = new Set([
-  "recruitment",
-  "hr-consulting",
-  "sme-hr-support",
-  "training",
-  "payroll",
+  "hr",
+  "enterprise-agri-sme",
+  "skills-employability",
+  "digital-learning",
   "general",
 ]);
 const defaultCooldownMinutes = 15;

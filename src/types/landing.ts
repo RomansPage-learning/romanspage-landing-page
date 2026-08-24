@@ -3,6 +3,15 @@ export type NavigationItem = {
   href: string;
 };
 
+export type NavChild = {
+  label: string;
+  href: string;
+};
+
+export type NavigationDropdownItem = NavigationItem & {
+  children?: NavChild[];
+};
+
 export type HeroContent = {
   eyebrow: string;
   title: string;

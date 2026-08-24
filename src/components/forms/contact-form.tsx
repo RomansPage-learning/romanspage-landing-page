@@ -3,19 +3,18 @@
 import { useState } from "react";
 
 import { CheckIcon } from "@/components/landing/icons";
+import { practiceAreas } from "@/content/services";
 import { trackEvent } from "@/lib/analytics";
-
-type Role = "employer" | "candidate";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-const roleToService: Record<Role, string> = {
-  employer: "general",
-  candidate: "recruitment",
-};
+const serviceOptions = [
+  ...practiceAreas.map((area) => ({ id: area.id, label: area.navLabel })),
+  { id: "general", label: "Not sure / general enquiry" },
+];
 
 export function ContactForm() {
-  const [role, setRole] = useState<Role>("employer");
+  const [service, setService] = useState<string>("general");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -31,7 +30,7 @@ export function ContactForm() {
       name: String(formData.get("name") || "").trim(),
       email: String(formData.get("email") || "").trim(),
       company: String(formData.get("company") || "").trim(),
-      service: roleToService[role],
+      service,
       message: String(formData.get("message") || "").trim(),
       website: String(formData.get("website") || "").trim(),
     };
@@ -51,7 +50,7 @@ export function ContactForm() {
         throw new Error(body?.error || "Something went wrong. Please try again.");
       }
 
-      trackEvent({ event: "contact_form_submitted", category: "contact", label: role });
+      trackEvent({ event: "contact_form_submitted", category: "contact", label: service });
       form.reset();
       setStatus("success");
     } catch (submissionError) {
@@ -115,23 +114,20 @@ export function ContactForm() {
         </div>
       </div>
       <div className="field">
-        <label>I am a…</label>
-        <div className="role-row" role="radiogroup" aria-label="I am a">
-          {(
-            [
-              ["employer", "I’m an employer"],
-              ["candidate", "I’m a candidate"],
-            ] as [Role, string][]
-          ).map(([key, label]) => (
+        <label>What do you need help with?</label>
+        <div className="role-row" role="radiogroup" aria-label="What do you need help with">
+          {serviceOptions.map((option) => (
             <button
-              key={key}
+              key={option.id}
               type="button"
               role="radio"
-              aria-checked={role === key}
-              className={`role-btn${role === key ? " active" : ""}`}
-              onClick={() => setRole(key)}
+              aria-checked={service === option.id}
+              className={`role-btn${service === option.id ? " active" : ""}${
+                option.id === "general" ? " role-btn-wide" : ""
+              }`}
+              onClick={() => setService(option.id)}
             >
-              {label}
+              {option.label}
             </button>
           ))}
         </div>
