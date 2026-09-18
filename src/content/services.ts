@@ -21,13 +21,14 @@ export type PracticeArea = {
   bannerImage: string;
   subs: SubService[];
   pricingTiers?: PricingTier[];
+  metaDescription?: string;
 };
 
 export const practiceAreas: PracticeArea[] = [
   {
     id: "hr",
-    navLabel: "People, HR & Organisation",
-    title: "People, HR & Organisation Advisory",
+    navLabel: "HR Consulting and Advisory",
+    title: "HR Consulting and Advisory",
     teaser:
       "Our consulting backbone — talent management, recruitment, capacity and governance — a professional advisory practice, not merely \"HR support.\"",
     intro:
@@ -59,33 +60,46 @@ export const practiceAreas: PracticeArea[] = [
         staffRange: "1–20 staff",
         price: "₦79,999/mo",
         features: [
-          "Payroll & compliance (Tax, Pension, NSITF, NHF)",
-          "Policies & HR documentation",
-          "Employee engagement",
-          "Unlimited HR support",
+          "Payroll & monthly statutory remittances",
+          "Annual statutory filing & returns",
+          "Recruitment (maximum of 3 specialised roles per month)",
+          "HR policies, handbook & contracts reviews",
+          "Onboarding & employee engagement",
+          "Performance appraisals and recommendation",
+          "Leave management & HR records",
+          "Unlimited HR advisory support",
         ],
       },
       {
         name: "SME",
-        staffRange: "20–50 staff",
+        staffRange: "21–50 staff",
         price: "₦149,999/mo",
         features: [
-          "Payroll & compliance (Tax, Pension, NSITF, NHF)",
-          "Policies & HR documentation",
-          "Employee engagement",
-          "Unlimited HR support",
-          "Recruitment & talent placement",
-          "Organisational assessment, outsourcing & training",
+          "Everything in Startup, plus:",
+          "Full statutory registrations (tax, PenCom, NSITF, NHF, ITF)",
+          "Recruitment (maximum of 5 specialised roles per month)",
+          "Background check and former employer verification",
+          "Training needs assessments and recommendations",
+          "Training via Coursademia @ 50% discounted rate",
+          "Employee relations & grievance handling",
+          "Benefits & HMO administration",
+          "Disciplinary & exit management",
+          "Monthly HR reports",
+          "Quarterly strategic HR review",
         ],
       },
       {
-        name: "Enterprise",
-        staffRange: "50+ staff / large corporation",
+        name: "Corporate",
+        staffRange: "51 & above",
         price: null,
         features: [
-          "Fully customised HR partnership",
+          "Everything in SME, plus:",
+          "Fully customised HR dashboard",
+          "Visit to the office once monthly",
+          "Recruitment (unlimited)",
+          "100% free trainings via Coursademia",
+          "Benefits survey and recommendation",
           "Dedicated account manager",
-          "Everything in Startup & SME",
         ],
       },
     ],
@@ -93,94 +107,116 @@ export const practiceAreas: PracticeArea[] = [
   {
     id: "enterprise-agri-sme",
     navLabel: "Enterprise & Agri-SME Growth",
-    title: "Enterprise & Agri-SME Growth Advisory",
+    title: "Enterprise & Agri-SME Growth Advisory Services",
     teaser:
-      "Business development, access-to-finance and agri-SME growth — the natural home for agribusinesses, mechanisation and solar-irrigation providers, youth-in-agriculture models and enterprise support programmes.",
+      "Our Business Development Support Programme (BDSP) — the practical, end-to-end pathway that takes a business from \"where we are\" to \"investment-ready and growing.\"",
     intro:
-      "Business development, access-to-finance and agri-SME growth advisory — the natural home for agribusinesses, mechanisation and solar-irrigation providers, youth-in-agriculture models and enterprise support programmes. We work directly with the operational and financial realities of Nigerian SMEs, and have helped the businesses we support unlock over US$5 million in financing to date.",
+      "Our Business Development Support Programme (BDSP) — the practical, end-to-end pathway that takes a business from \"where we are\" to \"investment-ready and growing.\" We combine structured diagnostics, funding-readiness work, hands-on business development, technology tools, and capacity building into a single engagement, so businesses don't have to piece together five different consultants. Since 2014, we've supported over 3,200 SMEs and agri-SMEs and helped unlock more than US$10 million in financing for the businesses we work with.",
     cta: "Explore business support",
     icon: "chart",
     bannerImage: "/brand/stock/meeting-handshake.jpg",
     subs: [
       {
-        name: "SME Business Diagnostics",
-        desc: "A ground-up review of how your business actually runs — business model, operating processes, staffing structure, systems and financial readiness — to pinpoint the specific constraints slowing growth. The output is a practical action plan, prioritised by what will move the business forward fastest, not a generic report.",
+        name: "Organisational Assessment & Diagnostics",
+        desc: "A ground-up review of how the business runs today — business model, operations, staffing structure, systems, and financial readiness — to pinpoint what's constraining growth. Every engagement starts here: the output is a prioritised, practical action plan, not a generic audit report that sits on a shelf.",
       },
       {
-        name: "Agri-SME Support",
-        desc: "Specialist advisory for agribusinesses, processors, mechanisation service providers, solar-irrigation companies and farmer cooperatives — the segment of the economy general business consultants rarely understand well. We work with the real value-chain constraints: seasonality, input financing, off-take arrangements and last-mile distribution.",
+        name: "Investment Readiness Programme",
+        desc: "We get businesses genuinely fundable, not just \"pitch-ready.\" That means structuring the business case, cleaning up financial models, tightening governance and compliance, and preparing the documentation that investors, lenders and development finance institutions actually scrutinise before they commit.",
       },
       {
-        name: "Business Development Services",
-        desc: "Investor-ready business plans, market-access strategy, funding-proposal development and growth planning tailored to where your business actually is today. We've guided businesses through the exact diligence and documentation that funders like AGRA, Mastercard Foundation and development finance institutions expect to see.",
+        name: "Business Development Support",
+        desc: "Hands-on support building the tools a growing business needs to win work and win backers: business plans, funding and grant proposals, market-access strategy, and marketing support to help businesses reach the customers and partners they're targeting. Tailored to where the business actually is today, not a template.",
       },
       {
-        name: "Access-to-Finance Readiness",
-        desc: "We prepare businesses for the scrutiny that comes with real funding — building the business case, investor documentation and financial models that lenders and investors actually ask for — then facilitate warm introductions to grant, loan and equity partners in our network. This discipline has helped the SMEs we support unlock over US$5 million in financing to date.",
+        name: "Technology Integration",
+        desc: "We help businesses adopt practical digital tools that improve efficiency, visibility and scale. Support may include digital record-keeping, reporting systems, customer and market tools, process automation, digital learning and technology solutions that strengthen day-to-day operations.",
       },
       {
-        name: "Operational Improvement",
-        desc: "Standard operating procedures, process mapping, reporting systems and hands-on field-operations support that turn ad-hoc ways of working into something repeatable and scalable. Particularly valuable for agri-SMEs managing dispersed field teams, seasonal labour and multi-site operations.",
+        name: "Access to Finance Support",
+        desc: "We help enterprises navigate the journey from being finance-ready to securing the right opportunity. Our support covers grant and loan applications, funding proposals, financial models, investor documentation, due-diligence preparation and facilitated linkages to grant, loan and equity partners.",
+      },
+      {
+        name: "Capacity Building Programmes",
+        desc: "Targeted training, coaching and technical assistance designed to strengthen the capabilities of founders, managers and teams. Our programmes equip enterprises with the knowledge, practical tools and confidence to make better decisions, improve performance, adapt to changing market demands and build sustainable, growth-ready businesses.",
       },
     ],
+    metaDescription:
+      "Organisational diagnostics, investment readiness, business development support, technology integration, access to finance and capacity building — one connected Business Development Support Programme (BDSP) for SMEs and agri-SMEs ready to scale.",
   },
   {
     id: "skills-employability",
-    navLabel: "Skills & Employability",
-    title: "Skills, Employability & Entrepreneurship Programmes",
+    navLabel: "Workforce Development & Job Creation",
+    title: "Workforce Development and Job Creation Programmes",
     teaser:
-      "Our programme-delivery practice for donors, NGOs, government agencies and corporate CSR partners — consolidating training, youth employability, entrepreneurship and job connection.",
+      "We design and deliver integrated programmes that equip young people and women with relevant skills, connect them to real employment and enterprise opportunities, and support sustainable income creation.",
     intro:
-      "Our programme-delivery practice for donors, NGOs, government agencies and corporate CSR partners — consolidating training, youth employability, entrepreneurship and job connection into one accountable delivery partner. We've trained over 50,000 young people to date, with a consistent focus on measurable outcomes — placement, income and enterprise growth — not just attendance.",
+      "We design and deliver integrated programmes that equip young people and women with relevant skills, connect them to real employment and enterprise opportunities, and support sustainable income creation. With over 50,000 young people trained, our focus is on measurable outcomes: jobs, business growth and improved livelihoods.",
     cta: "Discuss a programme",
     icon: "bulb",
     bannerImage: "/brand/gallery/training-audience-2.jpg",
     subs: [
       {
         name: "Employability Programmes",
-        desc: "Structured training in soft skills and workplace readiness — CV writing, interview coaching, workplace etiquette and communication — paired with active job-placement support, not just a certificate at the end. Delivered at scale for donor and government-funded youth programmes, with over 50,000 young people trained to date.",
+        desc: "Structured, market-relevant training that prepares participants for the world of work and connects them to real employment opportunities. Through career guidance, workplace-readiness support, CV development, interview preparation, talent profiling and active job matching, we help participants identify realistic career paths and transition into jobs, internships and apprenticeships. Our relevant programmes have consistently achieved job-placement outcomes of over 75%.",
       },
       {
         name: "Entrepreneurship Programmes",
-        desc: "Practical training in business ideation, planning, financial literacy, record-keeping and market access — backed by ongoing mentorship, not a one-off workshop. Built for first-time entrepreneurs, market women and youth-led micro-businesses who need support that continues after the training ends.",
-      },
-      {
-        name: "Career Development",
-        desc: "One-on-one career coaching and talent profiling to help young people identify realistic, well-matched career paths, paired with direct linkage to internship and apprenticeship opportunities with our employer partners. We track outcomes, not just attendance.",
-      },
-      {
-        name: "Programme Design & Management",
-        desc: "End-to-end design and implementation of youth, women, SME and livelihood programmes on behalf of donors, government agencies and corporate CSR partners — from programme logic and curriculum design through field delivery, monitoring and reporting. Delivered for funders including SOS Children's Villages, Mastercard Foundation and AGRA.",
+        desc: "Practical entrepreneurship and enterprise-development support that moves participants from business idea to viable enterprise. Participants receive guidance to clarify their business direction, develop the confidence and capabilities to manage growth, and access the tools needed to establish and strengthen their ventures. Support includes business registration, business-plan and proposal development, marketing support, and access-to-finance readiness for start-up and scale-up opportunities.",
       },
       {
         name: "Job Matching & Employer Engagement",
-        desc: "Active employer engagement and job-matching that connects trained youth to real internships, apprenticeships and enterprise opportunities — closing the loop between training and actual employment outcomes. We maintain relationships with employer partners specifically so placement isn't left to chance.",
+        desc: "Active engagement with employers to connect trained participants to jobs, internships, apprenticeships and enterprise opportunities. We work with employers to understand workforce needs, prepare candidates for available roles and track placement outcomes beyond programme completion.",
+      },
+      {
+        name: "Digital Learning Programmes — Coursademia",
+        desc: "Technology-enabled learning delivered through Coursademia, Romanspage's digital learning platform. Coursademia extends programme reach through accessible online and blended learning, digital assessments, certifications, learner tracking and practical learning resources that support participants before, during and after training. Explore Coursademia at coursademia.com.",
+      },
+      {
+        name: "Career & Enterprise Fairs",
+        desc: "Well-curated events that bring together jobseekers, entrepreneurs, employers, financial institutions, ecosystem partners and service providers. These fairs create direct pathways to recruitment, internships, business partnerships, market access, funding information and enterprise-support opportunities.",
+      },
+      {
+        name: "Programme Design & Management",
+        desc: "End-to-end design and delivery of workforce, youth, women, entrepreneurship and livelihood programmes. We support partners from programme strategy and curriculum design through participant mobilisation, field delivery, monitoring, evaluation and reporting — ensuring interventions translate into measurable employment and enterprise outcomes.",
       },
     ],
   },
   {
     id: "digital-learning",
-    navLabel: "Digital Learning & Technology",
-    title: "Digital Learning & Technology Solutions",
+    navLabel: "Technology Solutions",
+    title: "Technology Solutions",
     teaser:
-      "Where Coursademia and Bickford fit. Coursademia is our official learning infrastructure — not a side platform; Bickford is our technology and digital-skills delivery arm — not a separate, competing business.",
+      "Through Bickford International, our technology-delivery arm, we provide practical digital solutions that help businesses, institutions and development programmes improve efficiency, strengthen service delivery and remain competitive in a changing world.",
     intro:
-      "Where Coursademia and Bickford fit into the wider Group. Coursademia is our official learning infrastructure — not a side platform — built to scale our programme work to more people, cohorts and locations, with tracking and certification built in. Bickford is our technology and digital-skills delivery arm, helping SMEs take real, practical steps into digital transformation.",
+      "Through Bickford International, our technology-delivery arm, we provide practical digital solutions that help businesses, institutions and development programmes improve efficiency, strengthen service delivery and remain competitive in a changing world. We work with organisations to understand their needs, identify the right technology approach and deliver solutions that are secure, useful and built for scale. Whether the goal is to establish a stronger online presence, streamline internal operations, connect existing systems or equip teams to work more effectively with digital tools, our focus is on technology that delivers measurable value.",
     cta: "Start a digital project",
     icon: "chip",
     bannerImage: "/brand/gallery/coursademia-training-session.jpg",
     subs: [
       {
-        name: "Coursademia",
-        desc: "The Group's own online learning platform — soft skills, employability, entrepreneurship and SME training delivered through structured, blended learning with tracking and certification built in. It's the infrastructure that lets our programme work scale to more people, cohorts and locations than in-person delivery alone ever could.",
+        name: "Technology Integration",
+        desc: "We help organisations select, connect and adopt the digital tools that best support their operations. From integrating systems and improving data flow to redesigning workflows, we create practical technology environments that reduce manual work, improve visibility and support better decision-making.",
       },
       {
-        name: "Bickford International Partners",
-        desc: "Our technology and digital-skills delivery arm — IT training, digital-tools adoption, learning-management-system support and hands-on digital-transformation support for SMEs taking their first real steps into technology. Not a separate, competing business — Bickford is how the Group delivers on the technology half of its promise.",
+        name: "Website & Web Application Development",
+        desc: "We design and develop responsive, user-friendly websites and web applications that strengthen your digital presence and make it easier for customers, partners and users to engage with your organisation. Each solution is tailored to your objectives, audience and service-delivery needs.",
       },
       {
-        name: "Romanspage Digital Learning Unit",
-        desc: "The internal team behind the platform — managing course development, learner data, certification issuance, employer linkage and alumni tracking so that what people learn on Coursademia connects back to real opportunity. This is also where the self-assessment and guided-recommendation experience for the wider Romanspage site will be built.",
+        name: "Enterprise Software Development",
+        desc: "We build robust, scalable software solutions that help organisations manage their operations more effectively. From internal workflow and reporting systems to customer and service-management platforms, our solutions are designed to improve efficiency, provide clearer insights and support sustainable growth.",
+      },
+      {
+        name: "Mobile App Development & Application Integration",
+        desc: "We develop intuitive mobile applications that bring services, information and engagement closer to customers and teams. From concept development and prototyping through deployment, we also connect applications with the systems and platforms your organisation already uses.",
+      },
+      {
+        name: "AI Integration, Work Optimisation & Digital Skills Training",
+        desc: "We help organisations use artificial intelligence and digital tools to improve how work gets done. Our solutions and practical training support teams to automate routine tasks, organise information, increase productivity and make faster, more informed decisions. The focus is not simply on introducing new technology, but on building the confidence and capability to apply it meaningfully in everyday work.",
+      },
+      {
+        name: "QR Code API Design & Integration",
+        desc: "We design and integrate secure, easy-to-use QR-code solutions that improve customer engagement, access to information and operational efficiency. These custom solutions can support product verification, service access, event management, payments, digital records and other business processes.",
       },
     ],
   },
@@ -211,19 +247,70 @@ export const projects: Project[] = [
     image: "/brand/gallery/training-audience-1.jpg",
     status: "ongoing",
     location: "Kwara State",
+  },
+  {
+    slug: "youth-in-agriculture",
+    title: "Youth in Agriculture Project",
+    funder: "Nimsy Agro",
+    practiceAreaId: "enterprise-agri-sme",
+    summary: "A 12-week pilot supporting 25-30 young people into solar-powered agricultural mechanisation.",
+    detail:
+      "Romanspage is partnering with Nimsy Agro to open practical pathways for young people to earn, grow businesses and lead innovation in modern agriculture. The Youth in Agriculture Project blends employability, entrepreneurship and agribusiness training with hands-on exposure to solar-powered agricultural mechanisation. Through Coursademia, practical field demonstrations and technical sessions with Nimsy Agro, participants build the skills to work as service agents, launch youth-led mechanisation businesses or remain connected to future opportunities through an alumni network. The 12-week pilot will support 25-30 young people to explore income opportunities in solar irrigation, threshing, drying and other pay-per-use services that make modern mechanisation more accessible to smallholder farmers.",
+    image: "/brand/gallery/training-audience-1.jpg",
+    status: "ongoing",
+    location: "Nigeria",
     featured: true,
   },
   {
     slug: "agra-investment-readiness",
-    title: "AGRA Investment-Readiness Programme",
-    funder: "AGRA · Welcome2Africa International",
+    title: "AGRA-Supported Investment Readiness Programme for Agri-SMEs",
+    funder: "AGRA · Welcome to Africa",
     practiceAreaId: "enterprise-agri-sme",
-    summary: "Investment readiness for 100 SMEs across Niger, Kaduna and Nasarawa.",
+    summary: "Investment readiness for 12 high-potential agribusinesses across Kaduna, Niger and Nasarawa.",
     detail:
-      "Investment readiness, operational restructuring and financial-compliance support to 100 SMEs across Niger, Kaduna and Nasarawa, including rice SMEs (e.g. Sulaitan Ltd, Arzikin Noma Services).",
+      "In partnership with Welcome to Africa and with support from AGRA, Romanspage delivered an intensive investment-readiness programme for 12 high-potential agribusinesses across Kaduna, Niger and Nasarawa States, operating across Nigeria's maize, rice and soybean value chains. Over two practical days, business owners strengthened the foundations investors look for: a compelling business story, credible financial records, stronger compliance, clear growth plans and confident investor pitches. Each SME left better positioned to communicate its value, address internal gaps and pursue finance opportunities with greater clarity, discipline and confidence.",
     image: "/brand/gallery/agra-farmer-training.jpg",
     status: "completed",
     location: "Niger, Kaduna & Nasarawa States",
+    featured: true,
+  },
+  {
+    slug: "rice-enterprises-women-youth",
+    title: "Accelerating Inclusive Agribusiness Growth for Women and Youth-Led Rice Enterprises",
+    funder: "Tunmise Johnson Foundation",
+    practiceAreaId: "enterprise-agri-sme",
+    summary: "Supporting women and youth-led rice enterprises in Kaduna and Niger States toward finance-ready growth.",
+    detail:
+      "Romanspage is supporting women and youth-led rice enterprises in Kaduna and Niger States to move from early-stage operations to stronger, more visible and finance-ready businesses through the Tunmise Johnson Foundation initiative. The programme combines business diagnostics, tailored capacity building, formalisation support, mentoring, business-plan development and investment-readiness coaching with direct links to buyers, aggregators and finance providers. By strengthening business systems, governance, record-keeping and market access, the intervention is helping enterprises build the credibility and capability needed to grow, create jobs and participate more fully in the rice value chain.",
+    image: "/brand/gallery/agra-programme-banner.jpg",
+    status: "ongoing",
+    location: "Kaduna & Niger States",
+    featured: true,
+  },
+  {
+    slug: "nimsy-agro-capacity-assessment",
+    title: "Organisational Capacity Assessment and Technical Assistance for Agri-tech SMEs",
+    funder: "Wennovation / Heifer Nigeria Support Project",
+    practiceAreaId: "hr",
+    summary: "Organisational capacity assessment and technical assistance for Nimsy Agro Solar Concepts.",
+    detail:
+      "Through the Wennovation/Heifer Nigeria Support Project, Romanspage delivered targeted organisational capacity assessment and technical assistance for Nimsy Agro Solar Concepts, an agri-tech SME in Kaduna. The three-day intervention helped the business establish a clearer foundation for growth by strengthening its organisational structure, people practices and internal accountability. Romanspage developed a revised organogram, clarified roles and job expectations, oriented staff on the Employee Handbook and HR Manual, and introduced performance-appraisal criteria. The result was a more defined reporting structure and practical recommendations to improve recruitment, quality assurance, communication and performance management.",
+    image: "/brand/gallery/sos-certificate-group-2.jpg",
+    status: "completed",
+    location: "Kaduna State",
+    featured: true,
+  },
+  {
+    slug: "giz-skye-digital-skills",
+    title: "Digital Skills Training for Youth — GIZ SKYE Programme",
+    funder: "GIZ · SOS Children's Villages Nigeria",
+    practiceAreaId: "skills-employability",
+    summary: "Practical digital-skills training for 50 young people across Auchi, Usen and Uromi in Edo State.",
+    detail:
+      "Romanspage, through Bickford International Partners, delivered practical digital-skills training for 50 young people across Auchi, Usen and Uromi in Edo State under the GIZ-supported Skills Development for Youth Employment (SKYE) Programme, implemented by SOS Children's Villages Nigeria. The training combined instructor-led learning, practical assignments, mentoring and assessments to equip participants with market-relevant skills in graphic design, data analytics, coding and search-engine optimisation. By linking technical learning with workplace readiness and continuous evaluation, the programme prepared young people to pursue digital-work and employment opportunities with stronger confidence and capability.",
+    image: "/brand/gallery/sos-certificate-portrait.jpg",
+    status: "completed",
+    location: "Edo State",
     featured: true,
   },
   {
@@ -237,19 +324,19 @@ export const projects: Project[] = [
     image: "/brand/gallery/training-audience-3.jpg",
     status: "completed",
     location: "Edo State",
-    featured: true,
   },
   {
     slug: "oyo-youth-employability",
-    title: "Oyo Youth Employability & Placement",
-    funder: "SOS Children's Villages",
+    title: "FS Oyo Employability and Job Placement Programme",
+    funder: "SOS Children's Villages Nigeria",
     practiceAreaId: "skills-employability",
-    summary: "400 youths trained in employability skills.",
+    summary: "369 young adults trained, with 273 securing internships and direct job placements.",
     detail:
-      "Trained 400 youths in employability skills and supported job placement, achieving a strong placement rate.",
+      "For three years, Romanspage partnered with SOS Children's Villages Nigeria to help young people in Ibadan build the confidence, skills and connections needed to enter the world of work. The programme trained 369 young adults in workplace readiness, communication, digital productivity, financial literacy, CV development, interview preparation and personal branding. Through mock interviews, career coaching, Coursademia-based post-training support and annual job fairs, participants connected directly with employers and real opportunities. The programme delivered meaningful employment outcomes, with 273 participants securing internships and direct job placements across sectors including finance, ICT, education, hospitality and agro-processing.",
     image: "/brand/gallery/sos-certificate-group-1.jpg",
     status: "completed",
     location: "Oyo State",
+    featured: true,
   },
   {
     slug: "market-women-financial-literacy",
@@ -317,11 +404,17 @@ export type Stat = { value: string; label: string };
 
 export const stats: Stat[] = [
   { value: "2014", label: "Founded — over a decade of impact" },
-  { value: "2,700+", label: "SMEs built via Growth-Hack" },
-  { value: "50,000+", label: "Young people trained" },
-  { value: "500+", label: "SMEs supported (EdoCARES)" },
-  { value: "55%+", label: "Female participation" },
-  { value: "US$5M+", label: "Financing unlocked" },
+  { value: "3,200+", label: "SMEs supported through workforce development and investment readiness" },
+  { value: "75,000+", label: "Youths trained, with 70% placed into jobs" },
+  { value: "55%+", label: "Women participation" },
+];
+
+export const impactStats: Stat[] = [
+  { value: "3,200+", label: "SMEs supported and strengthened" },
+  { value: "75,000+", label: "Young people trained and supported into jobs or enterprise" },
+  { value: "200,000+", label: "People with improved livelihoods" },
+  { value: "US$10M+", label: "Finance unlocked for businesses" },
+  { value: "55%+", label: "Female participation across our programmes" },
 ];
 
 export type HeroSlide = {
@@ -348,29 +441,29 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     id: "hr",
-    eyebrow: "People, HR & Organisation Advisory",
+    eyebrow: "HR Consulting and Advisory",
     title: "HR and organisation advisory built for growing teams.",
     body: "Recruitment, payroll and compliance, organisational assessment and capacity building — a professional advisory practice, not just outsourced HR.",
     image: "/brand/stock/professional-portrait-1.jpg",
     ctaHref: "/services/hr",
-    ctaLabel: "See HR & organisation advisory",
+    ctaLabel: "See HR consulting and advisory",
   },
   {
     id: "enterprise-agri-sme",
-    eyebrow: "Enterprise & Agri-SME Growth Advisory",
+    eyebrow: "Enterprise & Agri-SME Growth Advisory Services",
     title: "Investment-ready growth for SMEs and agri-SMEs.",
-    body: "Business diagnostics, access-to-finance readiness and operational improvement — we've helped unlock over US$5M in financing for the businesses we support.",
+    body: "Business diagnostics, access-to-finance readiness and operational improvement — we've helped unlock over US$10M in financing for the businesses we support.",
     image: "/brand/stock/business-contract-discussion.jpg",
     ctaHref: "/services/enterprise-agri-sme",
     ctaLabel: "See enterprise & agri-SME growth",
   },
   {
     id: "skills-employability",
-    eyebrow: "Skills, Employability & Entrepreneurship",
-    title: "Training over 50,000 young people into real opportunity.",
+    eyebrow: "Workforce Development & Job Creation",
+    title: "Training over 75,000 young people into real opportunity.",
     body: "Employability programmes, entrepreneurship training and job matching for donors, NGOs, government agencies and corporate CSR partners.",
     image: "/brand/gallery/training-audience-1.jpg",
     ctaHref: "/services/skills-employability",
-    ctaLabel: "See skills & employability programmes",
+    ctaLabel: "See workforce development programmes",
   },
 ];

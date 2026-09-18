@@ -34,7 +34,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const area = practiceAreas.find((item) => item.id === slug);
   if (!area) return {};
-  return { title: area.title, description: area.teaser };
+  return { title: area.title, description: area.metaDescription ?? area.teaser };
 }
 
 export default async function ServiceDetailPage({
@@ -112,7 +112,10 @@ export default async function ServiceDetailPage({
                         <span className="plan-price plan-price-consult">Speak to a consultant</span>
                       )}
                     </div>
-                    <Link href="/contact" className="btn plan-cta btn-outline">
+                    <Link
+                      href={tier.price ? `/get-started?package=${encodeURIComponent(`${tier.name} Plan`)}` : "/contact"}
+                      className="btn plan-cta btn-outline"
+                    >
                       {tier.price ? "Get started" : "Talk to us"}
                     </Link>
                     <div className="plan-features">

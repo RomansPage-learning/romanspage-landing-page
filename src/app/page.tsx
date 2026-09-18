@@ -19,6 +19,11 @@ import { heroSlides, projects, stats } from "@/content/services";
 
 const clientLogos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 const featuredProjects = projects.filter((project) => project.featured);
+const learningStats = [
+  { value: "2,500+", label: "Learners" },
+  { value: "5+", label: "Partners" },
+  { value: "20+", label: "Courses" },
+];
 
 export default function Home() {
   return (
@@ -91,6 +96,14 @@ export default function Home() {
                 and SME training, with tracking and certification. It&rsquo;s a
                 standalone platform, not a side feature.
               </p>
+              <div className="mini-stats-row">
+                {learningStats.map((stat) => (
+                  <div key={stat.label} className="mini-stat">
+                    <div className="mini-stat-value">{stat.value}</div>
+                    <div className="mini-stat-label">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
               <div className="store-badge-row">
                 <TrackedLink
                   href={googlePlayUrl}

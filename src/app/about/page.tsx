@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { BulbIcon, ScaleIcon, StarIcon } from "@/components/landing/icons";
+import { BulbIcon, ScaleIcon, SocialIcon, StarIcon } from "@/components/landing/icons";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
-import { stats } from "@/content/services";
+import { impactStats } from "@/content/services";
 
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "Founded in 2014, Romanspage Consulting Group is an integrated consulting, learning and enterprise development company committed to top-tier service across HR advisory, enterprise growth, skills programmes and digital learning.",
+    "Romanspage is an integrated consulting, learning and enterprise-development organisation helping businesses, people and communities grow. Since 2014, we've worked with governments, development agencies, corporates and financial institutions to strengthen SMEs, prepare young people for work and enterprise, and create pathways to inclusive economic growth.",
 };
 
 const values = [
@@ -31,6 +31,41 @@ const values = [
   },
 ];
 
+const sdgCommitments = [
+  { number: 1, label: "Sustainable livelihoods and poverty reduction through enterprise and employment pathways" },
+  { number: 2, label: "Food security through agriculture and agri-SME development" },
+  { number: 4, label: "Access to quality learning and skills" },
+  { number: 5, label: "Women's economic inclusion" },
+  { number: 8, label: "Decent-work and entrepreneurship opportunities" },
+  { number: 9, label: "Innovation and technology adoption" },
+  { number: 10, label: "Reduced barriers faced by underserved groups" },
+  { number: 17, label: "Partnerships that scale meaningful impact" },
+];
+
+const team = [
+  {
+    name: "Name to be confirmed",
+    role: "Role to be confirmed",
+    bio: "Short writeup to be confirmed.",
+    image: "/brand/stock/professional-portrait-1.jpg",
+    linkedin: "#",
+  },
+  {
+    name: "Name to be confirmed",
+    role: "Role to be confirmed",
+    bio: "Short writeup to be confirmed.",
+    image: "/brand/stock/professional-portrait-2.jpg",
+    linkedin: "#",
+  },
+  {
+    name: "Name to be confirmed",
+    role: "Role to be confirmed",
+    bio: "Short writeup to be confirmed.",
+    image: "/brand/stock/professional-portrait-1.jpg",
+    linkedin: "#",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -43,10 +78,12 @@ export default function AboutPage() {
           <div className="kicker">About us</div>
           <h1>An integrated partner for people, growth and learning.</h1>
           <p className="page-lede">
-            Founded in 2014, Romanspage Consulting Group brings together HR
-            &amp; organisation advisory, enterprise &amp; agri-SME growth,
-            skills &amp; employability programmes, and digital learning &amp;
-            technology under one trusted Group.
+            Romanspage is an integrated consulting, learning and
+            enterprise-development organisation helping businesses, people
+            and communities grow. Since 2014, we have worked with
+            governments, development agencies, corporates and financial
+            institutions to strengthen SMEs, prepare young people for work
+            and enterprise, and create pathways to inclusive economic growth.
           </p>
         </section>
 
@@ -66,30 +103,44 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="band-soft" aria-label="Our story">
+        <section className="band-soft" aria-label="About Romanspage">
           <div className="container story-grid">
             <div>
-              <div className="kicker">Our story</div>
-              <h2>Over a decade of impact across four practice areas</h2>
+              <div className="kicker">About Romanspage</div>
+              <h2>An integrated consulting, learning and enterprise-development Group</h2>
             </div>
             <div className="story-copy">
               <p>
-                We&rsquo;re big enough to meet real organisational and
-                enterprise needs, and small enough to care about your
-                business. That balance has guided Romanspage since day one.
+                Our work spans agriculture and agri-SME development, the
+                green economy, workforce development, entrepreneurship,
+                digital learning, technology solutions and organisational
+                advisory.
               </p>
               <p>
-                Our goal is to continually provide creative solutions to the
-                issues of job creation, enterprise growth, and matching top
-                candidates to employers — helping our clients achieve their
-                organisational goals.
-              </p>
-              <p>
-                With more than a decade delivering HR, enterprise, skills and
-                digital learning solutions, we pride ourselves as one of the
-                market leaders across our practice areas in the region.
+                We bring together practical consulting, capacity building,
+                enterprise support, employer engagement and
+                access-to-finance solutions to help people and businesses
+                move from potential to lasting progress.
               </p>
             </div>
+          </div>
+        </section>
+
+        <section className="section container" aria-label="What we do">
+          <div className="section-head-center">
+            <div className="kicker">What we do</div>
+            <h2 className="section-title" style={{ fontSize: 34 }}>
+              Solutions that strengthen organisations, build capable
+              workforces and help enterprises grow
+            </h2>
+            <p className="section-lede">
+              Our work includes organisational diagnostics and advisory;
+              business development and investment-readiness support;
+              employability and entrepreneurship programmes; digital
+              learning and technology solutions; and agriculture and
+              green-economy initiatives that connect young people and SMEs
+              to modern, income-generating opportunities.
+            </p>
           </div>
         </section>
 
@@ -160,58 +211,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="band-soft" aria-label="Brand architecture">
-          <div className="container section">
-            <div className="section-head-center">
-              <div className="kicker">Brand architecture</div>
-              <h2 className="section-title" style={{ fontSize: 34 }}>
-                One trusted Group, four brands
-              </h2>
-              <p className="section-lede">
-                The Group consolidates under one market-facing identity while
-                retaining the equity built in its established names. Each
-                brand sits visibly under — and is endorsed by — Romanspage
-                Consulting Group.
-              </p>
-            </div>
-            <div className="table-scroll">
-              <table className="info-table">
-                <thead>
-                  <tr>
-                    <th style={{ width: "28%" }}>Brand</th>
-                    <th>Role</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Romanspage Consulting Group</td>
-                    <td>The parent and market-facing identity for the whole business.</td>
-                  </tr>
-                  <tr>
-                    <td>Romanspage Advisory</td>
-                    <td>HR, organisational assessment, and SME / agri-SME consulting.</td>
-                  </tr>
-                  <tr>
-                    <td>Romanspage Programmes</td>
-                    <td>
-                      Employability, entrepreneurship, women and youth
-                      empowerment, and project implementation.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Coursademia by Romanspage</td>
-                    <td>The Group&rsquo;s online learning platform and digital learning unit.</td>
-                  </tr>
-                  <tr>
-                    <td>Bickford Technology Solutions</td>
-                    <td>Technology training, digital skills and tech-enabled tools.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
         <section className="section container" aria-label="Our values">
           <div className="kicker" style={{ textAlign: "center" }}>
             What we believe
@@ -233,12 +232,110 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="stats-band" aria-label="Key numbers">
-          <div className="container stats-grid">
-            {stats.map((stat) => (
+        <section className="stats-band" aria-label="Our impact">
+          <div className="container" style={{ paddingTop: 72, paddingBottom: 24 }}>
+            <div className="kicker" style={{ color: "var(--dark-text)" }}>
+              Our impact
+            </div>
+            <h2 className="section-title" style={{ color: "#fff", fontSize: 30 }}>
+              Since 2014, Romanspage has:
+            </h2>
+          </div>
+          <div className="container stats-grid" style={{ paddingTop: 8 }}>
+            {impactStats.map((stat) => (
               <div key={stat.label}>
                 <div className="stat-value">{stat.value}</div>
                 <div className="stat-label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="section container" aria-label="Our vision and mission">
+          <div className="cards-3" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+            <div className="value-card">
+              <div className="kicker" style={{ marginBottom: 12 }}>
+                Our Vision
+              </div>
+              <p>
+                To be the trusted partner of choice for organisations,
+                enterprises and young people seeking to grow through
+                integrated consulting, learning and enterprise development.
+              </p>
+            </div>
+            <div className="value-card">
+              <div className="kicker" style={{ marginBottom: 12 }}>
+                Our Mission
+              </div>
+              <p>
+                To enable inclusive economic transformation through
+                tailored, data-driven solutions that strengthen enterprises,
+                build capable workforces, create jobs and expand opportunity
+                across agriculture, the green economy and the wider economy.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="band-soft" aria-label="Our SDG commitment">
+          <div className="container section">
+            <div className="section-head-center">
+              <div className="kicker">Our SDG commitment</div>
+              <h2 className="section-title" style={{ fontSize: 34 }}>
+                Contributing to the Sustainable Development Goals
+              </h2>
+              <p className="section-lede">
+                Our work is designed to contribute to the Sustainable
+                Development Goals.
+              </p>
+            </div>
+            <div className="sdg-grid">
+              {sdgCommitments.map((sdg) => (
+                <div key={sdg.number} className="sdg-pill">
+                  <span className="sdg-pill-num">{sdg.number}</span>
+                  {sdg.label}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section container" aria-label="Our team">
+          <div className="section-head-center">
+            <div className="kicker">Our team</div>
+            <h2 className="section-title" style={{ fontSize: 34 }}>
+              The people behind Romanspage
+            </h2>
+            <p className="section-lede">
+              Our team brings together experienced professionals in
+              enterprise development, agriculture, human resources,
+              workforce development, technology, learning and programme
+              delivery. We combine diverse expertise with a shared
+              commitment to practical problem-solving, meaningful
+              collaboration and results that improve lives, businesses and
+              communities.
+            </p>
+          </div>
+          <div className="cards-3">
+            {team.map((member, index) => (
+              <div key={`${member.name}-${index}`} className="team-card">
+                <div className="team-card-photo">
+                  <Image
+                    src={member.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 1023px) 90vw, 30vw"
+                  />
+                </div>
+                <div className="team-card-body">
+                  <div className="team-card-name">{member.name}</div>
+                  <div className="team-card-role">{member.role}</div>
+                  <p className="team-card-bio">{member.bio}</p>
+                  <a href={member.linkedin} className="team-card-linkedin">
+                    <SocialIcon name="linkedin" size={15} />
+                    LinkedIn profile
+                  </a>
+                </div>
               </div>
             ))}
           </div>
