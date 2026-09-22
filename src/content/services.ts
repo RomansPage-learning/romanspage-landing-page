@@ -238,18 +238,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "kwara-sme-finance",
-    title: "Kwara SME Finance & Capacity Development Project",
-    funder: "Mastercard Foundation · T.A Community",
-    practiceAreaId: "enterprise-agri-sme",
-    summary: "Tailored business development support to 200 SMEs.",
-    detail:
-      "Tailored business development support to 200 SMEs to unlock over US$5 million in financing (ongoing).",
-    image: "/brand/gallery/training-audience-1.jpg",
-    status: "ongoing",
-    location: "Kwara State",
-  },
-  {
     slug: "youth-in-agriculture",
     title: "Youth in Agriculture Project",
     funder: "Nimsy Agro",
@@ -273,19 +261,6 @@ export const projects: Project[] = [
     image: "/brand/gallery/agra-farmer-training.jpg",
     status: "completed",
     location: "Niger, Kaduna & Nasarawa States",
-    featured: true,
-  },
-  {
-    slug: "rice-enterprises-women-youth",
-    title: "Accelerating Inclusive Agribusiness Growth for Women and Youth-Led Rice Enterprises",
-    funder: "Tunmise Johnson Foundation",
-    practiceAreaId: "enterprise-agri-sme",
-    summary: "Supporting women and youth-led rice enterprises in Kaduna and Niger States toward finance-ready growth.",
-    detail:
-      "Romanspage is supporting women and youth-led rice enterprises in Kaduna and Niger States to move from early-stage operations to stronger, more visible and finance-ready businesses through the Tunmise Johnson Foundation initiative. The programme combines business diagnostics, tailored capacity building, formalisation support, mentoring, business-plan development and investment-readiness coaching with direct links to buyers, aggregators and finance providers. By strengthening business systems, governance, record-keeping and market access, the intervention is helping enterprises build the credibility and capability needed to grow, create jobs and participate more fully in the rice value chain.",
-    image: "/brand/gallery/rice-enterprises-focus-group.jpg",
-    status: "ongoing",
-    location: "Kaduna & Niger States",
     featured: true,
   },
   {
@@ -315,18 +290,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "edocares-enterprise-strengthening",
-    title: "EdoCARES Enterprise Strengthening Programme",
-    funder: "World Bank · Edo State Government / EdoJobs",
-    practiceAreaId: "hr",
-    summary: "500+ SMEs trained and supported, unlocking grant funding.",
-    detail:
-      "Trained and supported 500+ SMEs, enabling over 70% to access grant funding (over US$1 million).",
-    image: "/brand/gallery/training-audience-3.jpg",
-    status: "completed",
-    location: "Edo State",
-  },
-  {
     slug: "oyo-youth-employability",
     title: "FS Oyo Employability and Job Placement Programme",
     funder: "SOS Children's Villages Nigeria",
@@ -339,66 +302,6 @@ export const projects: Project[] = [
     location: "Oyo State",
     featured: true,
   },
-  {
-    slug: "market-women-financial-literacy",
-    title: "Market Women Financial Literacy & Mentorship",
-    funder: "Mastercard Foundation",
-    practiceAreaId: "hr",
-    summary: "Financial literacy and record-keeping training for market women.",
-    detail:
-      "Financial literacy and record-keeping training to improve women's financial capacity and access to finance.",
-    image: "/brand/gallery/market-women-group.jpg",
-    status: "completed",
-    location: "Multiple states",
-  },
-  {
-    slug: "sme-organisational-capacity-assessments",
-    title: "SME Organisational Capacity Assessments",
-    funder: "AGRA",
-    practiceAreaId: "enterprise-agri-sme",
-    summary: "Capacity assessments strengthening SMEs toward access to finance.",
-    detail:
-      "Capacity assessments strengthening SMEs toward access to finance across the AGRA priority states.",
-    image: "/brand/gallery/sme-capacity-building-session.jpg",
-    status: "completed",
-    location: "Niger, Kaduna & Nasarawa States",
-  },
-  {
-    slug: "agra-business-angel-investment-session",
-    title: "AGRA Business Angel Investment & Finance Strategy Session",
-    funder: "AGRA · Welcome2Africa International",
-    practiceAreaId: "enterprise-agri-sme",
-    summary: "A strategy session on catalysing agribusiness investment and finance for SMEs.",
-    detail:
-      "Facilitated a strategy session on catalysing agribusiness investment and finance for SMEs through the strengthening of Business Angel investments, bringing together AGRA, Welcome2Africa International and partner stakeholders across the programme's focus states.",
-    image: "/brand/gallery/agra-programme-banner.jpg",
-    status: "completed",
-    location: "Niger, Kaduna & Nasarawa States",
-  },
-  {
-    slug: "kbs-lms-handover",
-    title: "Kaduna Business School — LMS Build & Handover",
-    funder: "Kaduna Business School",
-    practiceAreaId: "digital-learning",
-    summary: "Built and handed over a custom learning management system, then trained staff to run it.",
-    detail:
-      "Designed and built a custom LMS for Kaduna Business School — covering learner, instructor and admin workflows — then led a hands-on technical handover session, walking their team through running and managing the platform.",
-    image: "/brand/gallery/kbs-lms-training.jpg",
-    status: "completed",
-    location: "Kaduna State",
-  },
-  {
-    slug: "noma-services-partner-visit",
-    title: "Partner Visit: Noma Services Consolidated Ltd",
-    funder: "Noma Services Consolidated Ltd (Partner)",
-    practiceAreaId: "enterprise-agri-sme",
-    summary: "A partner visit to Noma Services, an agri-fintech partner aggregating smallholder farmer financing.",
-    detail:
-      "Visited Noma Services Consolidated Ltd — a technology-driven agriculture and rural development partner working to aggregate smallholder farmers, unlock financing and promote financial inclusion — to strengthen our ongoing partnership and explore joint opportunities across our agri-SME work.",
-    image: "/brand/gallery/noma-partner-visit.jpg",
-    status: "completed",
-    location: "Partner office visit",
-  },
 ];
 
 export type Stat = { value: string; label: string };
@@ -408,14 +311,6 @@ export const stats: Stat[] = [
   { value: "3,200+", label: "SMEs supported through workforce development and investment readiness" },
   { value: "75,000+", label: "Youths trained, with 70% placed into jobs" },
   { value: "55%+", label: "Women participation" },
-];
-
-export const impactStats: Stat[] = [
-  { value: "3,200+", label: "SMEs supported and strengthened" },
-  { value: "75,000+", label: "Young people trained and supported into jobs or enterprise" },
-  { value: "200,000+", label: "People with improved livelihoods" },
-  { value: "US$10M+", label: "Finance unlocked for businesses" },
-  { value: "55%+", label: "Female participation across our programmes" },
 ];
 
 export type HeroSlide = {

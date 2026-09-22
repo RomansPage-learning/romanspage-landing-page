@@ -2,34 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { BulbIcon, ScaleIcon, SocialIcon, StarIcon } from "@/components/landing/icons";
+import { SocialIcon } from "@/components/landing/icons";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
-import { impactStats } from "@/content/services";
 
 export const metadata: Metadata = {
   title: "About us",
   description:
     "Romanspage is an integrated consulting, learning and enterprise-development organisation helping businesses, people and communities grow. Since 2014, we've worked with governments, development agencies, corporates and financial institutions to strengthen SMEs, prepare young people for work and enterprise, and create pathways to inclusive economic growth.",
 };
-
-const values = [
-  {
-    title: "Big enough, small enough",
-    body: "The reach to meet real organisational needs, the care to treat your business like our own.",
-    icon: <ScaleIcon />,
-  },
-  {
-    title: "Creative solutions",
-    body: "We solve for job creation, enterprise growth and talent matching with practical, tailored answers.",
-    icon: <BulbIcon />,
-  },
-  {
-    title: "Top-tier service",
-    body: "A commitment to quality that has made us a market leader across our practice areas.",
-    icon: <StarIcon />,
-  },
-];
 
 const sdgCommitments = [
   { number: 1, label: "Advance sustainable livelihoods and poverty reduction through enterprise and employment pathways" },
@@ -214,46 +195,6 @@ export default function AboutPage() {
                 </tr>
               </tbody>
             </table>
-          </div>
-        </section>
-
-        <section className="section container" aria-label="Our values">
-          <div className="kicker" style={{ textAlign: "center" }}>
-            What we believe
-          </div>
-          <h2
-            className="section-title"
-            style={{ textAlign: "center", marginBottom: 48, fontSize: 34 }}
-          >
-            The principles behind our work
-          </h2>
-          <div className="cards-3">
-            {values.map((value) => (
-              <div key={value.title} className="value-card">
-                <div className="icon-box">{value.icon}</div>
-                <h3>{value.title}</h3>
-                <p>{value.body}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="stats-band" aria-label="Our impact">
-          <div className="container" style={{ paddingTop: 72, paddingBottom: 24 }}>
-            <div className="kicker" style={{ color: "var(--dark-text)" }}>
-              Our impact
-            </div>
-            <h2 className="section-title" style={{ color: "#fff", fontSize: 30 }}>
-              Since 2014, Romanspage has:
-            </h2>
-          </div>
-          <div className="container stats-grid" style={{ paddingTop: 8 }}>
-            {impactStats.map((stat) => (
-              <div key={stat.label}>
-                <div className="stat-value">{stat.value}</div>
-                <div className="stat-label">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </section>
 
