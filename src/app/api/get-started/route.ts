@@ -1,13 +1,16 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/mongodb";
 import { sendGetStartedNotification } from "@/lib/mailer";
+import { nigeriaStates } from "@/content/nigeria-locations";
 
 type GetStartedRequest = {
   name: string;
   email: string;
   phone: string;
   company: string;
-  companyAddress: string;
+  streetAddress: string;
+  state: string;
+  lga: string;
   staffRange: string;
   packageInterest: string;
   proposedStartDate: string;
@@ -18,6 +21,7 @@ type GetStartedRequest = {
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const allowedStaffRanges = new Set(["1–20 staff", "20–50 staff", "50+ staff"]);
 const allowedPackages = new Set(["Startup Plan", "SME Plan", "Not sure yet"]);
+const stateLgaMap = new Map(nigeriaStates.map((item) => [item.name, new Set(item.lgas)]));
 const defaultCooldownMinutes = 15;
 
 function getCooldownMinutes(): number {
@@ -50,7 +54,9 @@ function normalizePayload(payload: Record<string, unknown>): GetStartedRequest {
     email: readString(payload, "email").toLowerCase(),
     phone: readString(payload, "phone"),
     company: readString(payload, "company"),
-    companyAddress: readString(payload, "companyAddress"),
+    streetAddress: readString(payload, "streetAddress"),
+    state: readString(payload, "state"),
+    lga: readString(payload, "lga"),
     staffRange: readString(payload, "staffRange"),
     packageInterest: readString(payload, "packageInterest"),
     proposedStartDate: readString(payload, "proposedStartDate"),
@@ -84,8 +90,18 @@ function validate(payload: GetStartedRequest): string | null {
     return "Please provide a valid company name.";
   }
 
-  if (payload.companyAddress.length < 5 || payload.companyAddress.length > 200) {
-    return "Please provide the company address, including State and LG.";
+  if (payload.streetAddress.length < 5 || payload.streetAddress.length > 200) {
+    return "Please provide a valid company street address.";
+  }
+
+  const lgasForState = stateLgaMap.get(payload.state);
+
+  if (!lgasForState) {
+    return "Please select a valid state.";
+  }
+
+  if (!lgasForState.has(payload.lga)) {
+    return "Please select a valid Local Government Area for the selected state.";
   }
 
   if (!allowedStaffRanges.has(payload.staffRange)) {
@@ -163,13 +179,18 @@ export async function POST(request: Request) {
       );
     }
 
+    const companyAddress = `${payload.streetAddress}, ${payload.lga} LGA, ${payload.state} State`;
+
     await db.collection("get_started_submissions").insertOne({
       submittedAt: now,
       name: payload.name,
       email: payload.email,
       phone: payload.phone,
       company: payload.company,
-      companyAddress: payload.companyAddress,
+      streetAddress: payload.streetAddress,
+      state: payload.state,
+      lga: payload.lga,
+      companyAddress,
       staffRange: payload.staffRange,
       packageInterest: payload.packageInterest,
       proposedStartDate: payload.proposedStartDate,
@@ -186,7 +207,7 @@ export async function POST(request: Request) {
         email: payload.email,
         phone: payload.phone,
         company: payload.company,
-        companyAddress: payload.companyAddress,
+        companyAddress,
         staffRange: payload.staffRange,
         packageInterest: payload.packageInterest,
         proposedStartDate: payload.proposedStartDate,

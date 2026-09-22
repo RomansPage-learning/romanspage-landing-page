@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { CheckIcon } from "@/components/landing/icons";
 import { trackEvent } from "@/lib/analytics";
+import { nigeriaStates } from "@/content/nigeria-locations";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -19,8 +20,20 @@ export function GetStartedForm({ defaultPackage }: GetStartedFormProps) {
   const [packageInterest, setPackageInterest] = useState<string>(
     packageOptions.includes(defaultPackage || "") ? (defaultPackage as string) : packageOptions[2],
   );
+  const [state, setState] = useState<string>("");
+  const [lga, setLga] = useState<string>("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
+
+  const lgaOptions = useMemo(
+    () => nigeriaStates.find((item) => item.name === state)?.lgas ?? [],
+    [state],
+  );
+
+  function onStateChange(nextState: string) {
+    setState(nextState);
+    setLga("");
+  }
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -35,7 +48,9 @@ export function GetStartedForm({ defaultPackage }: GetStartedFormProps) {
       email: String(formData.get("email") || "").trim(),
       phone: String(formData.get("phone") || "").trim(),
       company: String(formData.get("company") || "").trim(),
-      companyAddress: String(formData.get("companyAddress") || "").trim(),
+      streetAddress: String(formData.get("streetAddress") || "").trim(),
+      state,
+      lga,
       staffRange,
       packageInterest,
       proposedStartDate: String(formData.get("proposedStartDate") || "").trim(),
@@ -60,6 +75,8 @@ export function GetStartedForm({ defaultPackage }: GetStartedFormProps) {
 
       trackEvent({ event: "get_started_form_submitted", category: "hr", label: packageInterest });
       form.reset();
+      setState("");
+      setLga("");
       setStatus("success");
     } catch (submissionError) {
       setStatus("error");
@@ -124,12 +141,55 @@ export function GetStartedForm({ defaultPackage }: GetStartedFormProps) {
         <label htmlFor="gs-address">Company address</label>
         <input
           id="gs-address"
-          name="companyAddress"
+          name="streetAddress"
           className="input"
           required
-          placeholder="Street, State and Local Government Area"
+          placeholder="Street address"
           autoComplete="street-address"
         />
+      </div>
+      <div className="field-row">
+        <div className="field">
+          <label htmlFor="gs-state">State</label>
+          <select
+            id="gs-state"
+            name="state"
+            className="select"
+            required
+            value={state}
+            onChange={(event) => onStateChange(event.target.value)}
+          >
+            <option value="" disabled>
+              Select a state
+            </option>
+            {nigeriaStates.map((item) => (
+              <option key={item.name} value={item.name}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="field">
+          <label htmlFor="gs-lga">Local Government Area</label>
+          <select
+            id="gs-lga"
+            name="lga"
+            className="select"
+            required
+            disabled={!state}
+            value={lga}
+            onChange={(event) => setLga(event.target.value)}
+          >
+            <option value="" disabled>
+              {state ? "Select an LGA" : "Select a state first"}
+            </option>
+            {lgaOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       <div className="field-row">
         <div className="field">

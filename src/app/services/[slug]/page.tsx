@@ -14,6 +14,7 @@ import {
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 import { practiceAreas } from "@/content/services";
+import { siteConfig } from "@/lib/site-config";
 
 const iconFor = {
   people: <PeopleIcon />,
@@ -34,7 +35,24 @@ export async function generateMetadata({
   const { slug } = await params;
   const area = practiceAreas.find((item) => item.id === slug);
   if (!area) return {};
-  return { title: area.title, description: area.metaDescription ?? area.teaser };
+  const description = area.metaDescription ?? area.teaser;
+  const url = `${siteConfig.siteUrl}/services/${area.id}`;
+  return {
+    title: area.title,
+    description,
+    openGraph: {
+      title: area.title,
+      description,
+      url,
+      siteName: siteConfig.siteTitle,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: area.title,
+      description,
+    },
+  };
 }
 
 export default async function ServiceDetailPage({

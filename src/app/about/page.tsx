@@ -32,14 +32,14 @@ const values = [
 ];
 
 const sdgCommitments = [
-  { number: 1, label: "Sustainable livelihoods and poverty reduction through enterprise and employment pathways" },
-  { number: 2, label: "Food security through agriculture and agri-SME development" },
-  { number: 4, label: "Access to quality learning and skills" },
-  { number: 5, label: "Women's economic inclusion" },
-  { number: 8, label: "Decent-work and entrepreneurship opportunities" },
-  { number: 9, label: "Innovation and technology adoption" },
-  { number: 10, label: "Reduced barriers faced by underserved groups" },
-  { number: 17, label: "Partnerships that scale meaningful impact" },
+  { number: 1, label: "Advance sustainable livelihoods and poverty reduction through enterprise and employment pathways" },
+  { number: 2, label: "Strengthen food security through agriculture and agri-SME development" },
+  { number: 4, label: "Expand access to quality learning and skills" },
+  { number: 5, label: "Promote women's economic inclusion" },
+  { number: 8, label: "Create decent-work and entrepreneurship opportunities" },
+  { number: 9, label: "Support innovation and technology adoption" },
+  { number: 10, label: "Reduce barriers faced by underserved groups" },
+  { number: 17, label: "Build partnerships that scale meaningful impact" },
 ];
 
 const team = [
@@ -140,6 +140,12 @@ export default function AboutPage() {
               learning and technology solutions; and agriculture and
               green-economy initiatives that connect young people and SMEs
               to modern, income-generating opportunities.
+            </p>
+            <p className="section-lede">
+              Through our integrated brands — Romanspage Advisory,
+              Romanspage Programmes, Coursademia and Bickford International
+              — we support clients from strategy and training through
+              implementation, technology adoption and measurable outcomes.
             </p>
           </div>
         </section>

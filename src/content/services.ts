@@ -81,9 +81,10 @@ export const practiceAreas: PracticeArea[] = [
           "Background check and former employer verification",
           "Training needs assessments and recommendations",
           "Training via Coursademia @ 50% discounted rate",
+          "Unlimited HR advisory support",
           "Employee relations & grievance handling",
-          "Benefits & HMO administration",
-          "Disciplinary & exit management",
+          "Benefits & HMO administration (SME)",
+          "Disciplinary & exit management (SME)",
           "Monthly HR reports",
           "Quarterly strategic HR review",
         ],
@@ -256,7 +257,7 @@ export const projects: Project[] = [
     summary: "A 12-week pilot supporting 25-30 young people into solar-powered agricultural mechanisation.",
     detail:
       "Romanspage is partnering with Nimsy Agro to open practical pathways for young people to earn, grow businesses and lead innovation in modern agriculture. The Youth in Agriculture Project blends employability, entrepreneurship and agribusiness training with hands-on exposure to solar-powered agricultural mechanisation. Through Coursademia, practical field demonstrations and technical sessions with Nimsy Agro, participants build the skills to work as service agents, launch youth-led mechanisation businesses or remain connected to future opportunities through an alumni network. The 12-week pilot will support 25-30 young people to explore income opportunities in solar irrigation, threshing, drying and other pay-per-use services that make modern mechanisation more accessible to smallholder farmers.",
-    image: "/brand/gallery/training-audience-1.jpg",
+    image: "/brand/gallery/youth-agriculture-farmer-group.jpg",
     status: "ongoing",
     location: "Nigeria",
     featured: true,
@@ -282,7 +283,7 @@ export const projects: Project[] = [
     summary: "Supporting women and youth-led rice enterprises in Kaduna and Niger States toward finance-ready growth.",
     detail:
       "Romanspage is supporting women and youth-led rice enterprises in Kaduna and Niger States to move from early-stage operations to stronger, more visible and finance-ready businesses through the Tunmise Johnson Foundation initiative. The programme combines business diagnostics, tailored capacity building, formalisation support, mentoring, business-plan development and investment-readiness coaching with direct links to buyers, aggregators and finance providers. By strengthening business systems, governance, record-keeping and market access, the intervention is helping enterprises build the credibility and capability needed to grow, create jobs and participate more fully in the rice value chain.",
-    image: "/brand/gallery/agra-programme-banner.jpg",
+    image: "/brand/gallery/rice-enterprises-focus-group.jpg",
     status: "ongoing",
     location: "Kaduna & Niger States",
     featured: true,
@@ -295,7 +296,7 @@ export const projects: Project[] = [
     summary: "Organisational capacity assessment and technical assistance for Nimsy Agro Solar Concepts.",
     detail:
       "Through the Wennovation/Heifer Nigeria Support Project, Romanspage delivered targeted organisational capacity assessment and technical assistance for Nimsy Agro Solar Concepts, an agri-tech SME in Kaduna. The three-day intervention helped the business establish a clearer foundation for growth by strengthening its organisational structure, people practices and internal accountability. Romanspage developed a revised organogram, clarified roles and job expectations, oriented staff on the Employee Handbook and HR Manual, and introduced performance-appraisal criteria. The result was a more defined reporting structure and practical recommendations to improve recruitment, quality assurance, communication and performance management.",
-    image: "/brand/gallery/sos-certificate-group-2.jpg",
+    image: "/brand/gallery/nimsy-capacity-assessment-session.jpg",
     status: "completed",
     location: "Kaduna State",
     featured: true,
@@ -346,7 +347,7 @@ export const projects: Project[] = [
     summary: "Financial literacy and record-keeping training for market women.",
     detail:
       "Financial literacy and record-keeping training to improve women's financial capacity and access to finance.",
-    image: "/brand/gallery/sos-certificate-portrait.jpg",
+    image: "/brand/gallery/market-women-group.jpg",
     status: "completed",
     location: "Multiple states",
   },
@@ -358,7 +359,7 @@ export const projects: Project[] = [
     summary: "Capacity assessments strengthening SMEs toward access to finance.",
     detail:
       "Capacity assessments strengthening SMEs toward access to finance across the AGRA priority states.",
-    image: "/brand/gallery/sos-certificate-group-2.jpg",
+    image: "/brand/gallery/sme-capacity-building-session.jpg",
     status: "completed",
     location: "Niger, Kaduna & Nasarawa States",
   },
