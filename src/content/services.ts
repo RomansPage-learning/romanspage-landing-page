@@ -22,6 +22,7 @@ export type PracticeArea = {
   subs: SubService[];
   pricingTiers?: PricingTier[];
   metaDescription?: string;
+  externalLink?: { label: string; href: string };
 };
 
 export const practiceAreas: PracticeArea[] = [
@@ -192,6 +193,7 @@ export const practiceAreas: PracticeArea[] = [
     intro:
       "Through Bickford International, our technology-delivery arm, we provide practical digital solutions that help businesses, institutions and development programmes improve efficiency, strengthen service delivery and remain competitive in a changing world. We work with organisations to understand their needs, identify the right technology approach and deliver solutions that are secure, useful and built for scale. Whether the goal is to establish a stronger online presence, streamline internal operations, connect existing systems or equip teams to work more effectively with digital tools, our focus is on technology that delivers measurable value.",
     cta: "Start a digital project",
+    externalLink: { label: "Visit Bickford International", href: "https://bickfordintl.com/" },
     icon: "chip",
     bannerImage: "/brand/gallery/coursademia-training-session.jpg",
     subs: [

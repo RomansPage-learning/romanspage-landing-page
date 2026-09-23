@@ -1196,6 +1196,8 @@ button {
 .cta-inline-row {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
   padding-top: 8px;
 }
 

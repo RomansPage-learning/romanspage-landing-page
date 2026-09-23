@@ -154,6 +154,16 @@ export default async function ServiceDetailPage({
             <Link href="/contact" className="btn btn-dark btn-lg">
               {area.cta} <ArrowRightIcon />
             </Link>
+            {area.externalLink ? (
+              <a
+                href={area.externalLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline btn-lg"
+              >
+                {area.externalLink.label} <ArrowRightIcon />
+              </a>
+            ) : null}
           </div>
         </section>
 

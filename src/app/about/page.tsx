@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { SocialIcon } from "@/components/landing/icons";
+// import { SocialIcon } from "@/components/landing/icons";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 
@@ -23,29 +23,30 @@ const sdgCommitments = [
   { number: 17, label: "Build partnerships that scale meaningful impact" },
 ];
 
-const team = [
-  {
-    name: "Name to be confirmed",
-    role: "Role to be confirmed",
-    bio: "Short writeup to be confirmed.",
-    image: "/brand/stock/professional-portrait-1.jpg",
-    linkedin: "#",
-  },
-  {
-    name: "Name to be confirmed",
-    role: "Role to be confirmed",
-    bio: "Short writeup to be confirmed.",
-    image: "/brand/stock/professional-portrait-2.jpg",
-    linkedin: "#",
-  },
-  {
-    name: "Name to be confirmed",
-    role: "Role to be confirmed",
-    bio: "Short writeup to be confirmed.",
-    image: "/brand/stock/professional-portrait-1.jpg",
-    linkedin: "#",
-  },
-];
+// Team members to be supplied later — see commented-out "Our team" section below.
+// const team = [
+//   {
+//     name: "Name to be confirmed",
+//     role: "Role to be confirmed",
+//     bio: "Short writeup to be confirmed.",
+//     image: "/brand/stock/professional-portrait-1.jpg",
+//     linkedin: "#",
+//   },
+//   {
+//     name: "Name to be confirmed",
+//     role: "Role to be confirmed",
+//     bio: "Short writeup to be confirmed.",
+//     image: "/brand/stock/professional-portrait-2.jpg",
+//     linkedin: "#",
+//   },
+//   {
+//     name: "Name to be confirmed",
+//     role: "Role to be confirmed",
+//     bio: "Short writeup to be confirmed.",
+//     image: "/brand/stock/professional-portrait-1.jpg",
+//     linkedin: "#",
+//   },
+// ];
 
 export default function AboutPage() {
   return (
@@ -247,6 +248,9 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* "Our team" section — commented out until real staff photos, bios
+        and LinkedIn links are supplied. Re-enable this block and the
+        `team` array above once that content is ready.
         <section className="section container" aria-label="Our team">
           <div className="section-head-center">
             <div className="kicker">Our team</div>
@@ -287,6 +291,7 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
+        */}
 
         <section
           className="section container"
