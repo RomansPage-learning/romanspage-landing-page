@@ -1095,7 +1095,7 @@ button {
   padding-top: 72px;
   padding-bottom: 72px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 32px;
 }
 
@@ -1196,6 +1196,8 @@ button {
 .cta-inline-row {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
   padding-top: 8px;
 }
 
@@ -1329,6 +1331,25 @@ button {
   gap: 14px;
   flex-wrap: wrap;
   margin-top: 4px;
+}
+
+.mini-stats-row {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.mini-stat-value {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.mini-stat-label {
+  font-size: 13px;
+  color: var(--gray-600);
 }
 
 .store-badge {
@@ -1583,6 +1604,90 @@ button {
   font-size: 14px;
   color: var(--gray-500);
   line-height: 1.6;
+}
+
+.team-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.team-card-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+.team-card-photo img {
+  object-fit: cover;
+}
+
+.team-card-body {
+  padding: 22px 24px 26px;
+}
+
+.team-card-name {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+
+.team-card-role {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.team-card-bio {
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.team-card-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.sdg-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sdg-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 16px 8px 8px;
+  background: #fff;
+  font-size: 13.5px;
+  color: var(--gray-700);
+}
+
+.sdg-pill-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 /* ---------- Services detail ---------- */
@@ -1929,6 +2034,34 @@ button {
 .textarea:focus {
   border-color: var(--navy);
   box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.14);
+}
+
+.select {
+  padding: 0 40px 0 14px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  transition: border 0.15s ease, box-shadow 0.15s ease;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+    no-repeat right 14px center;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.select:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.14);
+}
+
+.select:disabled {
+  background-color: var(--bg-tint);
+  color: var(--gray-400);
+  cursor: not-allowed;
 }
 
 .role-row {
