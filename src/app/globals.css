@@ -1616,6 +1616,12 @@ button {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.team-carousel-track:active {
+  cursor: grabbing;
 }
 
 .team-carousel-track::-webkit-scrollbar {
@@ -1660,16 +1666,24 @@ button {
 .team-carousel-fade {
   position: absolute;
   top: 0;
-  right: 0;
   bottom: 0;
   width: 90px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95));
   pointer-events: none;
 }
 
+.team-carousel-fade-right {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95));
+}
+
+.team-carousel-fade-left {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95));
+}
+
+.team-carousel-prev,
 .team-carousel-next {
   position: absolute;
-  right: 12px;
   top: 112px;
   width: 40px;
   height: 40px;
@@ -1684,6 +1698,15 @@ button {
   color: var(--ink);
 }
 
+.team-carousel-prev {
+  left: 12px;
+}
+
+.team-carousel-next {
+  right: 12px;
+}
+
+.team-carousel-prev:hover,
 .team-carousel-next:hover {
   color: var(--navy);
   border-color: var(--navy);
@@ -1699,6 +1722,7 @@ button {
     height: 200px;
   }
 
+  .team-carousel-prev,
   .team-carousel-next {
     top: 90px;
   }

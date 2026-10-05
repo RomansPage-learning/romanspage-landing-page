@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 
-import { ArrowRightIcon } from "@/components/landing/icons";
+import { ArrowLeftIcon, ArrowRightIcon } from "@/components/landing/icons";
 
 export type TeamMember = {
   name: string;
@@ -53,6 +53,7 @@ export const teamMembers: TeamMember[] = [
 
 export function TeamCarousel({ members = teamMembers }: { members?: TeamMember[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const dragState = useRef({ isDown: false, dragged: false, startX: 0, startScrollLeft: 0 });
 
   function scroll(direction: 1 | -1) {
     const track = trackRef.current;
@@ -60,9 +61,44 @@ export function TeamCarousel({ members = teamMembers }: { members?: TeamMember[]
     track.scrollBy({ left: direction * (track.clientWidth * 0.8), behavior: "smooth" });
   }
 
+  function onPointerDown(event: React.PointerEvent<HTMLDivElement>) {
+    const track = trackRef.current;
+    if (!track || event.pointerType === "touch") return;
+    dragState.current.isDown = true;
+    dragState.current.dragged = false;
+    dragState.current.startX = event.clientX;
+    dragState.current.startScrollLeft = track.scrollLeft;
+    track.setPointerCapture(event.pointerId);
+  }
+
+  function onPointerMove(event: React.PointerEvent<HTMLDivElement>) {
+    const track = trackRef.current;
+    if (!track || !dragState.current.isDown) return;
+    const delta = event.clientX - dragState.current.startX;
+    if (Math.abs(delta) > 4) dragState.current.dragged = true;
+    track.scrollLeft = dragState.current.startScrollLeft - delta;
+  }
+
+  function endDrag() {
+    dragState.current.isDown = false;
+  }
+
+  function onCardClick(event: React.MouseEvent<HTMLAnchorElement>) {
+    if (dragState.current.dragged) {
+      event.preventDefault();
+    }
+  }
+
   return (
     <div className="team-carousel">
-      <div className="team-carousel-track" ref={trackRef}>
+      <div
+        className="team-carousel-track"
+        ref={trackRef}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={endDrag}
+        onPointerLeave={endDrag}
+      >
         {members.map((member) => (
           <a
             key={member.name}
@@ -70,6 +106,8 @@ export function TeamCarousel({ members = teamMembers }: { members?: TeamMember[]
             target="_blank"
             rel="noopener noreferrer"
             className="team-carousel-card"
+            onClick={onCardClick}
+            draggable={false}
           >
             <div className="team-carousel-photo">
               <Image
@@ -77,6 +115,7 @@ export function TeamCarousel({ members = teamMembers }: { members?: TeamMember[]
                 alt={member.name}
                 fill
                 sizes="(max-width: 1023px) 45vw, 220px"
+                draggable={false}
               />
             </div>
             <div className="team-carousel-name">{member.name}</div>
@@ -84,7 +123,16 @@ export function TeamCarousel({ members = teamMembers }: { members?: TeamMember[]
           </a>
         ))}
       </div>
-      <div className="team-carousel-fade" aria-hidden />
+      <div className="team-carousel-fade team-carousel-fade-left" aria-hidden />
+      <div className="team-carousel-fade team-carousel-fade-right" aria-hidden />
+      <button
+        type="button"
+        aria-label="Previous team member"
+        className="team-carousel-prev"
+        onClick={() => scroll(-1)}
+      >
+        <ArrowLeftIcon size={16} />
+      </button>
       <button
         type="button"
         aria-label="Next team member"
