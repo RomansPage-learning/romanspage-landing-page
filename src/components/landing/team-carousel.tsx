@@ -9,10 +9,15 @@ export type TeamMember = {
   name: string;
   role: string;
   image: string;
-  linkedin: string;
+  linkedin?: string;
 };
 
 export const teamMembers: TeamMember[] = [
+  {
+    name: "Samuel Oredia",
+    role: "Chief Executive Officer",
+    image: "/brand/team/samuel-oredia.jpg",
+  },
   {
     name: "Aibe Favour Mana",
     role: "HR Manager",
@@ -89,6 +94,24 @@ export function TeamCarousel({ members = teamMembers }: { members?: TeamMember[]
     }
   }
 
+  function renderCardContent(member: TeamMember) {
+    return (
+      <>
+        <div className="team-carousel-photo">
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            sizes="(max-width: 1023px) 45vw, 220px"
+            draggable={false}
+          />
+        </div>
+        <div className="team-carousel-name">{member.name}</div>
+        <div className="team-carousel-role">{member.role}</div>
+      </>
+    );
+  }
+
   return (
     <div className="team-carousel">
       <div
@@ -99,29 +122,25 @@ export function TeamCarousel({ members = teamMembers }: { members?: TeamMember[]
         onPointerUp={endDrag}
         onPointerLeave={endDrag}
       >
-        {members.map((member) => (
-          <a
-            key={member.name}
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="team-carousel-card"
-            onClick={onCardClick}
-            draggable={false}
-          >
-            <div className="team-carousel-photo">
-              <Image
-                src={member.image}
-                alt={member.name}
-                fill
-                sizes="(max-width: 1023px) 45vw, 220px"
-                draggable={false}
-              />
+        {members.map((member) =>
+          member.linkedin ? (
+            <a
+              key={member.name}
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="team-carousel-card"
+              onClick={onCardClick}
+              draggable={false}
+            >
+              {renderCardContent(member)}
+            </a>
+          ) : (
+            <div key={member.name} className="team-carousel-card">
+              {renderCardContent(member)}
             </div>
-            <div className="team-carousel-name">{member.name}</div>
-            <div className="team-carousel-role">{member.role}</div>
-          </a>
-        ))}
+          ),
+        )}
       </div>
       <div className="team-carousel-fade team-carousel-fade-left" aria-hidden />
       <div className="team-carousel-fade team-carousel-fade-right" aria-hidden />
