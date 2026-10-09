@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-// import { SocialIcon } from "@/components/landing/icons";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
+import { TeamCarousel } from "@/components/landing/team-carousel";
 
 export const metadata: Metadata = {
   title: "About us",
@@ -23,30 +23,6 @@ const sdgCommitments = [
   { number: 17, label: "Build partnerships that scale meaningful impact" },
 ];
 
-// Team members to be supplied later — see commented-out "Our team" section below.
-// const team = [
-//   {
-//     name: "Name to be confirmed",
-//     role: "Role to be confirmed",
-//     bio: "Short writeup to be confirmed.",
-//     image: "/brand/stock/professional-portrait-1.jpg",
-//     linkedin: "#",
-//   },
-//   {
-//     name: "Name to be confirmed",
-//     role: "Role to be confirmed",
-//     bio: "Short writeup to be confirmed.",
-//     image: "/brand/stock/professional-portrait-2.jpg",
-//     linkedin: "#",
-//   },
-//   {
-//     name: "Name to be confirmed",
-//     role: "Role to be confirmed",
-//     bio: "Short writeup to be confirmed.",
-//     image: "/brand/stock/professional-portrait-1.jpg",
-//     linkedin: "#",
-//   },
-// ];
 
 export default function AboutPage() {
   return (
@@ -248,9 +224,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* "Our team" section — commented out until real staff photos, bios
-        and LinkedIn links are supplied. Re-enable this block and the
-        `team` array above once that content is ready.
         <section className="section container" aria-label="Our team">
           <div className="section-head-center">
             <div className="kicker">Our team</div>
@@ -267,31 +240,8 @@ export default function AboutPage() {
               communities.
             </p>
           </div>
-          <div className="cards-3">
-            {team.map((member, index) => (
-              <div key={`${member.name}-${index}`} className="team-card">
-                <div className="team-card-photo">
-                  <Image
-                    src={member.image}
-                    alt=""
-                    fill
-                    sizes="(max-width: 1023px) 90vw, 30vw"
-                  />
-                </div>
-                <div className="team-card-body">
-                  <div className="team-card-name">{member.name}</div>
-                  <div className="team-card-role">{member.role}</div>
-                  <p className="team-card-bio">{member.bio}</p>
-                  <a href={member.linkedin} className="team-card-linkedin">
-                    <SocialIcon name="linkedin" size={15} />
-                    LinkedIn profile
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TeamCarousel />
         </section>
-        */}
 
         <section
           className="section container"

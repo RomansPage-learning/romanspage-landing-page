@@ -41,6 +41,14 @@ export function ArrowRightIcon({ size = 15, strokeWidth = 2.2, className }: Icon
   );
 }
 
+export function ArrowLeftIcon({ size = 15, strokeWidth = 2.2, className }: IconProps) {
+  return (
+    <svg {...base(size, strokeWidth)} className={className}>
+      <path d="M19 12H5M12 19l-7-7 7-7" />
+    </svg>
+  );
+}
+
 export function PeopleIcon({ size = 24, strokeWidth = 1.8, className }: IconProps) {
   return (
     <svg {...base(size, strokeWidth)} className={className}>
