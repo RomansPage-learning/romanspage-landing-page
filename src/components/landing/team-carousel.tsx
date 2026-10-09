@@ -17,6 +17,7 @@ export const teamMembers: TeamMember[] = [
     name: "Samuel Oredia",
     role: "Chief Executive Officer",
     image: "/brand/team/samuel-oredia.jpg",
+    linkedin: "https://www.linkedin.com/in/samuelomomoh",
   },
   {
     name: "Aibe Favour Mana",
@@ -40,7 +41,7 @@ export const teamMembers: TeamMember[] = [
     name: "Akinboyewa Micheal Bobola",
     role: "Social Media Manager",
     image: "/brand/team/akinboyewa-micheal.jpg",
-    linkedin: "https://www.linkedin.com/in/akinboyewa-micheal/",
+    linkedin: "https://www.linkedin.com/in/akinboyewa-micheal",
   },
   {
     name: "Ologbonyo Victor Ayomide",
