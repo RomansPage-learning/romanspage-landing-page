@@ -44,6 +44,6 @@ export const siteConfig = {
     phoneHref: toTelHref(process.env.NEXT_PUBLIC_CONTACT_PHONE || fallbackPhone),
     address:
       process.env.NEXT_PUBLIC_CONTACT_ADDRESS ||
-      "Edo Innovation Hub 59, I.C.E Road, Edo State.",
+      "290A Ajose Adeogun Street, Victoria Island, Lagos",
   },
 };

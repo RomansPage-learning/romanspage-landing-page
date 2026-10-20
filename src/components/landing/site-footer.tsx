@@ -85,7 +85,9 @@ export function SiteFooter() {
             <a href={`mailto:${contactDetails.email}`} className="footer-link">
               {contactDetails.email}
             </a>
-            <span className="footer-note">{contactDetails.address}</span>
+            <span className="footer-note">
+              {contactDetails.address} · {contactDetails.addressSecondary}
+            </span>
           </div>
         </div>
       </div>
