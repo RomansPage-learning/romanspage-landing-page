@@ -39,7 +39,7 @@ export const contactDetails = {
   phoneSecondaryHref: "tel:+2349124523153",
   email: siteConfig.contact.email,
   address: siteConfig.contact.address,
-  addressSecondary: "Ibadan, Oyo State",
+  addressSecondary: "Abuja, FCT",
 };
 
 export const coursademiaUrl = "https://coursademia.com";

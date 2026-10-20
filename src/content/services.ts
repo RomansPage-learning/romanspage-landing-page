@@ -311,7 +311,7 @@ export type Stat = { value: string; label: string };
 export const stats: Stat[] = [
   { value: "2014", label: "Founded — over a decade of impact" },
   { value: "3,200+", label: "SMEs supported through workforce development and investment readiness" },
-  { value: "75,000+", label: "Youths trained, with 70% placed into jobs" },
+  { value: "35,000+", label: "Youths trained, with 70% placed into jobs" },
   { value: "55%+", label: "Women participation" },
 ];
 
@@ -358,7 +358,7 @@ export const heroSlides: HeroSlide[] = [
   {
     id: "skills-employability",
     eyebrow: "Workforce Development & Job Creation",
-    title: "Training over 75,000 young people into real opportunity.",
+    title: "Training over 35,000 young people into real opportunity.",
     body: "Employability programmes, entrepreneurship training and job matching for donors, NGOs, government agencies and corporate CSR partners.",
     image: "/brand/gallery/training-audience-1.jpg",
     ctaHref: "/services/skills-employability",

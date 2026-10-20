@@ -28,8 +28,8 @@ export default function ContactPage() {
       icon: <MailIcon size={20} />,
     },
     {
-      label: "Office",
-      value: contactDetails.address,
+      label: "Offices",
+      value: `${contactDetails.address} · ${contactDetails.addressSecondary}`,
       icon: <PinIcon size={20} />,
     },
   ];
