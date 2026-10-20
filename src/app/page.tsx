@@ -213,7 +213,11 @@ export default function Home() {
                 </span>
                 <span className="cta-contact-item">
                   <PinIcon size={16} />
-                  {contactDetails.address} · {contactDetails.addressSecondary}
+                  {contactDetails.address}
+                </span>
+                <span className="cta-contact-item">
+                  <PinIcon size={16} />
+                  {contactDetails.addressSecondary}
                 </span>
               </div>
             </div>

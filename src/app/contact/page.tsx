@@ -28,8 +28,13 @@ export default function ContactPage() {
       icon: <MailIcon size={20} />,
     },
     {
-      label: "Offices",
-      value: `${contactDetails.address} · ${contactDetails.addressSecondary}`,
+      label: "Lagos office",
+      value: contactDetails.address,
+      icon: <PinIcon size={20} />,
+    },
+    {
+      label: "Abuja office",
+      value: contactDetails.addressSecondary,
       icon: <PinIcon size={20} />,
     },
   ];

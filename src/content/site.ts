@@ -39,7 +39,7 @@ export const contactDetails = {
   phoneSecondaryHref: "tel:+2349124523153",
   email: siteConfig.contact.email,
   address: siteConfig.contact.address,
-  addressSecondary: "Abuja, FCT",
+  addressSecondary: "Lofty Heights @ The Epicenter, No 1 (Plot 480) Zilley Aggrey Drive, Cadastral Zone C01, Karmo, Abuja, Nigeria",
 };
 
 export const coursademiaUrl = "https://coursademia.com";
