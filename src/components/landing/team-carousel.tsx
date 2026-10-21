@@ -55,6 +55,12 @@ export const teamMembers: TeamMember[] = [
     image: "/brand/team/oluwamayowa-adebisi.jpg",
     linkedin: "https://www.linkedin.com/in/adebisi-oluwamayowa",
   },
+  {
+    name: "Victor Ogbonna Ndukwe",
+    role: "Business Development & Growth Manager",
+    image: "/brand/team/victor-ndukwe.jpg",
+    linkedin: "https://www.linkedin.com/in/victor-ndukwe-86779926a",
+  },
 ];
 
 export function TeamCarousel({ members = teamMembers }: { members?: TeamMember[] }) {
